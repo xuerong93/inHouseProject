@@ -1,0 +1,516 @@
+<div class="left-content payment-method" ng-class="$ctrl.activeState">
+    <h2 class="header ng-binding">Check out</h2>
+    <h2 class="header-thank-you ng-binding">Thank you for your order!</h2>
+    <hr>
+    <!-- ngIf: $ctrl.activeState != 'receipt' -->
+    <timer ng-if="$ctrl.activeState != 'receipt'" shopping-cart-expiration="$ctrl.shoppingCartExpirationTime" default-time="15" redirect-page="/buy-gift-cards?cart=open&amp;login=open" class="ng-scope ng-isolate-scope">
+        <div id="timer">
+            <span class="green number ng-binding">13</span>
+            <span class="green ng-binding">minutes</span>
+            <span class="ng-binding">remaining to complete checkout.</span>
+        </div>
+    </timer>
+    <!-- end ngIf: $ctrl.activeState != 'receipt' -->
+    <div class="activeState" ng-switch="$ctrl.activeState">
+        <!-- ngSwitchWhen: blank -->
+        <!-- ngSwitchWhen: login -->
+        <!-- ngSwitchWhen: signup -->
+        <!-- ngSwitchWhen: forgot-password -->
+        <!-- ngSwitchWhen: force-update-password -->
+        <!-- ngSwitchWhen: guest-info -->
+        <!-- ngSwitchWhen: existing-account -->
+        <!-- ngSwitchWhen: device-wall -->
+        <!-- ngSwitchWhen: unconfirmed-email-wall -->
+        <!--<div ng-switch-when="phone">
+                <phone-form decline-click="$ctrl.declinePhoneClick()" on-continue="$ctrl.phoneFormContinue()"></phone-form>
+            </div>
+            <div ng-switch-when="sms-code">
+                <sms-code-form re-enter-phone-click="$ctrl.reEnterPhoneClick()" on-continue="$ctrl.smsCodeContinue()"></sms-code-form>
+            </div>-->
+        <!-- ngSwitchWhen: payment-method -->
+        <div ng-switch-when="payment-method" class="ng-scope">
+            <payment-method-form checkout-data="$ctrl.checkoutData" has-verified-email="$ctrl.hasEmailVerified" on-completed-purchase="$ctrl.onCompletedPurchase()" class="ng-isolate-scope">
+                <div id="payment-method">
+                    <form class="form ng-pristine ng-invalid ng-invalid-required ng-invalid-pattern ng-valid-minlength ng-valid-maxlength" name="paymentForm" ng-submit="$ctrl.submitPaymentForm()" novalidate="true">
+                        <cp-payment-form select-payment-title="Choose Payment Options" enter-card-info-title="Enter Payment Information" payment-form-data="$ctrl.paymentFormData" class="ng-isolate-scope">
+                            <div class="payment-form">
+                                <h3 ng-show="$ctrl.hasCards()" class="ng-binding ng-hide">Choose Payment Options</h3>
+                                <!-- ngIf: $ctrl.hasCards() -->
+                                <div class="check-billing-address ng-hide" ng-show="$ctrl.paymentFormData.selectedCard">
+                                    <h3 class="ng-binding">Check Your Billing Address</h3>
+                                    <div class="billing-address">
+                                        <div class="ng-binding"></div>
+                                        <!-- ngIf: $ctrl.paymentFormData.selectedCard.address.street2 -->
+                                        <div class="ng-binding"></div>
+                                        <div>
+                                            <span class="ng-binding"></span>
+                                            <span class="ng-binding"></span>
+                                        </div>
+                                        <div class="add-card-link">
+                                            <a tabindex="0" role="button" class="cardpool-link ng-binding" ng-click="$ctrl.paymentFormData.paymentOption = 'add'">Add a Credit/Debit Card</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ngIf: $ctrl.paymentFormData.paymentOption == 'add' || !$ctrl.hasCards() -->
+                                <div ng-if="$ctrl.paymentFormData.paymentOption == 'add' || !$ctrl.hasCards()" class="ng-scope">
+                                    <h3 ng-hide="$ctrl.hasCards()" class="ng-binding">Enter Payment Information</h3>
+                                    <cp-text ng-model="$ctrl.paymentFormData.cardName" label="Name on the Credit or Debit Card" required="true" pattern="^[a-zA-Z-]{2,}(?:\s[a-zA-Z])*\s[a-zA-Z-]{2,}(?:\s[a-zA-Z]+)*$" pattern-error="Oops! This requires a first and last name" autocomplete="cc-name" class="ng-pristine ng-untouched ng-isolate-scope ng-empty ng-valid-pattern ng-invalid ng-invalid-required">
+                                        <div id="ctrl-paymentformdata-cardname" class="form-element form-element-text required invalid invalid-required" ng-class="{
+                                                  required: !!$ctrl.required,
+                                                  focused: $ctrl.focused,
+                                                  valid: !$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid,
+                                                  invalid: $ctrl.model.$invalid || $ctrl.shouldDisplayError,
+                                                  'invalid-required': $ctrl.model.$error.required,
+                                                  'invalid-pattern': $ctrl.model.$error.pattern || $ctrl.model.$error.email,
+                                                  error: $ctrl.shouldDisplayError
+                                                }">
+                                            <!-- ngIf: !$ctrl.shouldDisplayError -->
+                                            <label ng-if="!$ctrl.shouldDisplayError" class="regular ng-binding ng-scope" ng-bind="$ctrl.label" ng-class="{'small': $ctrl.focused || !$ctrl.empty}">Name on the Credit or Debit Card</label>
+                                            <!-- end ngIf: !$ctrl.shouldDisplayError -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type === 'email' -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                            <label ng-if="!$ctrl.shouldDisplayError &amp;&amp; $ctrl.model.$error.required &amp;&amp; $ctrl.type !== 'email'" class="error-required small ng-scope" ng-i18next="[i18next]({field: $ctrl.label.toLowerCase()})form_required">Required</label>
+                                            <!-- end ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.pattern && !$ctrl.model.$error.required -->
+                                            <!-- ngIf: $ctrl.shouldDisplayError -->
+                                            <input type="text" name="cardName" autocomplete="cc-name" ng-model="$ctrl.ngModel" ng-model-options="{allowInvalid: true}" ng-change="$ctrl.onChange()" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" ng-pattern="^[a-zA-Z-]{2,}(?:\s[a-zA-Z])*\s[a-zA-Z-]{2,}(?:\s[a-zA-Z]+)*$" inputmode="latin" minlength="" maxlength="256" ng-readonly="$ctrl.ngReadonly" aria-label="Name on the Credit or Debit Card" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" required="required">
+                                            <!-- ngIf: !$ctrl.required -->
+                                            <i class="fa fa-check ng-hide" ng-show="(!$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid &amp;&amp; $ctrl.showCheckMark === undefined) || ($ctrl.showCheckMark &amp;&amp; !$ctrl.empty)" aria-hidden="true"></i>
+                                        </div>
+                                    </cp-text>
+                                    <div class="enter-cc-info">
+                                        <cp-text ng-model="$ctrl.paymentFormData.cardNumber" label="Credit or Debit Card Number" required="true" type="digits" pattern="^[2-6][\d\s-]{11,18}$" minlength="12" maxlength="19" autocomplete="cc-number" pattern-error="Please enter a valid credit card number" class="ng-pristine ng-untouched ng-isolate-scope ng-empty ng-valid-pattern ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength">
+                                            <div id="ctrl-paymentformdata-cardnumber" class="form-element form-element-text required invalid invalid-required" ng-class="{
+                                                      required: !!$ctrl.required,
+                                                      focused: $ctrl.focused,
+                                                      valid: !$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid,
+                                                      invalid: $ctrl.model.$invalid || $ctrl.shouldDisplayError,
+                                                      'invalid-required': $ctrl.model.$error.required,
+                                                      'invalid-pattern': $ctrl.model.$error.pattern || $ctrl.model.$error.email,
+                                                      error: $ctrl.shouldDisplayError
+                                                    }">
+                                                <!-- ngIf: !$ctrl.shouldDisplayError -->
+                                                <label ng-if="!$ctrl.shouldDisplayError" class="regular ng-binding ng-scope" ng-bind="$ctrl.label" ng-class="{'small': $ctrl.focused || !$ctrl.empty}">Credit or Debit Card Number</label>
+                                                <!-- end ngIf: !$ctrl.shouldDisplayError -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type === 'email' -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                                <label ng-if="!$ctrl.shouldDisplayError &amp;&amp; $ctrl.model.$error.required &amp;&amp; $ctrl.type !== 'email'" class="error-required small ng-scope" ng-i18next="[i18next]({field: $ctrl.label.toLowerCase()})form_required">Required</label>
+                                                <!-- end ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.pattern && !$ctrl.model.$error.required -->
+                                                <!-- ngIf: $ctrl.shouldDisplayError -->
+                                                <input type="text" name="cardNumber" autocomplete="cc-number" ng-model="$ctrl.ngModel" ng-model-options="{allowInvalid: true}" ng-change="$ctrl.onChange()" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" ng-pattern="^[2-6][\d\s-]{11,18}$" inputmode="numeric" minlength="12" maxlength="19" ng-readonly="$ctrl.ngReadonly" aria-label="Credit or Debit Card Number" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" required="required">
+                                                <!-- ngIf: !$ctrl.required -->
+                                                <i class="fa fa-check ng-hide" ng-show="(!$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid &amp;&amp; $ctrl.showCheckMark === undefined) || ($ctrl.showCheckMark &amp;&amp; !$ctrl.empty)" aria-hidden="true"></i>
+                                            </div>
+                                        </cp-text>
+                                        <span class="cc-icon">
+                                                  <i class="fa fa-cc-amex cc"></i>
+                                                  <i class="fa fa-cc-visa cc"></i>
+                                                  <i class="fa fa-cc-mastercard cc"></i>
+                                                  <i class="fa fa-cc-discover cc"></i>
+                                                </span>
+                                    </div>
+                                    <div class="card-exp-and-code">
+                                        <cp-text class="card-expiration-date ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-pattern ng-invalid-required" ng-model="$ctrl.paymentFormData.expireDate" label="Expiration MM/YY" required="true" type="month-year" autocomplete="cc-exp">
+                                            <div id="ctrl-paymentformdata-expiredate" class="form-element form-element-text required invalid invalid-required invalid-pattern" ng-class="{
+                                                      required: !!$ctrl.required,
+                                                      focused: $ctrl.focused,
+                                                      valid: !$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid,
+                                                      invalid: $ctrl.model.$invalid || $ctrl.shouldDisplayError,
+                                                      'invalid-required': $ctrl.model.$error.required,
+                                                      'invalid-pattern': $ctrl.model.$error.pattern || $ctrl.model.$error.email,
+                                                      error: $ctrl.shouldDisplayError
+                                                    }">
+                                                <!-- ngIf: !$ctrl.shouldDisplayError -->
+                                                <label ng-if="!$ctrl.shouldDisplayError" class="regular ng-binding ng-scope" ng-bind="$ctrl.label" ng-class="{'small': $ctrl.focused || !$ctrl.empty}">Expiration MM/YY</label>
+                                                <!-- end ngIf: !$ctrl.shouldDisplayError -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type === 'email' -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                                <label ng-if="!$ctrl.shouldDisplayError &amp;&amp; $ctrl.model.$error.required &amp;&amp; $ctrl.type !== 'email'" class="error-required small ng-scope" ng-i18next="[i18next]({field: $ctrl.label.toLowerCase()})form_required">Required</label>
+                                                <!-- end ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.pattern && !$ctrl.model.$error.required -->
+                                                <!-- ngIf: $ctrl.shouldDisplayError -->
+                                                <input type="text" name="expireDate" autocomplete="cc-exp" ng-model="$ctrl.ngModel" ng-model-options="{allowInvalid: true}" ng-change="$ctrl.onChange()" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" ng-pattern="^(0[1-9]|1[0-2])/(20)?[0-9]{2}$" inputmode="" minlength="" maxlength="7" ng-readonly="$ctrl.ngReadonly" aria-label="Expiration MM/YY" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" required="required">
+                                                <!-- ngIf: !$ctrl.required -->
+                                                <i class="fa fa-check ng-hide" ng-show="(!$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid &amp;&amp; $ctrl.showCheckMark === undefined) || ($ctrl.showCheckMark &amp;&amp; !$ctrl.empty)" aria-hidden="true"></i>
+                                            </div>
+                                        </cp-text>
+                                        <cp-text class="card-code ng-pristine ng-untouched ng-isolate-scope ng-empty ng-valid-pattern ng-invalid ng-invalid-required ng-valid-maxlength" ng-model="$ctrl.paymentFormData.securityCode" label="Code" required="true" pattern="^\d{3,4}$" maxlength="4" autocomplete="cc-csc" pattern-error="Invalid code">
+                                            <div id="ctrl-paymentformdata-securitycode" class="form-element form-element-text required invalid invalid-required" ng-class="{
+                                                      required: !!$ctrl.required,
+                                                      focused: $ctrl.focused,
+                                                      valid: !$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid,
+                                                      invalid: $ctrl.model.$invalid || $ctrl.shouldDisplayError,
+                                                      'invalid-required': $ctrl.model.$error.required,
+                                                      'invalid-pattern': $ctrl.model.$error.pattern || $ctrl.model.$error.email,
+                                                      error: $ctrl.shouldDisplayError
+                                                      }">
+                                                <!-- ngIf: !$ctrl.shouldDisplayError -->
+                                                <label ng-if="!$ctrl.shouldDisplayError" class="regular ng-binding ng-scope" ng-bind="$ctrl.label" ng-class="{'small': $ctrl.focused || !$ctrl.empty}">Code</label>
+                                                <!-- end ngIf: !$ctrl.shouldDisplayError -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type === 'email' -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                                <label ng-if="!$ctrl.shouldDisplayError &amp;&amp; $ctrl.model.$error.required &amp;&amp; $ctrl.type !== 'email'" class="error-required small ng-scope" ng-i18next="[i18next]({field: $ctrl.label.toLowerCase()})form_required">Required</label>
+                                                <!-- end ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.pattern && !$ctrl.model.$error.required -->
+                                                <!-- ngIf: $ctrl.shouldDisplayError -->
+                                                <input type="text" name="securityCode" autocomplete="cc-csc" ng-model="$ctrl.ngModel" ng-model-options="{allowInvalid: true}" ng-change="$ctrl.onChange()" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" ng-pattern="^\d{3,4}$" inputmode="latin" minlength="" maxlength="4" ng-readonly="$ctrl.ngReadonly" aria-label="Code" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" required="required">
+                                                <!-- ngIf: !$ctrl.required -->
+                                                <i class="fa fa-check ng-hide" ng-show="(!$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid &amp;&amp; $ctrl.showCheckMark === undefined) || ($ctrl.showCheckMark &amp;&amp; !$ctrl.empty)" aria-hidden="true"></i>
+                                            </div>
+                                        </cp-text>
+                                        <div tabindex="0" class="security-code-help" ng-click="showSecurityCodeTooltip = !showSecurityCodeTooltip"><span class="ng-binding">?</span></div>
+                                        <div class="cp-tooltip security-code-tip ng-binding ng-hide" ng-show="showSecurityCodeTooltip" ng-click="showSecurityCodeTooltip = false">
+                                            <span class="tooltip-close"><i class="fa fa-close"></i></span> A credit card security code is an added safeguard for your credit/debit card purchases. Depending on the type of credit card you use, it is the 3- or 4-digit number printed on the back or front of your credit card.
+                                        </div>
+                                    </div>
+                                    <cp-text ng-model="$ctrl.paymentFormData.billingAddress1" label="Billing Address 1" required="true" autocomplete="address-line1" class="ng-pristine ng-untouched ng-isolate-scope ng-empty ng-valid-pattern ng-invalid ng-invalid-required">
+                                        <div id="ctrl-paymentformdata-billingaddress1" class="form-element form-element-text required invalid invalid-required" ng-class="{
+                                                  required: !!$ctrl.required,
+                                                  focused: $ctrl.focused,
+                                                  valid: !$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid,
+                                                  invalid: $ctrl.model.$invalid || $ctrl.shouldDisplayError,
+                                                  'invalid-required': $ctrl.model.$error.required,
+                                                  'invalid-pattern': $ctrl.model.$error.pattern || $ctrl.model.$error.email,
+                                                  error: $ctrl.shouldDisplayError
+                                                }">
+                                            <!-- ngIf: !$ctrl.shouldDisplayError -->
+                                            <label ng-if="!$ctrl.shouldDisplayError" class="regular ng-binding ng-scope" ng-bind="$ctrl.label" ng-class="{'small': $ctrl.focused || !$ctrl.empty}">Billing Address 1</label>
+                                            <!-- end ngIf: !$ctrl.shouldDisplayError -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type === 'email' -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                            <label ng-if="!$ctrl.shouldDisplayError &amp;&amp; $ctrl.model.$error.required &amp;&amp; $ctrl.type !== 'email'" class="error-required small ng-scope" ng-i18next="[i18next]({field: $ctrl.label.toLowerCase()})form_required">Required</label>
+                                            <!-- end ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.pattern && !$ctrl.model.$error.required -->
+                                            <!-- ngIf: $ctrl.shouldDisplayError -->
+                                            <input type="text" name="billingAddress1" autocomplete="address-line1" ng-model="$ctrl.ngModel" ng-model-options="{allowInvalid: true}" ng-change="$ctrl.onChange()" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" inputmode="latin" minlength="" maxlength="256" ng-readonly="$ctrl.ngReadonly" aria-label="Billing Address 1" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" required="required">
+                                            <!-- ngIf: !$ctrl.required -->
+                                            <i class="fa fa-check ng-hide" ng-show="(!$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid &amp;&amp; $ctrl.showCheckMark === undefined) || ($ctrl.showCheckMark &amp;&amp; !$ctrl.empty)" aria-hidden="true"></i>
+                                        </div>
+                                    </cp-text>
+                                    <cp-text ng-model="$ctrl.paymentFormData.billingAddress2" label="Billing Address 2" autocomplete="address-line2" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty ng-valid-pattern">
+                                        <div id="ctrl-paymentformdata-billingaddress2" class="form-element form-element-text" ng-class="{
+                                                  required: !!$ctrl.required,
+                                                  focused: $ctrl.focused,
+                                                  valid: !$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid,
+                                                  invalid: $ctrl.model.$invalid || $ctrl.shouldDisplayError,
+                                                  'invalid-required': $ctrl.model.$error.required,
+                                                  'invalid-pattern': $ctrl.model.$error.pattern || $ctrl.model.$error.email,
+                                                  error: $ctrl.shouldDisplayError
+                                                }">
+                                            <!-- ngIf: !$ctrl.shouldDisplayError -->
+                                            <label ng-if="!$ctrl.shouldDisplayError" class="regular ng-binding ng-scope" ng-bind="$ctrl.label" ng-class="{'small': $ctrl.focused || !$ctrl.empty}">Billing Address 2</label>
+                                            <!-- end ngIf: !$ctrl.shouldDisplayError -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type === 'email' -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.pattern && !$ctrl.model.$error.required -->
+                                            <!-- ngIf: $ctrl.shouldDisplayError -->
+                                            <input type="text" name="billingAddress2" autocomplete="address-line2" ng-model="$ctrl.ngModel" ng-model-options="{allowInvalid: true}" ng-change="$ctrl.onChange()" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" inputmode="latin" minlength="" maxlength="256" ng-readonly="$ctrl.ngReadonly" aria-label="Billing Address 2" class="ng-pristine ng-untouched ng-empty ng-valid-pattern ng-valid-minlength ng-valid-maxlength ng-valid ng-valid-required">
+                                            <!-- ngIf: !$ctrl.required --><span class="optional ng-binding ng-scope" ng-if="!$ctrl.required" ng-show="$ctrl.empty || $ctrl.model.$pristine || $ctrl.model.$invalid">(optional)</span>
+                                            <!-- end ngIf: !$ctrl.required -->
+                                            <i class="fa fa-check ng-hide" ng-show="(!$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid &amp;&amp; $ctrl.showCheckMark === undefined) || ($ctrl.showCheckMark &amp;&amp; !$ctrl.empty)" aria-hidden="true"></i>
+                                        </div>
+                                    </cp-text>
+                                    <cp-text ng-model="$ctrl.paymentFormData.city" label="City" required="true" autocomplete="address-level2" class="ng-pristine ng-untouched ng-isolate-scope ng-empty ng-valid-pattern ng-invalid ng-invalid-required">
+                                        <div id="ctrl-paymentformdata-city" class="form-element form-element-text required invalid invalid-required" ng-class="{
+                                                  required: !!$ctrl.required,
+                                                  focused: $ctrl.focused,
+                                                  valid: !$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid,
+                                                  invalid: $ctrl.model.$invalid || $ctrl.shouldDisplayError,
+                                                  'invalid-required': $ctrl.model.$error.required,
+                                                  'invalid-pattern': $ctrl.model.$error.pattern || $ctrl.model.$error.email,
+                                                  error: $ctrl.shouldDisplayError
+                                                }">
+                                            <!-- ngIf: !$ctrl.shouldDisplayError -->
+                                            <label ng-if="!$ctrl.shouldDisplayError" class="regular ng-binding ng-scope" ng-bind="$ctrl.label" ng-class="{'small': $ctrl.focused || !$ctrl.empty}">City</label>
+                                            <!-- end ngIf: !$ctrl.shouldDisplayError -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type === 'email' -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                            <label ng-if="!$ctrl.shouldDisplayError &amp;&amp; $ctrl.model.$error.required &amp;&amp; $ctrl.type !== 'email'" class="error-required small ng-scope" ng-i18next="[i18next]({field: $ctrl.label.toLowerCase()})form_required">Required</label>
+                                            <!-- end ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.pattern && !$ctrl.model.$error.required -->
+                                            <!-- ngIf: $ctrl.shouldDisplayError -->
+                                            <input type="text" name="city" autocomplete="address-level2" ng-model="$ctrl.ngModel" ng-model-options="{allowInvalid: true}" ng-change="$ctrl.onChange()" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" inputmode="latin" minlength="" maxlength="256" ng-readonly="$ctrl.ngReadonly" aria-label="City" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" required="required">
+                                            <!-- ngIf: !$ctrl.required -->
+                                            <i class="fa fa-check ng-hide" ng-show="(!$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid &amp;&amp; $ctrl.showCheckMark === undefined) || ($ctrl.showCheckMark &amp;&amp; !$ctrl.empty)" aria-hidden="true"></i>
+                                        </div>
+                                    </cp-text>
+                                    <div class="state-and-zip">
+                                        <cp-dropdown class="state ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-pattern ng-invalid-required" ng-model="$ctrl.paymentFormData.state" label="State" required="true" options="$ctrl.states" restrict="true" autocomplete="address-level1">
+                                            <div id="ctrl-paymentformdata-state" class="form-element form-element-dropdown required invalid invalid-required invalid-pattern" ng-class="{
+                                                      required: !!$ctrl.required,
+                                                      focused: $ctrl.focused,
+                                                      valid: !$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid,
+                                                      invalid: $ctrl.model.$invalid,
+                                                      'invalid-required': $ctrl.model.$error.required,
+                                                      'invalid-pattern': $ctrl.model.$error.pattern
+                                                    }">
+                                                <label class="regular ng-binding" ng-bind="$ctrl.label" ng-class="{'small': $ctrl.focused || !$ctrl.empty}">State</label>
+                                                <!-- ngIf: $ctrl.model.$error.required -->
+                                                <label ng-if="$ctrl.model.$error.required" class="error-required small ng-scope" ng-i18next="[i18next]({field: $ctrl.label.toLowerCase()})form_required">Required</label>
+                                                <!-- end ngIf: $ctrl.model.$error.required -->
+                                                <!-- ngIf: $ctrl.model.$error.pattern -->
+                                                <label ng-if="$ctrl.model.$error.pattern" class="error-pattern small ng-scope" ng-i18next="form_dropdown_pattern_error">Required</label>
+                                                <!-- end ngIf: $ctrl.model.$error.pattern -->
+                                                <input type="text" name="state" autocomplete="address-level1" ng-model="$ctrl.ngModel" ng-model-options="{allowInvalid: true}" ng-change="$ctrl.onChange()" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" ng-keydown="$ctrl.onKeydown($event)" minlength="" maxlength="256" aria-label="State" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" required="required">
+                                                <!-- ngIf: !$ctrl.required -->
+                                                <i class="fa fa-check ng-hide" ng-show="!$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid" aria-hidden="true"></i>
+                                                <div class="dropdown-options ng-hide" ng-show="$ctrl.showDropdown &amp;&amp; $ctrl.mayShowDropdown">
+                                                    <!-- ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="1">Alabama</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="2">Alaska</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="3">Arizona</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="4">Arkansas</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="5">California</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="6">Colorado</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="7">Connecticut</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="8">Delaware</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="9">District Of Columbia</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="10">Florida</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="11">Georgia</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="12">Hawaii</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="13">Idaho</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="14">Illinois</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="15">Indiana</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="16">Iowa</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="17">Kansas</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="18">Kentucky</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="19">Louisiana</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="20">Maine</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="21">Maryland</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="22">Massachusetts</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="23">Michigan</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="24">Minnesota</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="25">Mississippi</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="26">Missouri</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="27">Montana</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="28">Nebraska</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="29">Nevada</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="30">New Hampshire</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="31">New Jersey</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="32">New Mexico</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="33">New York</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="34">North Carolina</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="35">North Dakota</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="36">Ohio</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="37">Oklahoma</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="38">Oregon</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="39">Pennsylvania</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="40">Rhode Island</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="41">South Carolina</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="42">South Dakota</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="43">Tennessee</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="44">Texas</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="45">Utah</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="46">Vermont</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="47">Virginia</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="48">Washington</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="49">West Virginia</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="50">Wisconsin</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) --><span class="option ng-binding ng-scope" ng-repeat="option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel))" ng-bind="option.value || option" ng-click="$ctrl.updateInput(option.key || option)" ng-keydown="$ctrl.onKeydown($event, option.key || option)" ng-mouseover="$ctrl.onMouseover()" tabindex="51">Wyoming</span>
+                                                    <!-- end ngRepeat: option in ($ctrl.options | filter: $ctrl.search($ctrl.ngModel)) -->
+                                                </div>
+                                            </div>
+                                        </cp-dropdown>
+                                        <cp-text class="zip ng-pristine ng-untouched ng-isolate-scope ng-empty ng-valid-pattern ng-invalid ng-invalid-required ng-valid-maxlength" ng-model="$ctrl.paymentFormData.zip" label="Postal Code" required="true" pattern="^\d{5}$" maxlength="5" autocomplete="postal-code" pattern-error="Invalid zip-code">
+                                            <div id="ctrl-paymentformdata-zip" class="form-element form-element-text required invalid invalid-required" ng-class="{
+                                                        required: !!$ctrl.required,
+                                                        focused: $ctrl.focused,
+                                                        valid: !$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid,
+                                                        invalid: $ctrl.model.$invalid || $ctrl.shouldDisplayError,
+                                                        'invalid-required': $ctrl.model.$error.required,
+                                                        'invalid-pattern': $ctrl.model.$error.pattern || $ctrl.model.$error.email,
+                                                        error: $ctrl.shouldDisplayError
+                                                      }">
+                                                <!-- ngIf: !$ctrl.shouldDisplayError -->
+                                                <label ng-if="!$ctrl.shouldDisplayError" class="regular ng-binding ng-scope" ng-bind="$ctrl.label" ng-class="{'small': $ctrl.focused || !$ctrl.empty}">Postal Code</label>
+                                                <!-- end ngIf: !$ctrl.shouldDisplayError -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type === 'email' -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                                <label ng-if="!$ctrl.shouldDisplayError &amp;&amp; $ctrl.model.$error.required &amp;&amp; $ctrl.type !== 'email'" class="error-required small ng-scope" ng-i18next="[i18next]({field: $ctrl.label.toLowerCase()})form_required">Required</label>
+                                                <!-- end ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.pattern && !$ctrl.model.$error.required -->
+                                                <!-- ngIf: $ctrl.shouldDisplayError -->
+                                                <input type="text" name="zip" autocomplete="postal-code" ng-model="$ctrl.ngModel" ng-model-options="{allowInvalid: true}" ng-change="$ctrl.onChange()" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" ng-pattern="^\d{5}$" inputmode="latin" minlength="" maxlength="5" ng-readonly="$ctrl.ngReadonly" aria-label="Postal Code" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" required="required">
+                                                <!-- ngIf: !$ctrl.required -->
+                                                <i class="fa fa-check ng-hide" ng-show="(!$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid &amp;&amp; $ctrl.showCheckMark === undefined) || ($ctrl.showCheckMark &amp;&amp; !$ctrl.empty)" aria-hidden="true"></i>
+                                            </div>
+                                        </cp-text>
+                                    </div>
+                                </div>
+                                <!-- end ngIf: $ctrl.paymentFormData.paymentOption == 'add' || !$ctrl.hasCards() -->
+                                <div class="phone-number">
+                                    <cp-text ng-model="$ctrl.paymentFormData.phoneNumber" type="tel" label="Phone Number" required="true" pattern-error="Phone requires 10 digits" class="ng-pristine ng-untouched ng-isolate-scope ng-empty ng-invalid ng-invalid-pattern ng-invalid-required">
+                                        <div id="ctrl-paymentformdata-phonenumber" class="form-element form-element-text required invalid invalid-required invalid-pattern" ng-class="{
+                                                  required: !!$ctrl.required,
+                                                  focused: $ctrl.focused,
+                                                  valid: !$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid,
+                                                  invalid: $ctrl.model.$invalid || $ctrl.shouldDisplayError,
+                                                  'invalid-required': $ctrl.model.$error.required,
+                                                  'invalid-pattern': $ctrl.model.$error.pattern || $ctrl.model.$error.email,
+                                                  error: $ctrl.shouldDisplayError
+                                                }">
+                                            <!-- ngIf: !$ctrl.shouldDisplayError -->
+                                            <label ng-if="!$ctrl.shouldDisplayError" class="regular ng-binding ng-scope" ng-bind="$ctrl.label" ng-class="{'small': $ctrl.focused || !$ctrl.empty}">Phone Number</label>
+                                            <!-- end ngIf: !$ctrl.shouldDisplayError -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type === 'email' -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                            <label ng-if="!$ctrl.shouldDisplayError &amp;&amp; $ctrl.model.$error.required &amp;&amp; $ctrl.type !== 'email'" class="error-required small ng-scope" ng-i18next="[i18next]({field: $ctrl.label.toLowerCase()})form_required">Required</label>
+                                            <!-- end ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                            <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.pattern && !$ctrl.model.$error.required -->
+                                            <!-- ngIf: $ctrl.shouldDisplayError -->
+                                            <input type="text" name="phoneNumber" autocomplete="tel" ng-model="$ctrl.ngModel" ng-model-options="{allowInvalid: true}" ng-change="$ctrl.onChange()" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" ng-pattern="^\(\d{3}\) \d{3} - \d{4}$" inputmode="tel" minlength="" maxlength="16" ng-readonly="$ctrl.ngReadonly" aria-label="Phone Number" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" required="required">
+                                            <!-- ngIf: !$ctrl.required -->
+                                            <i class="fa fa-check ng-hide" ng-show="(!$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid &amp;&amp; $ctrl.showCheckMark === undefined) || ($ctrl.showCheckMark &amp;&amp; !$ctrl.empty)" aria-hidden="true"></i>
+                                        </div>
+                                    </cp-text>
+                                    <button type="button" class="why-phone-number number btn-link form-link ng-binding" ng-click="showMobileNumberTooltip = !showMobileNumberTooltip">Why?</button>
+                                    <div class="cp-tooltip mobile-number-tip ng-binding ng-hide" ng-show="showMobileNumberTooltip" ng-click="showMobileNumberTooltip = false">
+                                        <span class="tooltip-close"><i class="fa fa-close"></i></span> We need your phone number in case we need to contact you regarding your order.
+                                    </div>
+                                </div>
+                                <!-- ngIf: $ctrl.paymentFormData.paymentOption == 'add' || !$ctrl.hasCards() -->
+                                <div ng-if="$ctrl.paymentFormData.paymentOption == 'add' || !$ctrl.hasCards()" class="ng-scope">
+                                    <div class="save-card-container">
+                                        <cp-checkbox ng-model="$ctrl.paymentFormData.saveCard" label="Save this card to speed through your next checkout" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty">
+                                            <div id="ctrl-paymentformdata-savecard" class="form-element form-element-checkbox" ng-class="{
+                                                      required: !!$ctrl.required,
+                                                      focused: $ctrl.focused,
+                                                      checked: $ctrl.checked,
+                                                      invalid: $ctrl.model.$invalid,
+                                                      'invalid-required': $ctrl.model.$error.required,
+                                                    }">
+                                                <label ng-click="$ctrl.onClick($event)">
+                                                    <input type="checkbox" name="saveCard" ng-true-value="true" ng-false-value="false" ng-model="$ctrl.ngModel" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" class="ng-pristine ng-untouched ng-empty ng-valid ng-valid-required">
+                                                    <span class="check" ng-keypress="$ctrl.onKeypress($event)" tabindex="0"></span>
+                                                    <span class="checkbox-label">
+      <!-- ngIf: $ctrl.customContent -->
+      <!-- ngIf: !$ctrl.customContent --><span ng-if="!$ctrl.customContent" ng-bind-html="$ctrl.label" class="ng-binding ng-scope">Save this card to speed through your next checkout</span>
+                                                    <!-- end ngIf: !$ctrl.customContent -->
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </cp-checkbox>
+                                    </div>
+                                </div>
+                                <!-- end ngIf: $ctrl.paymentFormData.paymentOption == 'add' || !$ctrl.hasCards() -->
+                            </div>
+                        </cp-payment-form>
+                        <!-- ngIf: $ctrl.checkoutData.isGuestCheckout -->
+                        <div class="promo-section">
+                            <cp-promo-code class="ng-isolate-scope">
+                                <div class="cp-promo-code">
+                                    <!-- ngRepeat: promoCode in $ctrl.shoppingCart.promoCodes track by promoCode.transactionId -->
+                                    <div id="cp-promo-code-0" class="form  initial" name="applyPromoCodeForm">
+                                        <cp-text class="promo-code-input ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty ng-valid-pattern ng-valid-minlength ng-valid-maxlength" ng-model="$ctrl.promoCode" label="Promo code" should-display-error="$ctrl.displayError" error-message="" minlength="2" maxlength="16">
+                                            <div id="ctrl-promocode" class="form-element form-element-text" ng-class="{
+                                                        required: !!$ctrl.required,
+                                                        focused: $ctrl.focused,
+                                                        valid: !$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid,
+                                                        invalid: $ctrl.model.$invalid || $ctrl.shouldDisplayError,
+                                                        'invalid-required': $ctrl.model.$error.required,
+                                                        'invalid-pattern': $ctrl.model.$error.pattern || $ctrl.model.$error.email,
+                                                        error: $ctrl.shouldDisplayError
+                                                      }">
+                                                <!-- ngIf: !$ctrl.shouldDisplayError -->
+                                                <label ng-if="!$ctrl.shouldDisplayError" class="regular ng-binding ng-scope" ng-bind="$ctrl.label" ng-class="{'small': $ctrl.focused || !$ctrl.empty}">Promo code</label>
+                                                <!-- end ngIf: !$ctrl.shouldDisplayError -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type === 'email' -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.required && $ctrl.type !== 'email' -->
+                                                <!-- ngIf: !$ctrl.shouldDisplayError && $ctrl.model.$error.pattern && !$ctrl.model.$error.required -->
+                                                <!-- ngIf: $ctrl.shouldDisplayError -->
+                                                <input type="text" name="promoCode" autocomplete="on" ng-model="$ctrl.ngModel" ng-model-options="{allowInvalid: true}" ng-change="$ctrl.onChange()" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" inputmode="latin" minlength="2" maxlength="16" ng-readonly="$ctrl.ngReadonly" aria-label="Promo code" class="ng-pristine ng-untouched ng-empty ng-valid-pattern ng-valid-minlength ng-valid-maxlength ng-valid ng-valid-required">
+                                                <!-- ngIf: !$ctrl.required --><span class="optional ng-binding ng-scope" ng-if="!$ctrl.required" ng-show="$ctrl.empty || $ctrl.model.$pristine || $ctrl.model.$invalid">(optional)</span>
+                                                <!-- end ngIf: !$ctrl.required -->
+                                                <i class="fa fa-check ng-hide" ng-show="(!$ctrl.empty &amp;&amp; $ctrl.model.$dirty &amp;&amp; $ctrl.model.$valid &amp;&amp; $ctrl.showCheckMark === undefined) || ($ctrl.showCheckMark &amp;&amp; !$ctrl.empty)" aria-hidden="true"></i>
+                                            </div>
+                                        </cp-text>
+                                        <button class="regular-button promo-button ng-binding" type="button" ng-click="$ctrl.applyPromoCode()">Apply</button>
+                                    </div>
+                                </div>
+                            </cp-promo-code>
+                            <div class="gift-card">
+                                <!-- ngRepeat: cpGiftcard in $ctrl.cart.cpgcs track by cpGiftcard.paymentObjectId -->
+                                <div>
+                                    <a class="cardpool-link ng-binding" ng-click="$ctrl.showCardpoolCardIdInput = !$ctrl.showCardpoolCardIdInput">Pay with a Cardpool Gift Card</a>
+                                    <!-- ngIf: $ctrl.showCardpoolCardIdInput -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-and-submit">
+                            <h3 class="ng-binding">Review and Submit</h3>
+                            <div class="review">
+                                <div class="total ng-binding">
+                                    Total amount to be charged to your
+                                    <span ng-switch="$ctrl.ccType">
+                        <!-- ngSwitchWhen: american_express -->
+                        <!-- ngSwitchWhen: visa -->
+                        <!-- ngSwitchWhen: master -->
+                        <!-- ngSwitchWhen: discover -->
+                                            </span> card:
+                                </div>
+                                <div class="amount number ng-binding">$22.50</div>
+                            </div>
+                            <div class="terms-and-conditions-container">
+                                <cp-checkbox ng-model="payment.termAndConditions" label="" required="true" class="ng-pristine ng-untouched ng-isolate-scope ng-invalid ng-invalid-submit ng-empty ng-invalid-required">
+                                    <div id="payment-termandconditions" class="form-element form-element-checkbox required invalid invalid-required" ng-class="{
+                                              required: !!$ctrl.required,
+                                              focused: $ctrl.focused,
+                                              checked: $ctrl.checked,
+                                              invalid: $ctrl.model.$invalid,
+                                              'invalid-required': $ctrl.model.$error.required,
+                                            }">
+                                        <label ng-click="$ctrl.onClick($event)">
+                                            <input type="checkbox" name="termAndConditions" ng-true-value="true" ng-false-value="false" ng-model="$ctrl.ngModel" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" required="required">
+                                            <span class="check" ng-keypress="$ctrl.onKeypress($event)" tabindex="0"></span>
+                                            <span class="checkbox-label">
+      <!-- ngIf: $ctrl.customContent -->
+      <!-- ngIf: !$ctrl.customContent --><span ng-if="!$ctrl.customContent" ng-bind-html="$ctrl.label" class="ng-binding ng-scope"></span>
+                                            <!-- end ngIf: !$ctrl.customContent -->
+                                            </span>
+                                        </label>
+                                    </div>
+                                </cp-checkbox>
+                                <div class="text ng-binding" ng-class="{'terms-accepted': payment.termAndConditions === true}">
+                                    By checking this box, you are agreeing to the Cardpool.com
+                                    <a href="/tos" target="_blank" class="ng-binding">Terms of Use</a> and
+                                    <a href="/privacy" target="_blank" class="ng-binding">Privacy Policy</a>
+                                </div>
+                            </div>
+                            <button class="button button-submit completed-payment" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="18.188" viewBox="0 0 14 18.188" aria-hidden="true" class="checkout-secured-img svg" src="/assets/images/secured-o.svg">
+                                    <defs>
+                                        <filter id="filter" x="1002" y="294.906" width="14" height="18.188" filterUnits="userSpaceOnUse">
+                                            <feFlood result="flood" flood-color="#999"></feFlood>
+                                            <feComposite result="composite" operator="in" in2="SourceGraphic"></feComposite>
+                                            <feBlend result="blend" in2="SourceGraphic"></feBlend>
+                                        </filter>
+                                    </defs>
+                                    <path id="secured-o.svg" class="secured-lock-svg" d="M1014.23,313.1h-10.46a1.777,1.777,0,0,1-1.77-1.773v-7.64a1.777,1.777,0,0,1,1.77-1.772h0.33v-1.987c0-3.2,1.79-5.03,4.9-5.03,2.37,0,4.9,1.322,4.9,5.03v1.987h0.33a1.777,1.777,0,0,1,1.77,1.772v7.64A1.777,1.777,0,0,1,1014.23,313.1ZM1004.1,311h9.8v-6.991h-9.8V311Zm2.1-9.088h5.6v-1.987c0-1.946-.94-2.932-2.8-2.932-1.96,0-2.8.876-2.8,2.932v1.987Zm3.47,7.107h-1.34v-3.029h1.34v3.029Z" transform="translate(-1002 -294.906)"></path>
+                                </svg>
+                                <span class="complete-purchase ng-binding ng-scope">
+                    Confirm Purchase
+                </span>
+                            </button>
+                            <div class="guarantee">
+                                <i class="fa fa-shield guarantee-shield" aria-hidden="true"></i>
+                                <a href="/guarantee">
+                                    <h5 class="rail-header">
+                        <span class="number ng-binding">1-Year Guarantee</span>
+                    </h5>
+                                    <p class="guarantee-content ng-binding">
+                                        Gift cards on our marketplace are provided by verified sellers. All orders are covered by our One (1) year Money-Back Guarantee.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                    <tmx class="ng-isolate-scope">
+                        <div style="display: none" ng-bind-html="$ctrl.template" class="ng-binding"></div>
+                    </tmx>
+                </div>
+            </payment-method-form>
+        </div>
+        <!-- end ngSwitchWhen: -->
+        <!-- ngSwitchWhen: receipt -->
+    </div>
+</div>

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)https://www.cardpool.com/ -->
+
+<html class="no-js" style="overflow-y: scroll;">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    [uib-typeahead-popup].dropdown-menu {
+        display: block;
+    }
+    </style>
+    <style type="text/css">
+    .uib-time input {
+        width: 50px;
+    }
+    </style>
+    <style type="text/css">
+    [uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,
+    [uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,
+    [uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,
+    [uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,
+    [uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,
+    [uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,
+    [uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,
+    [uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,
+    [uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,
+    [uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,
+    [uib-popover-popup].popover.top-left > .arrow,
+    [uib-popover-popup].popover.top-right > .arrow,
+    [uib-popover-popup].popover.bottom-left > .arrow,
+    [uib-popover-popup].popover.bottom-right > .arrow,
+    [uib-popover-popup].popover.left-top > .arrow,
+    [uib-popover-popup].popover.left-bottom > .arrow,
+    [uib-popover-popup].popover.right-top > .arrow,
+    [uib-popover-popup].popover.right-bottom > .arrow,
+    [uib-popover-html-popup].popover.top-left > .arrow,
+    [uib-popover-html-popup].popover.top-right > .arrow,
+    [uib-popover-html-popup].popover.bottom-left > .arrow,
+    [uib-popover-html-popup].popover.bottom-right > .arrow,
+    [uib-popover-html-popup].popover.left-top > .arrow,
+    [uib-popover-html-popup].popover.left-bottom > .arrow,
+    [uib-popover-html-popup].popover.right-top > .arrow,
+    [uib-popover-html-popup].popover.right-bottom > .arrow,
+    [uib-popover-template-popup].popover.top-left > .arrow,
+    [uib-popover-template-popup].popover.top-right > .arrow,
+    [uib-popover-template-popup].popover.bottom-left > .arrow,
+    [uib-popover-template-popup].popover.bottom-right > .arrow,
+    [uib-popover-template-popup].popover.left-top > .arrow,
+    [uib-popover-template-popup].popover.left-bottom > .arrow,
+    [uib-popover-template-popup].popover.right-top > .arrow,
+    [uib-popover-template-popup].popover.right-bottom > .arrow {
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        margin: 0;
+    }
+    
+    [uib-popover-popup].popover,
+    [uib-popover-html-popup].popover,
+    [uib-popover-template-popup].popover {
+        display: block !important;
+    }
+    </style>
+    <style type="text/css">
+    .uib-datepicker-popup.dropdown-menu {
+        display: block;
+        float: none;
+        margin: 0;
+    }
+    
+    .uib-button-bar {
+        padding: 10px 9px 2px;
+    }
+    </style>
+    <style type="text/css">
+    .uib-position-measure {
+        display: block !important;
+        visibility: hidden !important;
+        position: absolute !important;
+        top: -9999px !important;
+        left: -9999px !important;
+    }
+    
+    .uib-position-scrollbar-measure {
+        position: absolute !important;
+        top: -9999px !important;
+        width: 50px !important;
+        height: 50px !important;
+        overflow: scroll !important;
+    }
+    
+    .uib-position-body-scrollbar-measure {
+        overflow: scroll !important;
+    }
+    </style>
+    <style type="text/css">
+    .uib-datepicker .uib-title {
+        width: 100%;
+    }
+    
+    .uib-day button,
+    .uib-month button,
+    .uib-year button {
+        min-width: 100%;
+    }
+    
+    .uib-left,
+    .uib-right {
+        width: 100%
+    }
+    </style>
+    <style type="text/css">
+    .ng-animate.item:not(.left):not(.right) {
+        -webkit-transition: 0s ease-in-out left;
+        transition: 0s ease-in-out left
+    }
+    </style>
+    <style type="text/css">
+    @charset "UTF-8";
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak,
+    .ng-hide:not(.ng-hide-animate) {
+        display: none !important;
+    }
+    
+    ng\:form {
+        display: block;
+    }
+    
+    .ng-animate-shim {
+        visibility: hidden;
+    }
+    
+    .ng-anchor {
+        position: absolute;
+    }
+    </style>
+    <!-- Google Maps API -->
+    <!-- injector:css -->
+    <link rel="stylesheet" href="./css/cardpoolBase.css">
+    <link rel="stylesheet" href="./css/cardpoolAdvance.css">
+    <!-- endinjector -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Gift Card Exchange &amp; Discount Gift Cards - Save up to 35% | cardpool.com</title>
+    <meta name="description" content="Buy discounted gift cards up to 35% off, sell gift cards for cash, or trade gift cards at the most trusted and most popular gift card exchange.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--  <link rel="canonical" href="https://www.cardpool.com/"> -->
+    <link href="css/css" rel="stylesheet" type="text/css">
+    <link href="css/css(1)" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.cardpool.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="https://www.cardpool.com/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.cardpool.com/favicon-16x16.png" sizes="16x16">
+    <!-- <link rel="manifest" href="https://www.cardpool.com/manifest.json"> -->
+    <link rel="mask-icon" href="https://www.cardpool.com/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="js/dataservice.js"></script>
+    <script src="js/userdataservice.js"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
+    <script src="js/cardpool.js"></script>
+    <script>
+        $(document).ready(function() {
+            var errorMsg = "invalid password";
+            if (errorMsg) {
+                console.log(errorMsg);
+                $("#error").show();
+            }
+        });
+    </script>
+    <style>
+        
+    </style>
+</head>
+
+<body ng-app="mainApp">
+  <div ng-controller="mainCtrl">
+
+    <!-- <app class="ng-isolate-scope"></app> -->
+    <div id="modal"></div>
+    <!--[if lt IE 7]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header id="banner">
+       
+            <div id="header">
+                <div id="refer-a-friend-container">
+                    <!-- <referral><span><a href="#home">Refer a Friend, Get $5</a></span></referral> -->
+                    <referral><span><a ui-sref="home">Refer a Friend, Get $5</a></span></referral>
+                </div>
+                <div class="header-content">
+                    <div class="left-content">
+                        <a ui-sref="home" class="scr-medium scr-large"><img class="cardpool-logo" src="./img/cardpool_logo.png"></a>
+                        <a ui-sref="home" class="scr-small"><img class="image" height="44" width="44" src="./img/cardpool_logo_mobile.svg"></a>
+
+                        <!-- <search> -->
+                        <!-- ng-mouseenter="onMouseEnter()" -->
+                        <div id="top-selling-brands-container"  ng-mouseleave="onMouseLeft()">
+                            <div id="search-container" >
+                                <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                <!-- ng-change="updateTopBrands()" ng-keydown="onKeydown($event)" ng-focus="onFocus()"  ng-blur="onBlur()" -->
+                                <input type="text" id="brand-input" placeholder="Enter Store or Brand Name" ng-focus="onFocus()" ng-model="search.name"  class="ng-pristine ng-valid ng-empty ng-touched">
+                            </div>
+
+                            <!-- ng-click="clickFunction($index)" ng-keydown="onKeydown($event)"  tabindex="1" 
+                            ng-mouseover="onMouseEnter($event)" ng-mouseleave="onMouseLeave($event)"-->
+                            <div role="listbox" id="text-dropdown" ng-show="showDropdown" >
+                                <div class="top-brand" ng-click="clickFunction($index)""  class=""  ng-repeat="brand in cardList | filter:search | singleFilter | limitTo:5" ui-sref="card({cardname: brand.name})"  tabindex="{{$index}}">
+                                    <span role="option" aria-label="{{brand.name}} {{brand.discount}}% off">
+                                        <img class="card-image" ng-src="{{brand.img}}" >
+                                        <span class="card-name" title="{{brand.name}}">
+                                            <!-- ngRepeat: t in card.highlighting --><span >{{brand.name}}</span><!-- end ngRepeat: t in card.highlighting -->
+                                        </span>
+                                        <span class="card-discount">
+                                            <div class="save-text"><span >save up to</span></div>
+                                            <div class="discount-number ng-binding">{{brand.discount}}%</div>
+                                        </span>
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            
+
+
+
+                        </div>
+                        <!-- </search> -->
+
+                        <span class="header-link right-of-search buy-mobile"><a ui-sref="buy-gift-cards.index">Buy Gift Cards</a></span>
+                        <span class="header-link scr-small right-of-search sell-mobile"><a ui-sref="sell-gift-cards" >Sell</a></span>
+                        <span class="header-link right-of-search sell-mobile-disabled" >Sell</span>
+                        <span class="header-link scr-medium scr-large right-of-search"><a ui-sref="buy-gift-cards.index">Buy Gift Cards</a></span>
+                        <span class="header-link scr-medium scr-large sell-desktop"><a ui-sref="sell-gift-cards">Sell Gift Cards</a></span>
+                        <span class="header-link sell-disabled">Sell Gift Cards</span>
+                    </div>
+
+
+                    <div class="right-content">
+                        <span class="header-link help scr-medium scr-large"><a href="https://www.cardpool.com/support/how-it-works">Help</a></span>
+                        
+
+                        <div class="cart"  ng-click="openAndCloseCartSlider()" aria-label="My Cart" style="padding-right: 15px">
+                            <span class="notification has-number"><span class="number">{{shoppingcart.getTotalItems()}}</span></span>
+                            <!-- <span class="notification has-number"><span class="number">1</span></span> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.44 31.969" class="cart-img svg" src="img/shopping-cart.svg">
+                              <defs>
+                                <style>
+                                  .cls-1 {
+                                    fill: #636363;
+                                    fill-rule: evenodd;
+                                  }
+                                </style>
+                              </defs>
+                              <path id="shopping-cart.svg" class="cls-1" d="M1102.48,74.863h-17.71a1.186,1.186,0,0,1-1.17-1.008l-3.63-22.941h-2.04a1.2,1.2,0,0,1,0-2.4h3.04a1.175,1.175,0,0,1,1.16,1.007l3.64,22.942h15.71l2.15-13.57h-20.34a1.2,1.2,0,0,1,0-2.4h21.72a1.174,1.174,0,0,1,.9.422,1.2,1.2,0,0,1,.26.966l-2.53,15.966A1.176,1.176,0,0,1,1102.48,74.863Zm-14.59,5.643a2.029,2.029,0,1,1,1.99-2.029A2.01,2.01,0,0,1,1087.89,80.506Zm12.03,0a2.029,2.029,0,1,1,1.99-2.029A2.019,2.019,0,0,1,1099.92,80.506Z" transform="translate(-1076.75 -48.531)"></path>
+                            </svg>
+                          </div>
+
+                        
+                        <!--For mobile part-->
+                        <button class="account-menu-button scr-small" aria-label="My Account menu icon" ><i class="fa fa-bars menu-icon"></i></button>
+
+
+                        
+                        <!--show username-->
+                        <span ng-if="!username && !usernamegetter()"  class="header-link account scr-medium scr-large" >
+                        <!-- ui-sref="login" -->
+                          <a ui-sref="login">Log in</a>
+                        </span>
+
+                        <style>
+                            #account-dropdown {
+                                display: none !important;
+                            }
+                            #account-dropdown-container:hover > #account-dropdown {
+                                display: block !important;
+                            }
+                        </style>
+                        <span id="account-dropdown-container" class="header-link account scr-medium scr-large" ng-if="username || usernamegetter()">
+                            <a class="welcome" >Welcome {{username ? username : usernamegetter()}}</a>
+                            <div id="account-dropdown" >
+                              <div class="account-element">
+                                <a ui-sref="account.overview">
+                                  <div class="image-container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20.03" height="20.032" viewBox="0 0 20.03 20.032" class="modal-img overview svg" src="/assets/images/cog-o.svg">
+                                      <defs>
+                                        <style>
+                                          .cls-1 {
+                                            fill: #636363;
+                                            fill-rule: evenodd;
+                                            filter: url(#filter);
+                                          }
+                                        </style>
+                                        <filter id="filter" x="998.75" y="213.906" filterUnits="userSpaceOnUse">
+                                          <feFlood result="flood" flood-color="#39f"></feFlood>
+                                          <feComposite result="composite" operator="in" in2="SourceGraphic"></feComposite>
+                                          <feBlend result="blend" in2="SourceGraphic"></feBlend>
+                                        </filter>
+                                      </defs>
+                                      <path id="cog-o.svg" class="cls-1" d="M1010.09,233.948h-2.68a1.209,1.209,0,0,1-.76-0.266,1.1,1.1,0,0,1-.41-0.78l-0.27-1.729c-0.11-.044-0.22-0.089-0.33-0.137l-1.35,1.023a1.221,1.221,0,0,1-1.57-.092,15.758,15.758,0,0,1-2.07-2.118,1.2,1.2,0,0,1-.22-0.71,1.188,1.188,0,0,1,.24-0.715c0.11-.165.33-0.443,0.63-0.824,0.14-.177.26-0.334,0.37-0.471a4.487,4.487,0,0,1-.19-0.455l-1.764-.26a1.108,1.108,0,0,1-.733-0.434,1.187,1.187,0,0,1-.248-0.731v-2.682a1.206,1.206,0,0,1,.24-0.715,1.088,1.088,0,0,1,.69-0.445l1.835-.276a3,3,0,0,1,.16-0.379c-0.28-.366-0.61-0.79-1-1.267a1.169,1.169,0,0,1-.29-0.759,1.282,1.282,0,0,1,.23-0.7,13.868,13.868,0,0,1,1.28-1.405,2.733,2.733,0,0,1,1.66-1.077,1.252,1.252,0,0,1,.77.275l1.31,1.013q0.165-.072.33-0.138a16.219,16.219,0,0,1,.31-1.89,1.145,1.145,0,0,1,1.15-.89h2.68a1.179,1.179,0,0,1,.76.268,1.074,1.074,0,0,1,.41.771l0.27,1.736c0.11,0.044.22,0.09,0.33,0.137l1.36-1.025a1.235,1.235,0,0,1,1.51.037,17.185,17.185,0,0,1,2.13,2.193,1.107,1.107,0,0,1,.22.692,1.251,1.251,0,0,1-.24.712c-0.12.17-.34,0.448-0.64,0.827-0.14.178-.26,0.337-0.37,0.475,0.07,0.147.13,0.294,0.19,0.44l1.77,0.271a1.112,1.112,0,0,1,.73.434,1.212,1.212,0,0,1,.25.731V225.3a1.249,1.249,0,0,1-.24.712,1.112,1.112,0,0,1-.72.45l-1.81.276c-0.06.126-.11,0.246-0.16,0.36,0.26,0.345.6,0.772,1.01,1.274a1.236,1.236,0,0,1,.29.769,1.131,1.131,0,0,1-.31.775,11.634,11.634,0,0,1-1.22,1.333c-1.26,1.241-1.72,1.255-2.36.846l-1.37-1.063c-0.11.048-.22,0.095-0.33,0.138a15.952,15.952,0,0,1-.31,1.89A1.144,1.144,0,0,1,1010.09,233.948Zm-2.39-1.23v0Zm2.11-.028v0Zm-2.15-.218h2.2c0.09-.407.18-1.054,0.28-1.933l0.06-.472,0.45-.145a6.044,6.044,0,0,0,.98-0.409l0.43-.222,1.88,1.476a7.966,7.966,0,0,0,.64-0.571,14.218,14.218,0,0,0,.99-1.057c-0.52-.642-0.92-1.16-1.19-1.546l-0.26-.372,0.21-.4a6.488,6.488,0,0,0,.43-0.994l0.15-.419,2.38-.36v-2.179l-2.39-.366-0.14-.439a5.858,5.858,0,0,0-.44-1.064l-0.21-.4,0.26-.369c0.15-.207.38-0.5,0.68-0.878q0.3-.387.48-0.622a18.8,18.8,0,0,0-1.6-1.617l-1.9,1.445-0.42-.211a6.659,6.659,0,0,0-.98-0.4l-0.43-.142-0.36-2.406h-2.2c-0.07.329-.16,0.907-0.28,1.933l-0.06.472-0.45.144a5.964,5.964,0,0,0-.98.411l-0.42.219-1.9-1.468a7.593,7.593,0,0,0-.63.57,12.553,12.553,0,0,0-.98,1.045c0.49,0.6.88,1.107,1.18,1.54l0.26,0.375-0.21.4a5.108,5.108,0,0,0-.42.973l-0.13.446-2.41.362V225l2.4,0.355,0.13,0.458a5.526,5.526,0,0,0,.44,1.047l0.22,0.407-0.27.376c-0.15.207-.38,0.5-0.67,0.877-0.21.263-.37,0.472-0.49,0.628a15.957,15.957,0,0,0,1.61,1.61l1.89-1.443,0.42,0.211a6.155,6.155,0,0,0,.98.4l0.43,0.141Zm-4.27-1.581a0.223,0.223,0,0,1-.04.031Zm0.34,0s0.01,0,.01,0A0.042,0.042,0,0,1,1003.73,230.9Zm10.06-.024h0Zm1.92-1.561h0Zm-13.85-.023v0Zm13.83-.305v0h0Zm-0.04-10.094c0.02,0.018.03,0.037,0.05,0.055C1015.68,218.926,1015.67,218.907,1015.65,218.888Zm-13.84-.009h0Zm13.83-.3h0Zm-11.93-1.58h0Zm10.48-.075-0.08.059A0.512,0.512,0,0,0,1014.19,216.919Zm-6.5-1.749v0Zm2.11-.042v0Zm-1.05,12.635a3.829,3.829,0,1,1,2.71-1.123h0A3.7,3.7,0,0,1,1008.75,227.763Zm0-6.185a2.355,2.355,0,1,0,1.66,4.02h0.01A2.355,2.355,0,0,0,1008.75,221.578Z" transform="translate(-998.75 -213.906)"></path>
+                                    </svg>
+                                  </div>
+                                  <span class="account-dropdown-link" ng-i18next="global_header_overview">Overview</span>
+                                </a>
+                            </div>
+                            <div class="account-element">
+                                <a ui-sref="account.purchases">
+                                    <div class="image-container orders">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19.031" height="19.124" viewBox="0 0 19.031 19.124" class="modal-img svg" src="/assets/images/shopping-o.svg">
+                                            <defs>
+                                                <style>
+                                                .cls-1 {
+                                                    fill: #636363;
+                                                    fill-rule: evenodd;
+                                                    filter: url(#filter);
+                                                }
+                                                </style>
+                                                <filter id="filter" x="999.969" y="175.938" filterUnits="userSpaceOnUse">
+                                                    <feFlood result="flood" flood-color="#39f"></feFlood>
+                                                    <feComposite result="composite" operator="in" in2="SourceGraphic"></feComposite>
+                                                    <feBlend result="blend" in2="SourceGraphic"></feBlend>
+                                                </filter>
+                                            </defs>
+                                            <path id="shopping-o.svg" class="cls-1" d="M1017.62,195.052h-16.26a1.363,1.363,0,0,1-1.04-.458,1.4,1.4,0,0,1-.347-1.084l0.317-2.852h0l0.93-8.449a1.443,1.443,0,0,1,.45-0.877,1.365,1.365,0,0,1,.94-0.363h2.36v-0.491a4.519,4.519,0,0,1,4.52-4.53,4.359,4.359,0,0,1,3.19,1.327,4.421,4.421,0,0,1,1.32,3.2v0.491h2.37a1.358,1.358,0,0,1,.93.363,1.445,1.445,0,0,1,.45.867v0.01l0.93,8.449h0l0.32,2.849a1.407,1.407,0,0,1-.34,1.074A1.361,1.361,0,0,1,1017.62,195.052Zm-16.12-1.528h15.97l-0.25-2.238h-15.47Zm0.49-4.394h14.99l-0.73-6.632h-1.63v0.491a2,2,0,0,1-.58,1.428,2.037,2.037,0,0,1-2.85,0,1.964,1.964,0,0,1-.59-1.428V182.5h-2.23v0.491a1.967,1.967,0,0,1-.59,1.429,2.027,2.027,0,0,1-2.84,0,1.967,1.967,0,0,1-.59-1.428V182.5h-1.63Zm5.76-8.161h3.48v-0.491a1.681,1.681,0,0,0-.51-1.235,1.643,1.643,0,0,0-1.23-.511,1.61,1.61,0,0,0-1.23.512,1.64,1.64,0,0,0-.51,1.234v0.491Z" transform="translate(-999.969 -175.938)"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="account-dropdown-link" ng-i18next="global_header_purchases">Purchases</span>
+                                </a>
+                            </div>
+                            <div class="account-element">
+                                <a ui-sref="account.listings">
+                                    <div class="image-container listings">
+                                        <i class="fa fa-list-ul account-img listings"></i>
+                                    </div>
+                                    <span class="account-dropdown-link" ng-i18next="global_header_listings">Listings</span>
+                                </a>
+                            </div>
+                            <div class="account-element">
+                                <a ui-sref="account.profile">
+                                    <div class="image-container profile">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19.031" height="19.124" viewBox="0 0 13.813 16" class="modal-img profile svg" src="/assets/images/icon-profile.svg">
+                                            <defs>
+                                                <style>
+                                                .cls-1 {
+                                                    fill: #999;
+                                                    fill-rule: evenodd;
+                                                }
+                                                </style>
+                                            </defs>
+                                            <path id="icon-profile.svg" class="cls-1" d="M206.811,323.847m2.515-3.693a3.861,3.861,0,0,1,1.865.486,3.5,3.5,0,0,1,1.7,3.115,6.041,6.041,0,0,1-1.079,4.183A3.24,3.24,0,0,1,209.343,329h-0.109a3.227,3.227,0,0,1-2.466-1.064c-1.3-1.457-1.1-3.919-1.078-4.195a3.5,3.5,0,0,1,1.716-3.116m1.894,0.911h-0.033a2.1,2.1,0,0,0-2.193,2.3l-0.005.044a4.827,4.827,0,0,0,.736,3.144,2.135,2.135,0,0,0,2.966,0,4.679,4.679,0,0,0,.738-3.1l-0.009-.094A2.079,2.079,0,0,0,209.3,321.537Zm6.621,10.193-6.625,4.413a12.466,12.466,0,0,1-6.446-1.574,0.661,0.661,0,0,1-.266-0.324,5.163,5.163,0,0,1-.182-1.547,0.716,0.716,0,0,0,0-.078,2.746,2.746,0,0,1,1.637-2.841l0.05-.014a8.854,8.854,0,0,0,2.594-1.171,0.71,0.71,0,0,1,.523-0.117,0.693,0.693,0,0,1,.449.284,0.679,0.679,0,0,1,.117.513,0.69,0.69,0,0,1-.287.448,10.554,10.554,0,0,1-3.031,1.374,1.489,1.489,0,0,0-.664,1.551l0,0.08a5.8,5.8,0,0,0,.043.816,12.793,12.793,0,0,0,10.915,0,6.353,6.353,0,0,0,.044-0.82,0.614,0.614,0,0,1,0-.083,1.456,1.456,0,0,0-.686-1.551,10.209,10.209,0,0,1-3.01-1.366,0.691,0.691,0,0,1-.285-0.447,0.688,0.688,0,0,1,.567-0.8,0.7,0.7,0,0,1,.518.115,9.055,9.055,0,0,0,2.593,1.171l0.048,0.014a2.708,2.708,0,0,1,1.642,2.791h0l0.007,0.244h0a4.861,4.861,0,0,1-.172,1.427,0.694,0.694,0,0,1-.27.327A12.678,12.678,0,0,1,209.3,336.143Z" transform="translate(-202.375 -320.156)"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="account-dropdown-link" ng-i18next="global_header_profile">Profile</span>
+                                </a>
+                            </div>
+                            <div class="account-element">
+                                <a ui-sref="account.settings">
+                                    <div class="image-container settings">
+                                        <i class="fa fa-toggle-on account-img settings"></i>
+                                    </div>
+                                    <span class="account-dropdown-link" ng-i18next="global_header_settings">Settings</span>
+                                </a>
+                            </div>
+                            <div class="account-element">
+                                <a href="http://localhost:8080/CardPool/j_spring_security_logout">
+                                <!-- <a href="/logout?redirect=https://www.cardpool.com/account/my-purchases"> -->
+                                    <div class="image-container sign-out">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="18.188" viewBox="0 0 14 18.188" class="modal-img svg" src="/assets/images/signout-o.svg">
+                                            <defs>
+                                                <style>
+                                                .cls-1 {
+                                                    fill: #636363;
+                                                    fill-rule: evenodd;
+                                                    filter: url(#filter);
+                                                }
+                                                </style>
+                                                <filter id="filter" x="1002" y="294.906" width="14" height="18.188" filterUnits="userSpaceOnUse">
+                                                    <feFlood result="flood" flood-color="#ffffff"></feFlood>
+                                                    <feComposite result="composite" operator="in" in2="SourceGraphic"></feComposite>
+                                                    <feBlend result="blend" in2="SourceGraphic"></feBlend>
+                                                </filter>
+                                            </defs>
+                                            <path id="signout-o.svg" class="cls-1" d="M1014.23,313.1h-10.46a1.777,1.777,0,0,1-1.77-1.773v-7.64a1.777,1.777,0,0,1,1.77-1.772h0.33v-1.987c0-3.2,1.79-5.03,4.9-5.03,2.37,0,4.9,1.322,4.9,5.03v1.987h0.33a1.777,1.777,0,0,1,1.77,1.772v7.64A1.777,1.777,0,0,1,1014.23,313.1ZM1004.1,311h9.8v-6.991h-9.8V311Zm2.1-9.088h5.6v-1.987c0-1.946-.94-2.932-2.8-2.932-1.96,0-2.8.876-2.8,2.932v1.987Zm3.47,7.107h-1.34v-3.029h1.34v3.029Z" transform="translate(-1002 -294.906)"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="account-dropdown-link" ng-i18next="global_header_sign_out">Logout</span>
+                                </a>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+    </header>
+
+    <!-- <div ng-view></div> -->
+    <div ui-view></div>
+    
+    <footer>
+        <div id="blue-bar">
+            <div class="content">
+                <div class="centered_content">
+                    <div class="blue-group top">
+                        <div class="blue-content-outer">
+                            <a href="https://www.cardpool.com/guarantee">
+                                <div class="blue-content-inner">
+                                    <div class="image-container" role="presentation">
+                                        <i class="fa fa-shield footer-img shield"></i>
+                                    </div>
+                                    <div class="content-text">
+                                        <div class="content-text">1 Year Guarantee</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="blue-content-outer">
+                            <div class="blue-content-inner">
+                                <div class="image-container refer" role="presentation">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24" class="footer-img svg" src="/assets/images/user-o.svg">
+                                        <defs>
+                                            <style>
+                                            .cls-1 {
+                                                fill: #636363;
+                                                fill-rule: evenodd;
+                                            }
+                                            </style>
+                                        </defs>
+                                        <path id="user-o.svg" class="cls-1" d="M405.964,667.537a9.645,9.645,0,0,0-.132-1.033,8.357,8.357,0,0,0-.255-1.042,5.242,5.242,0,0,0-.43-0.977,3.8,3.8,0,0,0-.655-0.854,2.929,2.929,0,0,0-.947-0.6,3.14,3.14,0,0,0-.787-0.195,3.938,3.938,0,0,0,.386-1.736,3.985,3.985,0,0,0-7.947-.454,5.748,5.748,0,0,0-7.392-.052,3.985,3.985,0,0,0-7.951.4,3.923,3.923,0,0,0,.386,1.735,3.159,3.159,0,0,0-.788.195,2.924,2.924,0,0,0-.946.6,3.738,3.738,0,0,0-.655.854,5.313,5.313,0,0,0-.431.977,8.386,8.386,0,0,0-.254,1.041,9.707,9.707,0,0,0-.133,1.034c-0.021.314-.032,0.617-0.032,0.945a2.491,2.491,0,0,0,.828,1.971,2.883,2.883,0,0,0,2.123.626h2.175a2.843,2.843,0,0,0-.084.393,13.329,13.329,0,0,0-.373,1.612,15.012,15.012,0,0,0-.195,1.558c-0.032.459-.047,0.952-0.047,1.434a5.052,5.052,0,0,0,1.214,3.487,4.684,4.684,0,0,0,3.114,1.541h11.429a4.674,4.674,0,0,0,3.114-1.531,4.541,4.541,0,0,0,1.214-3.28c0-.482-0.016-1.19-0.048-1.652a13.962,13.962,0,0,0-.194-1.494,15.056,15.056,0,0,0-.373-1.687,2.786,2.786,0,0,0-.084-0.381h2.232a2.86,2.86,0,0,0,2.123-.571,2.556,2.556,0,0,0,.828-2C406,668.069,405.986,667.851,405.964,667.537Zm-8.832-8.45a2.854,2.854,0,0,1,4.035,4.037,3.209,3.209,0,0,1-.293.26l-0.185.133a2.87,2.87,0,0,1-3.557-.393,3.217,3.217,0,0,1-.31-0.372,5.539,5.539,0,0,0-.345-0.638,2.857,2.857,0,0,1-.18-1.009A2.729,2.729,0,0,1,397.132,659.087Zm-5.662,1.866a4.187,4.187,0,0,1,2.959,7.148,4.722,4.722,0,0,1-.429.381l-0.271.2A4.191,4.191,0,1,1,391.47,660.953Zm-9.639-1.977a2.853,2.853,0,0,1,4.87,2.018,2.838,2.838,0,0,1-.185,1.022,5.688,5.688,0,0,0-.332.614,2.971,2.971,0,0,1-.319.383,2.87,2.87,0,0,1-3.557.393l-0.185-.133a3.2,3.2,0,0,1-.292-0.26A2.855,2.855,0,0,1,381.831,658.976Zm-1.879,10.99a1.814,1.814,0,0,1-1.336-.381,1.611,1.611,0,0,1-.474-1.253c0-.3.01-0.568,0.03-0.856a8.435,8.435,0,0,1,.117-0.9,6.947,6.947,0,0,1,.219-0.888,4.077,4.077,0,0,1,.335-0.758,2.611,2.611,0,0,1,.452-0.59,1.777,1.777,0,0,1,.579-0.358,2.072,2.072,0,0,1,.692-0.136c0.035,0.021.09,0.052,0.16,0.1,0.2,0.128.426,0.272,0.674,0.431a4.909,4.909,0,0,0,1.108.49,4.426,4.426,0,0,0,2.757,0,2.775,2.775,0,0,0,.389-0.177c-0.011.15-.042,0.293-0.042,0.448a5.777,5.777,0,0,0,.566,2.547,4.563,4.563,0,0,0-1.156.285,4.283,4.283,0,0,0-1.387.873,4.444,4.444,0,0,0-.96,1.082c-0.039.068-.069,0.039-0.106,0.039h-2.617Zm19.193,8.118a2.847,2.847,0,0,1-1.96.9H385.756a2.849,2.849,0,0,1-1.96-.9,2.716,2.716,0,0,1-.694-1.986c0-.442.014-0.93,0.044-1.354a12.736,12.736,0,0,1,.171-1.363,10.429,10.429,0,0,1,.321-1.328,5.911,5.911,0,0,1,.492-1.122,3.778,3.778,0,0,1,.662-0.872,2.605,2.605,0,0,1,.846-0.529,3.2,3.2,0,0,1,1-.208c0.048,0.026.126,0.072,0.244,0.15q0.437,0.282.98,0.631a7.008,7.008,0,0,0,1.605.719,6.37,6.37,0,0,0,4.007,0,6.971,6.971,0,0,0,1.606-.719q0.546-.348.979-0.631c0.1-.068.179-0.113,0.231-0.144a3.056,3.056,0,0,1,1.012.2,2.616,2.616,0,0,1,.848.526,3.832,3.832,0,0,1,.662.869,5.93,5.93,0,0,1,.492,1.117,10.3,10.3,0,0,1,.32,1.313,12.64,12.64,0,0,1,.172,1.335c0.029,0.422.044,0.77,0.044,1.212A3.231,3.231,0,0,1,399.145,678.084Zm5.237-8.444a1.8,1.8,0,0,1-1.336.326h-2.675c-0.036,0-.066.029-0.1-0.039a4.977,4.977,0,0,0-.96-1.167,4.183,4.183,0,0,0-1.389-.83,4.55,4.55,0,0,0-1.154-.265,5.725,5.725,0,0,0,.566-2.535c0-.126-0.027-0.236-0.034-0.36a2.917,2.917,0,0,0,.438.207,4.426,4.426,0,0,0,2.757,0,4.929,4.929,0,0,0,1.108-.49c0.247-.158.477-0.3,0.674-0.43,0.07-.046.125-0.077,0.16-0.1a2.066,2.066,0,0,1,.691.137,1.783,1.783,0,0,1,.579.358,2.6,2.6,0,0,1,.452.593,4.014,4.014,0,0,1,.336.761,7.041,7.041,0,0,1,.218.9,8.382,8.382,0,0,1,.117.91c0.02,0.288.031,0.5,0.031,0.8A1.548,1.548,0,0,1,404.382,669.64Z" transform="translate(-377 -657)"></path>
+                                    </svg>
+                                </div>
+                                <div class="content-text referral">
+                                    <referral><span><a href="#home">Refer a Friend, Get $5</a></span>
+                                    </referral>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blue-group bottom">
+                        <div class="blue-content-outer">
+                            <a href="https://www.cardpool.com/locations">
+                                <div class="blue-content-inner">
+                                    <div class="image-container" role="presentation">
+                                        <i class="fa fa-map-marker footer-img get-mobile"></i>
+                                    </div>
+                                    <div class="content-text">Find a Location</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="blue-content-outer follow">
+                            <div class="blue-content-inner follow">
+                                <div class="content-text follow">
+                                    Follow Us
+                                </div>
+                                <div class="image-container" role="presentation">
+                                    <a href="https://www.facebook.com/cardpool" target="_blank">
+                                        <i aria-hidden="true" class="fa fa-facebook-square footer-img fb-badge"></i>
+                                        <span class="sr-only">Facebook</span>
+                                    </a>
+                                    <a href="https://www.twitter.com/cardpool" target="_blank">
+                                        <i aria-hidden="true" class="fa fa-twitter-square footer-img twitter-badge"></i>
+                                        <span class="sr-only">Twitter</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer-links">
+            <div class="content">
+                <div class="centered_content">
+                    <div class="link-group">
+                        <p class="link-group-header">About Us</p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/about">About Cardpool</a></p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/press">Cardpool in the Press</a></p>
+                        <p class="link-group-item"><a href="https://blackhawknetwork.com/news" target="_blank">Blackhawk in the Press</a></p>
+                        <p class="link-group-item"><a href="https://blackhawknetwork.com/blog" target="_blank">Blog</a></p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/reviews">User Reviews</a></p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/careers">Careers</a></p>
+                    </div>
+                    <div class="link-group">
+                        <p class="link-group-header">Help/FAQs</p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/support/how-it-works">How it Works</a></p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/support/buying">Buying</a></p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/support/selling">Selling</a></p>
+                        <p class="link-group-item"><a href="mailto:support@cardpool.com?subject=Website%3A%20Customer%20question%2C%20issue%20or%20comment">Contact Us</a></p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/privacy">Privacy Policy</a></p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/tos">Terms of Use</a></p>
+                    </div>
+                    <div class="link-group">
+                        <p class="link-group-header">Partnership</p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/brand-partnership">Brand Partnership</a></p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/affiliates/programs">Affiliate Program</a></p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/bulk-seller-program">Bulk Seller Program</a></p>
+                        <p class="link-group-item"><a href="https://www.cardpool.com/bulk-buyer-program">Bulk Buyer Program</a></p>
+                    </div>
+                    <div class="link-group">
+                        <p class="link-group-header">Find Us On</p>
+                        <p class="link-group-item">
+                            <a href="https://www.cardpool.com/redirect_to_itunes_link"><img src="./img/App_Store_Badge_162x48@2x.png" class="app-store-icon" alt="Download on the App Store"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="trademark-text">
+            <p>Designated trademarks and brands are the property of their respective owners, cardpool and its products are not affiliated or endorsed by such owners. Use of this website constitutes acceptance of cardpool.com's <a href="https://www.cardpool.com/privacy">Privacy Policy</a> and <a href="https://www.cardpool.com/tos">Terms of Use</a>.</p>
+            <p>Copyright © 2017 cardpool, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+    <!--shopping cart-->
+    <div>
+        <div id="cart-wrap" class="slide ms-transform-origin">
+            <div cart="" id="cart-panel">
+                <div class="title-container">
+                    <!-- ngIf: $ctrl.cart.items.length -->
+                    <h4 class="cart-title" style="font-size:15px; padding-top: 10px">Your Shopping Cart</h4>
+                    <!-- end ngIf: $ctrl.cart.items.length -->
+                    <div class="close" aria-label="close shopping cart" ng-click="openAndCloseCartSlider()">
+                        <i class="fa fa-close"></i>
+                    </div>
+                </div>
+                <!-- ngIf: !$ctrl.cart.items.length -->
+                <div class="cart-body">
+                    <!-- ngIf: $ctrl.cart.items.length -->
+                    <div class="cart-content" >
+                        <div class="cart-trust">
+                            <img class="cart-trust-img" src="img/trust_logos@2x.jpg" alt="TRUSTe Privacy Certification, Norton Secured, Better Business Bureau A+ Accredited Business">
+                        </div>
+
+                        <div>
+                            <div class="cart-item" ng-repeat="eachCard in shoppingcart.$cart.items">
+                                <div class="card-image-container">
+                                    <img class="card-image" ng-src="{{eachCard._img}}">
+                                </div>
+                                <div class="brand-name ng-binding">{{eachCard._name}}</div>
+                                <!-- ngIf: $ctrl.availabilityStatus() !== 'none' -->
+                                <div class="card-info-headers ng-scope">
+                                    <span class="card-header gray">VALUE</span>
+                                    <span class="card-header gray">YOU PAY</span>
+                                </div>
+
+                                <div class="cart-sku ng-scope" >
+                                    <span class="card-element more-details-toggle">
+                                        <div class="ng-binding ng-scope">+ <span class="more-details-toggle-text ng-binding">More Info</span></div><!-- end ngIf: !$ctrl.shouldShowMoreInfo(sku) -->
+                                    </span>
+                                    <span class="card-element number ng-binding">{{eachCard._price | currency}}</span>
+                                    <span class="card-element number ng-binding">{{eachCard._price * (1-eachCard._discount/100) | currency}}</span>
+                                    <span tabindex="0" class="card-element remove-item focus-on-click"  aria-label="remove card from cart button" ng-click="shoppingcart.removeItem()">
+                                        <i class="fa fa-trash-o"></i>
+                                    </span>
+
+                                    <!-- ng-class="{slide : showRemoveConfirm}" -->
+                                    <!-- <div class="remove-item-confirm"  aria-hidden="true">
+                                        <button class="remove-item-confirm-button small-button ng-binding" ng-click="$ctrl.removeCardFromCart(sku)" aria-label="confirm card remove">
+                                            <i class="fa fa-trash-o"></i> Remove?
+                                        </button>
+                                        <button class="remove-item-cancel-button small-button ng-binding" ng-click="showRemoveConfirm = !showRemoveConfirm;" aria-label=" cancel card remove">
+                                            Cancel
+                                        </button>
+                                    </div> -->
+
+
+                                    <div  class="tags ng-scope" >
+                                        <div class="tag ng-binding">{{eachCard._type}}</div>
+                                        <div class="tag ng-binding">Use Anywhere</div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+               
+
+
+                <div class="cart-secured slide ms-transform-origin">
+                    <div ng-if="shoppingcart.$cart.items.length" class="cart-summery ng-scope">
+                        <div class="summery-element">
+                            <div class="title" ng-i18next="cart_summary_value">VALUE</div>
+                            <div class="value number ng-binding">{{shoppingcart.getOriginalTotal() | currency}}</div>
+                        </div>
+                        <div class="summery-element">
+                            <div class="title" ng-i18next="cart_summary_savings">SAVINGS</div>
+                            <div class="value number ng-binding">{{shoppingcart.savings() | currency}}</div>
+                        </div>
+                        <div class="summery-element">
+                            <div class="title" ng-i18next="cart_summary_total">TOTAL</div>
+                            <div class="value number ng-binding">{{shoppingcart.getActualTotal() | currency}}</div>
+                        </div>
+                    </div>
+                    
+                    <button ng-if="shoppingcart.$cart.items.length"  id="proceed-button" class="button button-large ng-scope" ui-sref="checkout">Proceed to Checkout</button>
+                    
+                    <div class="secured-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="18.188" viewBox="0 0 14 18.188" aria-hidden="true" class="cart-secured-img svg" src="/assets/images/secured-o.svg">
+                            <defs>
+                                <filter id="filter" x="1002" y="294.906" width="14" height="18.188" filterUnits="userSpaceOnUse">
+                                    <feFlood result="flood" flood-color="#999"></feFlood>
+                                    <feComposite result="composite" operator="in" in2="SourceGraphic"></feComposite>
+                                    <feBlend result="blend" in2="SourceGraphic"></feBlend>
+                                </filter>
+                            </defs>
+                            <path id="secured-o.svg" class="secured-lock-svg" d="M1014.23,313.1h-10.46a1.777,1.777,0,0,1-1.77-1.773v-7.64a1.777,1.777,0,0,1,1.77-1.772h0.33v-1.987c0-3.2,1.79-5.03,4.9-5.03,2.37,0,4.9,1.322,4.9,5.03v1.987h0.33a1.777,1.777,0,0,1,1.77,1.772v7.64A1.777,1.777,0,0,1,1014.23,313.1ZM1004.1,311h9.8v-6.991h-9.8V311Zm2.1-9.088h5.6v-1.987c0-1.946-.94-2.932-2.8-2.932-1.96,0-2.8.876-2.8,2.932v1.987Zm3.47,7.107h-1.34v-3.029h1.34v3.029Z" transform="translate(-1002 -294.906)"></path>
+                        </svg>
+                        <span class="cart-secured-text">Secured Checkout</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="cart-close-click-target" ng-click="closeCartSlider()"></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<div id="body-wrap">
+    <div id="browse-container">
+        <div class="breadcrumbs">
+            <span><a ui-sref="home">Home</a></span>
+            <span><a ui-sref="buy-gift-cards.index" ng-click="selectCategoryFilter('All')">Buy Gift Cards</a></span>
+        </div>
+        <div id="browse-wrapper">
+            <div id="left-rail">
+                <div class="rail-section-container categories" ng-init="lessList=false">
+                    <div class="rail-header"><a ui-sref="buy-gift-cards.index" ng-click="selectCategoryFilter('All')">Categories</a></div>
+                    <ul class="categories-list" ng-repeat="categoryshow in categoryListShow">
+                        <li class="rail-item "><i class="fa fa-angle-right"></i><a class="rail-link" ng-click="selectCategoryFilter(categoryshow)">{{categoryshow}}</a></li>
+                    </ul>
+                    <div class="show-more-link">
+                        <a ng-click="lessList = !lessList" ng-hide="lessList">See More</a>
+                    </div>
+                    <ul class="categories-list ng-hide" ng-show="lessList" ng-repeat="categoryhide in categoryListHide">
+                        <li class="rail-item "><i class="fa fa-angle-right"></i><a class="rail-link" ng-click="selectCategoryFilter(categoryhide)">{{categoryhide}}</a></li>
+                    </ul>
+                </div>
+                <div class="rail-section-container guarantee">
+                    <i class="fa fa-shield guarantee-shield" aria-hidden="true"></i>
+                    <a href="https://www.cardpool.com/guarantee">
+                        <h5 class="rail-header">
+                            <span class="number">1-Year Guarantee</span>
+                        </h5>
+                        <p class="guarantee-content">
+                            Gift cards on our marketplace are provided by verified sellers. All orders are covered by our One (1) year Money-Back Guarantee.
+                        </p>
+                    </a>
+                </div>
+                <div class="rail-section-container ratings-and-reviews">
+                    <h5 class="rail-header">Our<span class="number">15,300+</span>  reviews make us proud</h5>
+                    <div class="app-rating">
+                        <span class="star-count number">4.0</span>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+                        <div class="rating-subtitle">
+                            Average customer rating
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <span class="rating-testimonial">I ordered my cards and they came in just a few days. Everything was great. I'm going to order more in the future to save more money.</span>
+                        <span class="rating-user"> - Eric</span>
+                    </div>
+                    <div class="user-rating">
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="rail-section-container trusted">
+                    <div class="rail-header">Our site is secure and accredited</div>
+                    <img class="rail-img" src="./img/BBB_logo.png" alt="Better Business Bureau A+ Accredited Business">
+                    <img class="rail-img" src="./img/Norton_logo.png" alt="Norton Secured">
+                    <img class="rail-img" src="./img/truste-certified-privacy-badge.png" alt="TRUSTe Privacy Certification">
+                </div>
+                <div class="rail-section-container features">
+                    <h5>Free USPS Shipping</h5>
+                    <h5>No Fees</h5>
+                    <h5>No Expirations</h5>
+                </div>
+            </div>
+            <div id="browse-body">
+                <h1 class="title">Buy Gift Cards</h1>
+                <div id="browse-filters">
+                    <div class="btn-group dropdown">
+                        <button type="button" class="btn btn-primary wide dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong class="tablet-display">Card Type: </strong>
+                            <strong class="desktop-display">Card Type: </strong>
+                            <strong class="mobile-display">Type: </strong>
+                            <span >{{type}}</span>
+                            <i id="type-btn-toggle" class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+                            <!-- ngRepeat: (key,value) in typeFilters -->
+                            <li class="dropdown-filter" role="menuitem" ng-click="selectTypeFilter('All')">All</li>
+                            <!-- end ngRepeat: (key,value) in typeFilters -->
+                            <li class="dropdown-filter" role="menuitem" ng-click="selectTypeFilter('Email Only')">Email only</li>
+                            <!-- end ngRepeat: (key,value) in typeFilters -->
+                            <li class="dropdown-filter " role="menuitem" ng-click="selectTypeFilter('Physical Only')">Physical only</li>
+                            <!-- end ngRepeat: (key,value) in typeFilters -->
+                        </ul>
+                    </div>
+                    <div class="btn-group button-categories hide-mobile">
+                        <a role="button" class="btn btn-primary btn-active" ui-sref=".categories">View Categories</a>
+                    </div>
+                    <div id="alphanumeric-bar">
+                        <span  ng-repeat="alphaa in alphaList">
+                            <a class="alpha-button" ng-click="selectAlphaFilter(alphaa)">{{alphaa}}</a>
+                        </span>
+                    </div>
+                    
+                </div>
+                <div ui-view></div>
+            </div>
+        </div>
+    </div>
+</div>

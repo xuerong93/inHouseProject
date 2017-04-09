@@ -1,0 +1,309 @@
+<div id="body-wrap">
+        <div class="plank" id="hero-plank">
+            <div class="top">
+                <div class="left">
+                    <h1>Welcome to the gift card exchange!</h1>
+                    <h2>Buy discount gift cards. Get up to <b class="number">35% OFF</b></h2>
+                    <div class="button-container">
+                        <a href="#buy-gift-cards" class="large-button">Find a Gift Card Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <div class="bottom-links">
+                    <div class="bottom-link"><a id="guarantee" href="https://www.cardpool.com/guarantee"><i class="fa fa-shield" aria-hidden="true"></i><span class="number"> 1</span> Year Guarantee </a></div>
+                    <div class="bottom-link">Free USPS Shipping</div>
+                    <div class="bottom-link">No Fees</div>
+                    <div class="bottom-link hide-bar">No Expiration</div>
+                    <div class="bottom-link">
+                        <span id="cp-video" class="pointer" ng-click="$ctrl.open()"><a class="clear-action-button ng-scope">See how it works <i class="fa fa-play-circle-o" aria-hidden="true"></i></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="plank" id="buy_cards_plank">
+            <h2 class="large text-center">Top Selling Brands</h2>
+            <div>
+                <div class="cards" >
+                    <a class="card"  ng-repeat="singlecard in cardList | singleFilter | limitTo:10" ui-sref="card({cardname: singlecard.name})">
+                        <div class="card">
+                            <div class="imgContainer" style="-webkit-box-shadow: 0 0 1px #F58030; box-shadow: 0 0 1px #F58030;">
+                                <div class="img" style="background-image: url(&#39;{{singlecard.img}}&#39;);">
+                                </div>
+                            </div>
+                            <span class="cardTextBackground"></span>
+                            <span class="cardText">Up to <span class="number bold">{{singlecard.discount}}%</span> OFF</span>
+                            <span class="pull-left brandname ellipsis">{{singlecard.name}} Gift Cards</span>
+                        </div>
+                    </a>
+                    <br style="clear: left;"/>
+                    <!-- <div class="clearfix"></div> -->
+                </div>
+
+                <div class="button-container text-center">
+                    <a ui-sref="buy-gift-cards" class="large-button">Browse All Brands</a>
+                </div>
+            </div>
+        </div>
+        <div class="plank" id="sell_card_plank">
+            <h2 class="large plank_header">Turn your gift cards into cash!</h2>
+            <div class="plank_subheader">
+                <span>Have unused gift cards? Sell them to cardpool &amp; get up to </span>
+                <span class="bold headline">
+                  <span class="number">92</span>% cash back.
+                </span>
+            </div>
+            <img src="./img/atm_giftcard_into_dollar.png" alt="turn gift cards into cash">
+            <div>
+                <a class="large-button" aria-role="button" href="#sell-gift-cards">
+                    <img class="button_icon money" aria-hidden="" src="./img/dollar_sellnow.png">
+                    <span class="button_text">
+                      <span class="bold">Sell Now</span>
+                      <span class="flavor">Get higher payouts!</span>
+                    </span>
+                </a>
+                <a class="large-button" aria-role="button" href="https://www.cardpool.com/locations">
+                    <img class="button_icon map" aria-hidden="" src="./img/mappin_findlocation.png">
+                    <div class="button_text">
+                        <div class="bold">Find a Location</div>
+                        <div class="flavor">Walk out with cash!</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="plank" id="mobile-plank">
+            <div class="mobile-plank-container">
+                <div class="left">
+                    <h2 class="large">Now you can take Cardpool with you while you shop</h2>
+                    <p>Instantly purchase discounted gift cards at the checkout line, and use them to pay in-store from your phone.</p>
+                    <p>Instant purchases are securely stored in a digital wallet.</p>
+                    <a href="https://www.cardpool.com/redirect_to_itunes_link"><img src="./img/App_Store_Badge_162x48@2x.png" class="app-store-icon" alt="Download on the App Store"></a>
+                </div>
+                <div class="right">
+                    <a href="https://www.cardpool.com/redirect_to_itunes_link"><img src="./img/mobile_app@2x.png" class="mobile-app-image" alt="iPhone showing cardpool Mobile app"></a>
+                </div>
+            </div>
+        </div>
+        <div class="plank" id="card-categories-plank">
+            <h2 class="large plank-header">Gift Card Categories</h2>
+            <div class="categories">
+                <div class="categories-column categories-column-1">
+                    <!-- <a href="https://www.cardpool.com/buy-gift-cards?category=department-stores" class="category category-department-stores category-device-desktop category-size-small"> -->
+                    <a ui-sref="buy-gift-cards" class="category category-department-stores category-device-desktop category-size-small">
+                        <img class="category-image" src="./img/categories/category_department-stores-303.jpg" alt="Department Stores" title="Department Stores">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Department Stores</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=computers-electronics" class="category category-computers-electronics category-device-desktop category-size-medium">
+                        <img class="category-image" src="./img/categories/category_computers-electronics-303.jpg" alt="Computers &amp; Electronics" title="Computers &amp; Electronics">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Computers &amp; Electronics</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=movies-entertainment" class="category category-movies-entertainment category-device-desktop category-size-small">
+                        <img class="category-image" src="./img/categories/category_movies-entertainment-303.jpg" alt="Movies &amp; Entertainment" title="Movies &amp; Entertainment">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Movies &amp; Entertainment</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=health-beauty" class="category category-health-beauty category-device-desktop category-size-medium">
+                        <img class="category-image" src="./img/categories/category_health-beauty-303.jpg" alt="Health &amp; Beauty" title="Health &amp; Beauty">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Health &amp; Beauty</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=department-stores" class="category category-department-stores category-device-mobile category-size-small">
+                        <img class="category-image" src="./img/categories/category_department-stores-303.jpg" alt="Department Stores" title="Department Stores">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Department Stores</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=restaurants" class="category category-restaurants category-device-mobile category-size-small">
+                        <img class="category-image" src="./img/categories/category_restaurants-303.jpg" alt="Restaurants" title="Restaurants">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Restaurants</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=baby-kids-toys" class="category category-baby-kids-toys category-device-mobile category-size-medium">
+                        <img class="category-image" src="./img/categories/category_baby-kids-toys-303.jpg" alt="Baby, Kids &amp; Toys" title="Baby, Kids &amp; Toys">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Baby, Kids &amp; Toys</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="categories-column categories-column-2">
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=home-garden" class="category category-home-garden category-device-desktop category-size-large">
+                        <img class="category-image" src="./img/categories/category_home-garden-303.jpg" alt="Home &amp; Garden" title="Home &amp; Garden">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Home &amp; Garden</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=baby-kids-toys" class="category category-baby-kids-toys category-device-desktop category-size-medium">
+                        <img class="category-image" src="./img/categories/category_baby-kids-toys-303.jpg" alt="Baby, Kids &amp; Toys" title="Baby, Kids &amp; Toys">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Baby, Kids &amp; Toys</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=hotels-travel" class="category category-hotels-travel category-device-desktop category-size-medium">
+                        <img class="category-image" src="./img/categories/category_hotels-travel-303.jpg" alt="Hotels &amp; Travel" title="Hotels &amp; Travel">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Hotels &amp; Travel</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=home-garden" class="category category-home-garden category-device-mobile category-size-medium">
+                        <img class="category-image" src="./img/categories/category_home-garden-303.jpg" alt="Home &amp; Garden" title="Home &amp; Garden">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Home &amp; Garden</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=computers-electronics" class="category category-computers-electronics category-device-mobile category-size-small">
+                        <img class="category-image" src="./img/categories/category_computers-electronics-303.jpg" alt="Computers &amp; Electronics" title="Computers &amp; Electronics">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Computers &amp; Electronics</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=movies-entertainment" class="category category-movies-entertainment category-device-mobile category-size-small">
+                        <img class="category-image" src="./img/categories/category_movies-entertainment-303.jpg" alt="Movies &amp; Entertainment" title="Movies &amp; Entertainment">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Movies &amp; Entertainment</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="categories-column categories-column-3">
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=restaurants" class="category category-restaurants category-device-desktop category-size-small">
+                        <img class="category-image" src="./img/categories/category_restaurants-303.jpg" alt="Restaurants" title="Restaurants">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Restaurants</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=sports-outdoors" class="category category-sports-outdoors category-device-desktop category-size-large">
+                        <img class="category-image" src="./img/categories/category_sports-outdoors-303.jpg" alt="Sports &amp; Outdoors" title="Sports &amp; Outdoors">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Sports &amp; Outdoors</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=clothing-shoes-jewelry" class="category category-clothing-shoes-jewelry category-device-desktop category-size-small">
+                        <img class="category-image" src="./img/categories/category_clothing-shoes-jewelry-303.jpg" alt="Clothing, Shoes &amp; Jewelry" title="Clothing, Shoes &amp; Jewelry">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Clothing, Shoes &amp; Jewelry</span>
+                        </div>
+                    </a>
+                    <a href="https://www.cardpool.com/buy-gift-cards?category=pets" class="category category-pets category-device-desktop category-size-small">
+                        <img class="category-image" src="./img/categories/category_pets-303.jpg" alt="Pets" title="Pets">
+                        <div class="category-overlay"></div>
+                        <div aria-hidden="true" class="category-caption">
+                            <span>Pets</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="categories-more-button">
+                <a role="button" href="https://www.cardpool.com/buy-gift-cards/categories" class="large-button">See All Categories</a>
+            </div>
+        </div>
+        <div cp-rating="" class="plank" id="rating-plank">
+            <div class="star-container">
+                <h2 class="large title">Our <strong>15,200+</strong> reviews make us proud</h2>
+                <div class="stars">
+                    4.0
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <p class="rating-subtitle">Average customer rating</p>
+                </div>
+            </div>
+            <div class="testimonial-container">
+                <div class="large-quote">
+                    <p id="quote" style="opacity: 1;">"I ordered my cards and they came in just a few days. Everything was great. I'm going to order more in the future to save more money."</p>
+                </div>
+                <div class="testimonials">
+                    <button role="button" aria-label="Previous Testimonial" class="mobile-button fa fa-angle-left" ng-click="mobile_button_back()"></button>
+                    <div class="testimonial" id="testimonial1" ng-click="toggleSelected(1)" ng-mouseenter="color(1)" ng-mouseleave="deColor(1)">
+                        <img class="testimonial-photo" alt="Photo of Customer" src="./img/testimonial-author-1-grey.jpg" id="photo1">
+                        <img class="testimonial-photo" alt="Photo of Customer" src="./img/testimonial-author-1.jpg" id="colorPhoto1">
+                        <div class="name">
+                            <p>Melanie</p>
+                            <p id="testimonial1_text" hidden="">"cardpool offers a large selection of discounted gift cards at places I like to shop and for places I like to gift. What a convenient and smart way to buy!"</p>
+                            <div title="Five out of Five Stars" class="stars">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial" id="testimonial2" ng-click="toggleSelected(2)" ng-mouseenter="color(2)" ng-mouseleave="deColor(2)">
+                        <img class="testimonial-photo" alt="Photo of Customer" src="./img/testimonial-author-2-grey.jpg" id="photo2">
+                        <img class="testimonial-photo" alt="Photo of Customer" src="./img/testimonial-author-2.jpg" id="colorPhoto2">
+                        <div class="name">
+                            <p>Julia</p>
+                            <p id="testimonial2_text" hidden="">"cardpool has excellent choices of gift cards to purchase at a discount and shipping is really fast. I use them often."</p>
+                            <div title="Five out of Five Stars" class="stars">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial colored" id="testimonial3" ng-click="toggleSelected(3)" ng-mouseenter="color(3)" ng-mouseleave="deColor(3)">
+                        <img class="testimonial-photo" alt="Photo of Customer" src="./img/testimonial-author-3-grey.jpg" id="photo3">
+                        <img class="testimonial-photo" alt="Photo of Customer" src="./img/testimonial-author-3.jpg" id="colorPhoto3">
+                        <div class="name">
+                            <p>Eric</p>
+                            <p id="testimonial3_text" hidden="">"I ordered my cards and they came in just a few days. Everything was great. I'm going to order more in the future to save more money."</p>
+                            <div title="Five out of Five Stars" class="stars">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button role="button" aria-label="Next Testimonial" class="mobile-button fa fa-angle-right" ng-click="mobile_button_forward()"></button>
+                </div>
+            </div>
+            <div class="logo-container">
+                <div class="accredited-logos">
+                    <h4>Our site is secure and accredited:</h4>
+                    <br>
+                    <a href="https://www.bbb.org/greater-san-francisco/business-reviews/internet-selling-services/cardpoolcom-in-san-francisco-ca-376843" target="_blank">
+                        <img src="./img/BBB_logo@2x.png" width="150" alt="Better Business Bureau A+ Accredited Business">
+                    </a>
+                    <a href="https://safeweb.norton.com/report/show?url=www.cardpool.com" target="_blank">
+                        <img src="./img/Norton_logo@2x.png" id="norton" alt="Norton Secured">
+                    </a>
+                    <a title="TRUSTe Privacy Certification" href="https://privacy.truste.com/privacy-seal/validation?rid=185566c5-bed3-48b6-a99a-2ca8ce40b19d" target="_blank">
+                        <img src="./img/truste-certified-privacy-badge@2x.png" alt="TRUSTe Privacy Certification" width="142">
+                    </a>
+                </div>
+                <div class="featured-logos">
+                    <h4>Featured on:</h4>
+                    <br>
+                    <img alt="CNN, TIME, Today, Rachael" src="./img/brand_logo@2x.png">
+                </div>
+            </div>
+        </div>
+      </div>

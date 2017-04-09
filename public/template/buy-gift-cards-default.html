@@ -1,0 +1,55 @@
+<div class="browse-cards">
+    <div ng-init="getl={}">
+        <div class="cards" ng-repeat="card in cardList | alphaFilter:alpha | typeFilter:type | categoryFilter:category | singleFilter | lenFilter:getl | limitTo: pageSize : curPage * pageSize">
+        <!-- | limitTo: pageSize : curPage * pageSize -->
+            <a class="card col-sm-4" ui-sref="card({cardname: card.name})" >
+                <div>
+                    <div class="imgContainer" style="-webkit-box-shadow: 0 0 1px #009301; box-shadow: 0 0 1px #009301; ">
+                        <div class="img" style="background-image: url(&#39;{{card.img}}&#39;);">
+                        </div>
+                    </div>
+                    <div class="pull-left">
+                        <div class="brandname ellipsis">{{card.name}} Gift Card</div>
+                        <div class="discount">Up to <span class="number">{{card.discount}}%</span> OFF</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div ng-show="cardList.length" id="pager" class="col-sm-12">
+            <div class="pager-content">
+                <div class="pager-cell prev-link">
+                    <span class="pager-number number disabled only-mobile" ng-disabled="curPage==0" ng-click="curPage=curPage-1"><i aria-label="Previous" class="fa fa-angle-left"></i></span>
+                    <!-- <span class="pager-number number disabled hide-mobile" ng-disabled="curPage==0" ng-click="curPage=curPage-1">Previous</span> -->
+                    <button type="button" class="pager-number number disabled hide-mobile" ng-disabled="curPage==0" ng-click="curPage=curPage-1">Previous</button>
+                </div>
+                <div class="pager-cell">
+                    <!-- <span class="pager-number number disabled">1</span> -->
+                    <span class="pager-number number"> {{curPage + 1}} </span>
+                </div>
+                <!-- <div class="pager-cell hide-mobile">
+                    <span class="fa fa-ellipsis-h ellipses"></span>
+                </div> -->
+                <div class="pager-cell next-link">
+                    <button class="pager-number number only-mobile" ng-disabled="curPage >= getl.len/pageSize-1" ng-click="curPage = curPage+1"><i aria-label="Next" class="fa fa-angle-right"></i></button>
+                    <button class="pager-number number hide-mobile" ng-disabled="curPage >= getl.len/pageSize-1" ng-click="curPage = curPage+1">Next</button>
+                </div>
+            </div>  
+        </div>
+
+
+
+        <!-- <ul>
+            <li>
+                <button type="button" class="btn btn-primary" ng-disabled="curPage == 0" ng-click="curPage=curPage-1"> &lt; PREV</button>
+            </li>
+            <li>
+                <span>Page {{curPage + 1}} of {{ cardList.length/pageSize }}</span>
+            </li>
+            <li>
+                <button type="button" class="btn btn-primary" ng-disabled="curPage >= cardList.length/pageSize - 1" ng-click="curPage = curPage+1">NEXT &gt;</button>
+            </li>
+        </ul> -->
+
+
+    </div>
+    </div> 

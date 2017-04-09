@@ -1,0 +1,157 @@
+<h1 class="account-header">Settings</h1>
+<div id="account-content">
+    <account-settings class="ng-isolate-scope">
+        <div id="account-settings">
+            <div class="tabs">
+                <span class="tab active" ng-class="{'active': $ctrl.isTabSelected('notifications')}" ng-click="$ctrl.onNotificationsTabTap()">Notifications</span>
+                <span class="tab hidden" ng-class="{'active': $ctrl.isTabSelected('pin')}" ng-click="$ctrl.onPinTabTap()">PIN</span>
+                <span class="tab" ng-class="{'active': $ctrl.isTabSelected('password')}" ng-click="$ctrl.onPasswordTabTap()">Password</span>
+            </div>
+            <div class="activeTab" ng-switch="$ctrl.settingsTab">
+                <!-- ngSwitchWhen: notifications -->
+                <div ng-switch-when="notifications" class="ng-scope">
+                    <notification-settings class="ng-isolate-scope">
+                        <div id="notification-settings">
+                            <h3 ng-i18next="account_settings_page_subtitle_notifications">Notifications</h3>
+                            <h4 ng-i18next="account_settings_page_section_email">Email me when:</h4>
+                            <form name="notificationSettingsForm" class="form notifications ng-pristine ng-valid ng-valid-required ng-invalid-add ng-valid-required-remove ng-invalid-required-add ng-valid-remove" novalidate="true">
+                                <cp-checkbox ng-model="$ctrl.locked" class="notification-checkbox locked ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty" label="I complete a transaction" ng-disabled="true" disabled="disabled">
+                                    <div id="ctrl-locked" class="form-element form-element-checkbox" ng-class="{
+  required: !!$ctrl.required,
+  focused: $ctrl.focused,
+  checked: $ctrl.checked,
+  invalid: $ctrl.model.$invalid,
+  'invalid-required': $ctrl.model.$error.required,
+}">
+                                        <label ng-click="$ctrl.onClick($event)">
+                                            <input type="checkbox" name="locked" ng-true-value="true" ng-false-value="false" ng-model="$ctrl.ngModel" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" class="ng-pristine ng-untouched ng-empty ng-valid ng-valid-required">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="18.188" viewBox="0 0 14 18.188" class="svg lock-icon" src="/assets/images/secured-o.svg">
+                                                <defs>
+                                                    <filter id="filter" x="1002" y="294.906" width="14" height="18.188" filterUnits="userSpaceOnUse">
+                                                        <feFlood result="flood" flood-color="#999"></feFlood>
+                                                        <feComposite result="composite" operator="in" in2="SourceGraphic"></feComposite>
+                                                        <feBlend result="blend" in2="SourceGraphic"></feBlend>
+                                                    </filter>
+                                                </defs>
+                                                <path id="secured-o.svg" class="secured-lock-svg" d="M1014.23,313.1h-10.46a1.777,1.777,0,0,1-1.77-1.773v-7.64a1.777,1.777,0,0,1,1.77-1.772h0.33v-1.987c0-3.2,1.79-5.03,4.9-5.03,2.37,0,4.9,1.322,4.9,5.03v1.987h0.33a1.777,1.777,0,0,1,1.77,1.772v7.64A1.777,1.777,0,0,1,1014.23,313.1ZM1004.1,311h9.8v-6.991h-9.8V311Zm2.1-9.088h5.6v-1.987c0-1.946-.94-2.932-2.8-2.932-1.96,0-2.8.876-2.8,2.932v1.987Zm3.47,7.107h-1.34v-3.029h1.34v3.029Z" transform="translate(-1002 -294.906)"></path>
+                                            </svg>
+                                            <span class="checkbox-label">
+      <!-- ngIf: $ctrl.customContent -->
+      <!-- ngIf: !$ctrl.customContent --><span ng-if="!$ctrl.customContent" ng-bind-html="$ctrl.label" class="ng-binding ng-scope">I complete a transaction</span>
+                                            <!-- end ngIf: !$ctrl.customContent -->
+                                            </span>
+                                        </label>
+                                    </div>
+                                </cp-checkbox>
+                                <cp-checkbox ng-model="$ctrl.locked" class="notification-checkbox locked ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty" label="My security settings are updated" ng-disabled="true" disabled="disabled">
+                                    <div id="ctrl-locked" class="form-element form-element-checkbox" ng-class="{
+  required: !!$ctrl.required,
+  focused: $ctrl.focused,
+  checked: $ctrl.checked,
+  invalid: $ctrl.model.$invalid,
+  'invalid-required': $ctrl.model.$error.required,
+}">
+                                        <label ng-click="$ctrl.onClick($event)">
+                                            <input type="checkbox" name="locked" ng-true-value="true" ng-false-value="false" ng-model="$ctrl.ngModel" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" class="ng-pristine ng-untouched ng-empty ng-valid ng-valid-required">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="18.188" viewBox="0 0 14 18.188" class="svg lock-icon" src="/assets/images/secured-o.svg">
+                                                <defs>
+                                                    <filter id="filter" x="1002" y="294.906" width="14" height="18.188" filterUnits="userSpaceOnUse">
+                                                        <feFlood result="flood" flood-color="#999"></feFlood>
+                                                        <feComposite result="composite" operator="in" in2="SourceGraphic"></feComposite>
+                                                        <feBlend result="blend" in2="SourceGraphic"></feBlend>
+                                                    </filter>
+                                                </defs>
+                                                <path id="secured-o.svg" class="secured-lock-svg" d="M1014.23,313.1h-10.46a1.777,1.777,0,0,1-1.77-1.773v-7.64a1.777,1.777,0,0,1,1.77-1.772h0.33v-1.987c0-3.2,1.79-5.03,4.9-5.03,2.37,0,4.9,1.322,4.9,5.03v1.987h0.33a1.777,1.777,0,0,1,1.77,1.772v7.64A1.777,1.777,0,0,1,1014.23,313.1ZM1004.1,311h9.8v-6.991h-9.8V311Zm2.1-9.088h5.6v-1.987c0-1.946-.94-2.932-2.8-2.932-1.96,0-2.8.876-2.8,2.932v1.987Zm3.47,7.107h-1.34v-3.029h1.34v3.029Z" transform="translate(-1002 -294.906)"></path>
+                                            </svg>
+                                            <span class="checkbox-label">
+      <!-- ngIf: $ctrl.customContent -->
+      <!-- ngIf: !$ctrl.customContent --><span ng-if="!$ctrl.customContent" ng-bind-html="$ctrl.label" class="ng-binding ng-scope">My security settings are updated</span>
+                                            <!-- end ngIf: !$ctrl.customContent -->
+                                            </span>
+                                        </label>
+                                    </div>
+                                </cp-checkbox>
+                                <cp-checkbox ng-model="$ctrl.locked" class="notification-checkbox locked ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty" label="I add or remove a payment method" ng-disabled="true" disabled="disabled">
+                                    <div id="ctrl-locked" class="form-element form-element-checkbox" ng-class="{
+  required: !!$ctrl.required,
+  focused: $ctrl.focused,
+  checked: $ctrl.checked,
+  invalid: $ctrl.model.$invalid,
+  'invalid-required': $ctrl.model.$error.required,
+}">
+                                        <label ng-click="$ctrl.onClick($event)">
+                                            <input type="checkbox" name="locked" ng-true-value="true" ng-false-value="false" ng-model="$ctrl.ngModel" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" class="ng-pristine ng-untouched ng-empty ng-valid ng-valid-required">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="18.188" viewBox="0 0 14 18.188" class="svg lock-icon" src="/assets/images/secured-o.svg">
+                                                <defs>
+                                                    <filter id="filter" x="1002" y="294.906" width="14" height="18.188" filterUnits="userSpaceOnUse">
+                                                        <feFlood result="flood" flood-color="#999"></feFlood>
+                                                        <feComposite result="composite" operator="in" in2="SourceGraphic"></feComposite>
+                                                        <feBlend result="blend" in2="SourceGraphic"></feBlend>
+                                                    </filter>
+                                                </defs>
+                                                <path id="secured-o.svg" class="secured-lock-svg" d="M1014.23,313.1h-10.46a1.777,1.777,0,0,1-1.77-1.773v-7.64a1.777,1.777,0,0,1,1.77-1.772h0.33v-1.987c0-3.2,1.79-5.03,4.9-5.03,2.37,0,4.9,1.322,4.9,5.03v1.987h0.33a1.777,1.777,0,0,1,1.77,1.772v7.64A1.777,1.777,0,0,1,1014.23,313.1ZM1004.1,311h9.8v-6.991h-9.8V311Zm2.1-9.088h5.6v-1.987c0-1.946-.94-2.932-2.8-2.932-1.96,0-2.8.876-2.8,2.932v1.987Zm3.47,7.107h-1.34v-3.029h1.34v3.029Z" transform="translate(-1002 -294.906)"></path>
+                                            </svg>
+                                            <span class="checkbox-label">
+      <!-- ngIf: $ctrl.customContent -->
+      <!-- ngIf: !$ctrl.customContent --><span ng-if="!$ctrl.customContent" ng-bind-html="$ctrl.label" class="ng-binding ng-scope">I add or remove a payment method</span>
+                                            <!-- end ngIf: !$ctrl.customContent -->
+                                            </span>
+                                        </label>
+                                    </div>
+                                </cp-checkbox>
+                                <!-- ngRepeat: (key, setting) in $ctrl.settings -->
+                                <div class="repeated-settings ng-scope" ng-repeat="(key, setting) in $ctrl.settings">
+                                    <cp-checkbox class="notification-checkbox ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" ng-model="$ctrl.settings[key]" ng-click="$ctrl.onNotificationSettingTapped()" label="My favorite gift cards are in stock">
+                                        <div id="ctrl-settings-key-" class="form-element form-element-checkbox" ng-class="{
+  required: !!$ctrl.required,
+  focused: $ctrl.focused,
+  checked: $ctrl.checked,
+  invalid: $ctrl.model.$invalid,
+  'invalid-required': $ctrl.model.$error.required,
+}">
+                                            <label ng-click="$ctrl.onClick($event)">
+                                                <input type="checkbox" name="settings[key]" ng-true-value="true" ng-false-value="false" ng-model="$ctrl.ngModel" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" class="ng-pristine ng-untouched ng-empty ng-valid ng-valid-required">
+                                                <span class="check" ng-keypress="$ctrl.onKeypress($event)" tabindex="0"></span>
+                                                <span class="checkbox-label">
+      <!-- ngIf: $ctrl.customContent -->
+      <!-- ngIf: !$ctrl.customContent --><span ng-if="!$ctrl.customContent" ng-bind-html="$ctrl.label" class="ng-binding ng-scope">My favorite gift cards are in stock</span>
+                                                <!-- end ngIf: !$ctrl.customContent -->
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </cp-checkbox>
+                                </div>
+                                <!-- end ngRepeat: (key, setting) in $ctrl.settings -->
+                                <div class="repeated-settings ng-scope" ng-repeat="(key, setting) in $ctrl.settings">
+                                    <cp-checkbox class="notification-checkbox ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" ng-model="$ctrl.settings[key]" ng-click="$ctrl.onNotificationSettingTapped()" label="Member only sales are available">
+                                        <div id="ctrl-settings-key-" class="form-element form-element-checkbox" ng-class="{
+  required: !!$ctrl.required,
+  focused: $ctrl.focused,
+  checked: $ctrl.checked,
+  invalid: $ctrl.model.$invalid,
+  'invalid-required': $ctrl.model.$error.required,
+}">
+                                            <label ng-click="$ctrl.onClick($event)">
+                                                <input type="checkbox" name="settings[key]" ng-true-value="true" ng-false-value="false" ng-model="$ctrl.ngModel" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" class="ng-pristine ng-untouched ng-empty ng-valid ng-valid-required">
+                                                <span class="check" ng-keypress="$ctrl.onKeypress($event)" tabindex="0"></span>
+                                                <span class="checkbox-label">
+      <!-- ngIf: $ctrl.customContent -->
+      <!-- ngIf: !$ctrl.customContent --><span ng-if="!$ctrl.customContent" ng-bind-html="$ctrl.label" class="ng-binding ng-scope">Member only sales are available</span>
+                                                <!-- end ngIf: !$ctrl.customContent -->
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </cp-checkbox>
+                                </div>
+                                <!-- end ngRepeat: (key, setting) in $ctrl.settings -->
+                            </form>
+                        </div>
+                    </notification-settings>
+                </div>
+                <!-- end ngSwitchWhen: -->
+                <!-- ngSwitchWhen: pin -->
+                <!-- ngSwitchWhen: password -->
+            </div>
+        </div>
+    </account-settings>
+</div>

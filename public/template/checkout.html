@@ -1,0 +1,179 @@
+<div class="checkout">
+    <!-- <header>
+        <div id="header">
+            <div class="header-content">
+                <div class="left-content">
+                    <a href="/" class="scr-medium scr-large"><img class="cardpool-logo" src="img/cardpool_logo.png"></a>
+                    <a href="/" class="scr-small"><img height="44" width="44" src="img/cardpool_logo_mobile.svg"></a>
+                </div>
+                <div class="right-content">
+                    <div class="checkout-progress-bar payment-method">
+                        <span class="step signin">
+                        <span class="no-animate ng-binding">Login</span>
+                        </span>
+                        <i class="fa fa-angle-right signin"></i>
+                        <span class="step confirm ng-binding ng-hide" ng-hide="$ctrl.userConfirmed">Confirm</span>
+                        <i class="fa fa-angle-right confirm ng-hide" ng-hide="$ctrl.userConfirmed"></i>
+                        <span class="step pay-and-submit ng-binding">Pay &amp; Submit</span>
+                        <i class="fa fa-angle-right pay-and-submit"></i>
+                        <span class="step receipt ng-binding">Receipt</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="secure-checkout-bar ng-binding">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="18.188" viewBox="0 0 14 18.188" class="svg cart-secured-img" src="/assets/images/signout-o.svg">
+            <defs>
+                <style>
+                .cls-1 {
+                    fill: #636363;
+                    fill-rule: evenodd;
+                    filter: url(#filter);
+                }
+                </style>
+                <filter id="filter" x="1002" y="294.906" width="14" height="18.188" filterUnits="userSpaceOnUse">
+                    <feFlood result="flood" flood-color="#ffffff"></feFlood>
+                    <feComposite result="composite" operator="in" in2="SourceGraphic"></feComposite>
+                    <feBlend result="blend" in2="SourceGraphic"></feBlend>
+                </filter>
+            </defs>
+            <path id="signout-o.svg" class="cls-1" d="M1014.23,313.1h-10.46a1.777,1.777,0,0,1-1.77-1.773v-7.64a1.777,1.777,0,0,1,1.77-1.772h0.33v-1.987c0-3.2,1.79-5.03,4.9-5.03,2.37,0,4.9,1.322,4.9,5.03v1.987h0.33a1.777,1.777,0,0,1,1.77,1.772v7.64A1.777,1.777,0,0,1,1014.23,313.1ZM1004.1,311h9.8v-6.991h-9.8V311Zm2.1-9.088h5.6v-1.987c0-1.946-.94-2.932-2.8-2.932-1.96,0-2.8.876-2.8,2.932v1.987Zm3.47,7.107h-1.34v-3.029h1.34v3.029Z" transform="translate(-1002 -294.906)"></path>
+          </svg>Secured Transaction
+          </div>
+    </header> -->
+    <div class="checkout-body">
+        <div class="left-content payment-method" >
+          <h2 class="header ng-binding">Check out</h2>
+          <h2 class="header-thank-you ng-binding">Thank you for your order!</h2>
+          <hr>
+          <label >
+              <input type="radio" name="payment-option" value="paypal" checked>
+              <img src="img/paypal-mark.jpg"  alt="Pay with Paypal">
+          </label>
+          <br>
+
+          <label >
+              <input type="radio" name="payment-option" value="card">
+              <img src="img/card-mark.png" style="width: 50%; height:50%" alt="Accepting Visa, Mastercard, Discover and American Express">
+          </label>
+
+          <div id="paypal-button-container"></div>
+          <div id="card-button-container" class="hidden"><button>Continue</button></div>
+
+          <script>
+              // Helper functions
+              function getElements(el) {
+                  return Array.prototype.slice.call(document.querySelectorAll(el));
+              }
+              function hideElement(el) {
+                  document.body.querySelector(el).style.display = 'none';
+              }
+              function showElement(el) {
+                  document.body.querySelector(el).style.display = 'block';
+              }
+
+              // Listen for changes to the radio fields
+              getElements('input[name=payment-option]').forEach(function(el) {
+                  el.addEventListener('change', function(event) {
+                      // If PayPal is selected, show the PayPal button
+                      if (event.target.value === 'paypal') {
+                          hideElement('#card-button-container');
+                          showElement('#paypal-button-container');
+                      }
+                      // If Card is selected, show the standard continue button
+                      if (event.target.value === 'card') {
+                          showElement('#card-button-container');
+                          hideElement('#paypal-button-container');
+                      }
+                  });
+              });
+              // Hide Non-PayPal button by default
+              hideElement('#card-button-container');
+              // Render the PayPal button
+              paypal.Button.render({
+                  env: 'sandbox',
+                  client: {
+                      sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
+                      production: 'Aco85QiB9jk8Q3GdsidqKVCXuPAAVbnqm0agscHCL2-K2Lu2L6MxDU2AwTZa-ALMn_N0z-s2MXKJBxqJ'
+                  },
+                  payment: function() {
+                      return paypal.rest.payment.create(this.props.env, this.props.client, {
+                          transactions: [
+                              {
+                                  amount: { total: '0.01', currency: 'USD' }
+                              }
+                          ]
+                      });
+                  },
+                  onAuthorize: function(data, actions) {
+                      return actions.payment.execute().then(function() {
+                          document.querySelector('#paypal-button-container').innerText = 'Payment Complete!';
+                      });
+                  }
+              }, '#paypal-button-container');
+
+          </script>
+        </div>
+
+        <div class="right-content">
+            <div class="ng-isolate-scope">
+                <div class="order-summary">
+                    <h3 class="ng-binding">Order Summary</h3>
+                    <div class="section brand-titles">
+                        <span class="left-column gift-card-brands-title ng-binding">Gift Card Brands</span>
+                        <span class="right-column gift-card-value-title ng-binding">Value</span>
+                    </div>
+                    <div class="section brands">
+                        <!-- ngRepeat: brand in $ctrl.brands track by brand.name -->
+                        <div class="brand-total" ng-repeat="item in shoppingcart.$cart.items">
+                            <span class="left-column brand-name ng-binding">{{item._name}}</span>
+                            <span class="right-column brand-total-amount number ng-binding">{{item._price | currency}}<span></span>
+                            </span>
+                        </div>
+                        <!-- end ngRepeat: brand in $ctrl.brands track by brand.name -->
+                        <!-- ngIf: $ctrl.activeState != 'receipt' -->
+                        <div class="edit-items-link ng-scope" ><a ng-click="openCartSlider()" class="ng-binding">Edit items in your cart</a></div>
+                        <!-- end ngIf: $ctrl.activeState != 'receipt' -->
+                    </div>
+                    <div class="section all-brands-total">
+                        <span class="left-column ng-binding">Total value on gift cards</span>
+                        <span class="right-column number ng-binding">{{shoppingcart.getOriginalTotal() | currency}}</span>
+                    </div>
+                    <div class="section discounts">
+                        <div class="card-savings">
+                            <span class="left-column ng-binding">My gift card savings</span>
+                            <span class="right-column number ng-binding">{{shoppingcart.savings() | currency}}</span>
+                        </div>
+                        <!-- ngIf: $ctrl.activeState == 'payment-method' || $ctrl.activeState == 'receipt' -->
+                        <div class="promotional-savings ng-scope" ng-if="$ctrl.activeState == 'payment-method' || $ctrl.activeState == 'receipt'">
+                            <span class="left-column ng-binding">Promo Code Discount</span>
+                            <span class="right-column number ng-binding">$0.00</span>
+                        </div>
+                        <!-- end ngIf: $ctrl.activeState == 'payment-method' || $ctrl.activeState == 'receipt' -->
+                        <div class="no-fees">
+                            <span class="left-column ng-binding">Free shipping. No fees.</span>
+                            <span class="right-column number ng-binding">$0.00</span>
+                        </div>
+                    </div>
+                    <div class="section subtotal">
+                        <span class="left-column ng-binding">Subtotal</span>
+                        <span class="right-column number ng-binding">{{shoppingcart.getActualTotal() | currency}}</span>
+                    </div>
+                    <!-- ngIf: $ctrl.activeState == 'payment-method' || $ctrl.activeState == 'receipt' -->
+                    <div class="section gift-cards ng-scope">
+                        <span class="left-column ng-binding">Cardpool Gift Cards</span>
+                        <span class="right-column number ng-binding">$0.00</span>
+                    </div>
+                    <!-- end ngIf: $ctrl.activeState == 'payment-method' || $ctrl.activeState == 'receipt' -->
+                    <div class="section total">
+                        <span class="left-column ng-binding">Total amount to be charged</span>
+                        <span class="right-column number ng-binding">{{shoppingcart.getActualTotal() | currency}}</span>
+                    </div>
+                    <div class="section accreditation">
+                        <img class="accreditation-img" src="img/trust_logos@2x.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

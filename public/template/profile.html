@@ -1,0 +1,78 @@
+<h1 class="account-header">Profile</h1>
+<div id="account-content">
+    <account-profile class="ng-isolate-scope">
+        <div id="account-profile">
+            <div>
+                <h3 class="h3-edit-name ng-binding">Edit Name</h3>
+                <p class="verified message ng-binding ng-hide" ng-show="$ctrl.nameChanged">Success! Your name has been updated.</p>
+                <p class="inline edit-name ng-binding" ng-show="!$ctrl.editName">{{username}}</p>
+                <form ng-submit="$ctrl.editName = !$ctrl.editName; $ctrl.changeName()" novalidate="" class="ng-pristine ng-valid">
+                    <p class="message failure ng-binding ng-hide" ng-show="$ctrl.nameChangeError">Oops! This requires two names</p>
+                    <!-- ngIf: $ctrl.editName -->
+                    <div class="button-container">
+                        <a role="button" ng-hide="$ctrl.editName" ng-click="$ctrl.nameButtonLoading || ($ctrl.editName = !$ctrl.editName)" ng-class="{'button-loading': $ctrl.nameButtonLoading}" class="button">
+                            <span ng-hide="$ctrl.nameButtonLoading" class="ng-binding">Change Name</span>
+                            <span ng-show="$ctrl.nameButtonLoading" class="ng-binding ng-hide">Please Wait</span>
+                        </a>
+                        <button type="submit" ng-show="$ctrl.editName" class="button save ng-binding ng-hide">Save</button>
+                    </div>
+                </form>
+            </div>
+            <hr class="separator-small">
+            <div>
+                <h3 class="ng-binding">Edit Email Address</h3>
+                <p class="verified message ng-binding ng-hide" ng-show="$ctrl.emailChanged">Success! Your email has been updated.</p>
+                <p class="message failure ng-binding ng-hide" ng-show="$ctrl.emailPasswordInvalid">Incorrect Password.</p>
+                <p class="message failure ng-binding ng-hide" ng-show="$ctrl.emailPasswordMissing">Current password is required.</p>
+                <p class="message failure ng-binding ng-hide" ng-show="$ctrl.emailMissing">New email address is required.</p>
+                <p class="message failure ng-binding ng-hide" ng-show="$ctrl.emailChangeError">Error, email address already exists.</p>
+                <p class="message ng-binding ng-hide" ng-show="$ctrl.verifyEmailSent">We sent you a message to verify your email address. <strong class="ng-binding">Please go check your email account to verify.</strong></p>
+                <p class="message failure ng-binding ng-hide" ng-show="$ctrl.verifyEmailFailed">Error sending verification email</p>
+                <div class="inline" ng-hide="$ctrl.editEmail">
+                    <p class="inline ng-binding" ng-hide="$ctrl.editEmail">This is an email</p>
+                    <p class="inline verified ng-binding" ng-show="$ctrl.emailVerified">VERIFIED</p>
+                    <p class="inline not-verified ng-binding ng-hide" ng-hide="$ctrl.emailVerified">UNVERIFIED</p>
+                    <div ng-hide="$ctrl.emailVerified" class="vertical-line ng-hide"></div>
+                    <button class="verify-now ng-binding ng-hide" ng-hide="$ctrl.emailVerified" ng-click="$ctrl.checkUserVerificationEmail()">Resend Verification Email</button>
+                </div>
+                <form ng-submit="$ctrl.changeEmail()" novalidate="" class="ng-pristine ng-valid">
+                    <!-- ngIf: $ctrl.editEmail -->
+                    <div class="button-container">
+                        <a role="button" ng-hide="$ctrl.editEmail" ng-click="$ctrl.checkUserVerificationEmail()" ng-class="{'button-loading': $ctrl.emailButtonLoading}" class="button">
+                            <span ng-hide="$ctrl.emailButtonLoading" class="ng-binding">Change Email Address</span>
+                            <span ng-show="$ctrl.emailButtonLoading" class="ng-binding ng-hide">Please Wait</span>
+                        </a>
+                        <button type="submit" ng-show="$ctrl.editEmail" class="button save ng-binding ng-hide">Save</button>
+                    </div>
+                </form>
+            </div>
+            <hr class="separator">
+            <div>
+                <h3 class="ng-binding">Add Phone Number, or Edit Phone Number</h3>
+                <p class="verified message ng-binding ng-hide" ng-show="$ctrl.mobileNumberChanged">Success! Your phone number has been updated.</p>
+                <p class="message failure ng-binding ng-hide" ng-show="$ctrl.mobileNumberChangeError">Error, cannot verify phone number.</p>
+                <p class="message failure ng-binding ng-hide" ng-show="$ctrl.mobileNumberPasswordInvalid">Incorrect Password.</p>
+                <p class="message failure ng-binding ng-hide" ng-show="$ctrl.mobileNumberPasswordMissing">Current password is required.</p>
+                <p class="message failure ng-binding ng-hide" ng-show="$ctrl.mobileNumberMissing">Phone requires 10 digits.</p>
+                <p ng-hide="$ctrl.editmobileNumber" class="number inline ng-binding"></p>
+                <form ng-submit="$ctrl.changeMobileNumber()" novalidate="" class="ng-pristine ng-valid">
+                    <!-- ngIf: $ctrl.editmobileNumber -->
+                    <div class="button-container">
+                        <a role="button" ng-hide="$ctrl.editmobileNumber" ng-click="$ctrl.checkUserVerificationPhone()" ng-class="{'button-loading': $ctrl.mobileButtonLoading}" class="button">
+                            <span ng-hide="$ctrl.mobileButtonLoading" class="ng-binding">Change Phone Number</span>
+                            <span ng-show="$ctrl.mobileButtonLoading" class="ng-binding ng-hide">Please Wait</span>
+                        </a>
+                        <button type="submit" ng-show="$ctrl.editmobileNumber" class="button save ng-binding ng-hide">Save</button>
+                    </div>
+                </form>
+            </div>
+            <hr class="separator">
+        </div>
+        <tmx class="ng-isolate-scope">
+            <div style="display: none" ng-bind-html="$ctrl.template" class="ng-binding">
+                <script src="/fp/tags.js?org_id=kw5u0fdd&amp;session_id=ce6f9a26-be50-453d-b0c9-95acea415f1b" type="text/javascript"></script>
+                <noscript>&lt;iframe style="width: 100px; height: 100px; border: 0; position: absolute; top: -5000px;" src=&lt;script src="/fp/tags.js?org_id=kw5u0fdd&amp;session_id=ce6f9a26-be50-453d-b0c9-95acea415f1b" type="text/javascript"&gt;&lt;/iframe&gt;</noscript>
+            </div>
+        </tmx>
+    </account-profile>
+</div>

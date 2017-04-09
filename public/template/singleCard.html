@@ -1,0 +1,371 @@
+<div id="body-wrap" class="">
+<!--     <div aria-hidden="true" id="favorite-bar">
+        <div id="contents">
+            <span id="left-content">
+              Brand notifications are enabled!
+            </span>
+            <span id="right-content">
+              <i class="fa fa-check-square-o"></i>
+              <span>Email</span>
+            </span>
+        </div>
+    </div> -->
+    <div id="brand-container">
+        <div class="breadcrumbs">
+            <span><a ui-sref="home">Home</a></span>
+            <span><a ui-sref="buy-gift-cards">Buy Gift Cards</a></span>
+            <span>{{card.name}}'s Gift Cards</span>
+        </div>
+
+        <div id="brand-wrapper">
+            <div id="left-rail">
+                <div class="rail-section-container brand-image">
+                    <img src="{{card.img}}">
+                </div>
+                <div class="rail-section-container brand-description">
+                    {{card.description}}
+                </div>
+                <div class="rail-section-container guarantee">
+                    <i class="fa fa-shield guarantee-shield" aria-hidden="true"></i>
+                    <a href="/guarantee">
+                        <h5 class="rail-header">
+                          <span class="number">1-Year Guarantee</span>
+                        </h5>
+                        <p class="guarantee-content">
+                            Gift cards on our marketplace are provided by verified sellers. All orders are covered by our One (1) year Money-Back Guarantee.
+                        </p>
+                    </a>
+                </div>
+                <div class="rail-section-container ratings-and-reviews">
+                    <h5 class="rail-header">Our 
+                      <span class="number">15,500+</span>  reviews make us proud
+                    </h5>
+                    <div class="app-rating">
+                        <span class="star-count number">4.0</span>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+                        <div class="rating-subtitle">
+                            Average customer rating
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <span class="rating-testimonial">I ordered my cards and they came in just a few days. Everything was great. I'm going to order more in the future to save more money.</span>
+                        <span class="rating-user"> - Eric</span>
+                    </div>
+                    <div class="user-rating">
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="rail-section-container trusted">
+                    <div class="rail-header">Our site is secure and accredited</div>
+                    <img class="rail-img" src="/img/BBB_logo.png" alt="Better Business Bureau A+ Accredited Business">
+                    <img class="rail-img" src="/img/Norton_logo.png" alt="Norton Secured">
+                    <img class="rail-img" src="/img/truste-certified-privacy-badge.png" alt="TRUSTe Privacy Certification">
+                </div>
+                <div class="rail-section-container features">
+                    <h5>Free USPS Shipping</h5>
+                    <h5>No Fees</h5>
+                    <h5>No Expirations</h5>
+                </div>
+                <div class="rail-section-container legend">
+                    <div class="rail-header">
+                        Legend
+                    </div>
+                    <div class="legend-description">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="37" height="28" viewBox="0 0 37 28">
+                            <path id="icon-instant.svg" d="M234.318,1168.94a2.469,2.469,0,0,0-1.78-.94H221.525a2.72,2.72,0,0,0-1.9.94,2.85,2.85,0,0,0-.782,2.04v6.16a0.554,0.554,0,0,1,.239-0.31l0.4-.41a1.539,1.539,0,0,1,1.376-.71v-1.31a0.37,0.37,0,0,1,.193-0.34,0.545,0.545,0,0,1,.472-0.06h11.013c0.187,0,.216-0.08.352,0.06s0.073,0.15.073,0.34v15.01a0.465,0.465,0,0,1-.073.43,0.363,0.363,0,0,1-.352.16H221.525a0.584,0.584,0,0,1-.472-0.16,0.523,0.523,0,0,1-.193-0.43v-0.87a1.534,1.534,0,0,1-1.357-.7l-0.45-.5a0.547,0.547,0,0,1-.21-0.29v5.77a3.114,3.114,0,0,0,.782,2.15,2.834,2.834,0,0,0,1.9,1.03h11.013a2.585,2.585,0,0,0,1.78-1.03,3.018,3.018,0,0,0,.662-2.15v-21.84A2.752,2.752,0,0,0,234.318,1168.94Zm-6.071,25.09a1.727,1.727,0,0,1-2.431,0,1.639,1.639,0,0,1-.5-1.21,1.617,1.617,0,0,1,.5-1.2,1.727,1.727,0,0,1,2.431,0,1.617,1.617,0,0,1,.5,1.2A1.639,1.639,0,0,1,228.247,1194.03Zm-2.289-11.91a0.708,0.708,0,0,1-.219.53l-3.851,3.82a0.742,0.742,0,0,1-.538.22,0.733,0.733,0,0,1-.532-0.22l-0.444-.44a0.714,0.714,0,0,1-.225-0.53,0.736,0.736,0,0,1,.225-0.54l1.733-1.71h-4.164a0.653,0.653,0,0,1-.5-0.22,0.8,0.8,0,0,1-.193-0.54v-0.75a0.793,0.793,0,0,1,.193-0.53,0.653,0.653,0,0,1,.5-0.22h4.164l-1.733-1.72a0.737,0.737,0,0,1,0-1.06l0.444-.44a0.72,0.72,0,0,1,.532-0.22,0.729,0.729,0,0,1,.538.22l3.851,3.82A0.693,0.693,0,0,1,225.958,1182.12Zm-9.615-5.06v10.44a1.462,1.462,0,0,1-.455,1.08,1.5,1.5,0,0,1-1.094.45H200.546a1.5,1.5,0,0,1-1.094-.45,1.462,1.462,0,0,1-.455-1.08v-10.44a1.469,1.469,0,0,1,.455-1.09,1.5,1.5,0,0,1,1.094-.45h14.248a1.5,1.5,0,0,1,1.094.45A1.469,1.469,0,0,1,216.343,1177.06Zm-1.239.35v-0.23c0-.03,0-0.07-0.005-0.13a0.293,0.293,0,0,0-.029-0.12,0.474,0.474,0,0,1-.053-0.09,0.221,0.221,0,0,0-.087-0.07,0.535,0.535,0,0,0-.136-0.02H200.546a0.3,0.3,0,0,0-.219.09,0.291,0.291,0,0,0-.091.22,3.343,3.343,0,0,0,1.423,2.72c1.245,0.97,2.539,1.99,3.881,3.04,0.039,0.04.152,0.13,0.339,0.29s0.336,0.27.445,0.36,0.253,0.18.431,0.3a2.154,2.154,0,0,0,.488.26,1.121,1.121,0,0,0,.417.09h0.019a1.121,1.121,0,0,0,.417-0.09,2.138,2.138,0,0,0,.489-0.26q0.266-.18.431-0.3t0.445-.36c0.187-.16.3-0.25,0.339-0.29,1.342-1.05,2.636-2.07,3.881-3.04a4.322,4.322,0,0,0,.973-1.11A2.36,2.36,0,0,0,215.1,1177.41Zm0,10.09v-7.37a5.514,5.514,0,0,1-.668.63q-2.594,1.98-4.124,3.24c-0.329.28-.6,0.49-0.8,0.65a4.324,4.324,0,0,1-.837.46,2.408,2.408,0,0,1-.993.24H207.66a2.407,2.407,0,0,1-.992-0.24,4.324,4.324,0,0,1-.837-0.46c-0.207-.16-0.474-0.37-0.8-0.65q-1.53-1.26-4.124-3.24a5.506,5.506,0,0,1-.667-0.63v7.37a0.285,0.285,0,0,0,.091.21,0.279,0.279,0,0,0,.219.1h14.248a0.277,0.277,0,0,0,.218-0.1A0.286,0.286,0,0,0,215.1,1187.5Z" transform="translate(-199 -1168)"></path>
+                        </svg>
+                        <span><span class="bold">eGifts</span> will arrive by email in approximately 1 business day.</span>
+                    </div>
+                    <div class="legend-description">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="25" viewBox="0 0 36 25">
+                            <path id="icon-physical.svg" d="M227.7,1229.66h-7.016a1.413,1.413,0,0,1-1.419-1.4v-3.48a1.413,1.413,0,0,1,1.419-1.4h5.769a1.18,1.18,0,0,1,1.351.64l1.247,3.81a1.378,1.378,0,0,1-.2,1.25A1.436,1.436,0,0,1,227.7,1229.66Zm-6.469-1.94h5.72l-0.9-2.4h-4.824v2.4Zm4.7-2.77h0Zm7.229,14.19-0.014-1.93h1.891v-6.23l-3.459-1.53a1.18,1.18,0,0,1-.64-0.69l-1.967-5.54a1.159,1.159,0,0,1,.153-1.07,1.176,1.176,0,0,1,.643-0.45v-0.08h-26.8v16.76h1.76a9.655,9.655,0,0,0,.375,1.93h-2.245a1.843,1.843,0,0,1-1.856-1.82v-16.98a1.845,1.845,0,0,1,1.856-1.83H230.31a1.413,1.413,0,0,1,1.419,1.4v1.11a1.391,1.391,0,0,1-.634,1.16l1.586,4.47,3.615,1.6a1.176,1.176,0,0,1,.7,1.07v7.25a1.413,1.413,0,0,1-1.42,1.4h-2.423Zm-8.309,1.17H214.406l0.059-1.93h9.5S224.011,1240.38,224.848,1240.31Zm-15.041,4.4a5.381,5.381,0,1,1,5.468-5.38A5.428,5.428,0,0,1,209.807,1244.71Zm0-8.98a3.6,3.6,0,1,0,3.657,3.6A3.637,3.637,0,0,0,209.807,1235.73Zm18.742,8.98a5.191,5.191,0,1,1,5.274-5.19A5.233,5.233,0,0,1,228.549,1244.71Zm0-8.66a3.47,3.47,0,1,0,3.527,3.47A3.5,3.5,0,0,0,228.549,1236.05Z" transform="translate(-201 -1219.69)"></path>
+                        </svg>
+                        <span><span class="bold">Physical</span> cards arrive in 3-7 days via USPS mail.</span>
+                    </div>
+                </div>
+                <div class="rail-section-container similar-brands" style="display: block;">
+                    <div class="rail-header">
+                        Similar Brands
+                    </div>
+                    <div class="cards" ng-repeat="cardCategory in cardCategoryList | singleFilter | limitTo:5">
+                        <a ui-sref="card({cardname: cardCategory.name})">
+                            <div class="card">
+                                <div class="imgContainer" style="-webkit-box-shadow: 0 0 1px #006341; box-shadow: 0 0 1px #006341; ">
+                                    <div class="img" style="background-image: url('{{cardCategory.img}}');">
+                                    </div>
+                                </div>
+                                <div class="pull-left ellipsis brandname">{{cardCategory.name}} Gift Cards</div>
+                                <div class="discount">
+                                    Up to <span class="number">{{cardCategory.discount}}%</span> OFF
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="brand-body">
+                <div id="favorite-buttons" brand-id="10" cp-favorites="">
+                    <button tabindex="0" aria-label="Toggle favoriting of this brand" id="heart-container" ng-click="toggleFavorite()">
+                        <div id="heart_icon">
+                            <svg data-name="icon_heart" xmlns="http://www.w3.org/2000/svg" width="48" height="44" viewBox="0 0 173.77 172.61">
+                                <title>Brand favorite status icon</title>
+                                <g>
+                                    <path id="heart_icon_outer" d="M173.52,18A21.28,21.28,0,0,0,152.29,0C130.52,0,19.19.05,18,.25A21.28,21.28,0,0,0,0,21.58c0,43.15.05,131.84.25,133a21.28,21.28,0,0,0,21.23,18c43.54,0,133.07-.05,134.28-.24a21.27,21.27,0,0,0,18-21.23C173.77,107.85,173.7,19.09,173.52,18Z"></path>
+                                    <path id="heart_icon_inner" d="M38.25,72a22.45,22.45,0,0,1,3.67-13.28,13.8,13.8,0,0,1,4.85-4.2,21.49,21.49,0,0,1,8.68-2.64,20.43,20.43,0,0,1,8.43.58A28.89,28.89,0,0,1,70,55.26a49.56,49.56,0,0,1,6.95,5.35A48.8,48.8,0,0,1,81.35,65,4.32,4.32,0,0,0,88,64.65a25.6,25.6,0,0,1,3.42-3.53,68.14,68.14,0,0,1,5.79-4.67c3.34-2.34,6.9-4.34,11-4.72a23.75,23.75,0,0,1,14.4,2.92c4.3,2.49,6.47,6.45,7.53,11.09a22.66,22.66,0,0,1-.77,13.53,34.8,34.8,0,0,1-5.32,9,66.78,66.78,0,0,1-6.44,7c-3.71,3.51-30.59,29.5-32.4,31.28-.55.54-1,.53-1.44,0l-.13-.14c-3.15-3.09-27.4-26.53-31-30-1.37-1.31-2.78-2.58-4.08-4a43.74,43.74,0,0,1-8-11A20.21,20.21,0,0,1,38.25,72Z"></path>
+                                    <path id="heart_icon_outline" d="M142.76,71.87c.34,9.13-3.27,16.78-8.81,23.73a103.56,103.56,0,0,1-9.36,9.89c-3.42,3.28-30.1,29-34.69,33.5-1,1-2,1.92-3.07,2.8a3.52,3.52,0,0,1-4.62,0C80.07,140,41.7,103,38.17,99.19c-4.9-5.33-9-11.17-10.85-18.36a38.62,38.62,0,0,1-.92-12.15,45.91,45.91,0,0,1,.81-6.79,24,24,0,0,1,6.48-12.3A42.59,42.59,0,0,1,38.75,45a27.33,27.33,0,0,1,11-4.52,37,37,0,0,1,5.84-.6c1.38,0,2.76-.17,4.14-.17a29.39,29.39,0,0,1,16.66,5,67.46,67.46,0,0,1,7.26,5.44,1.18,1.18,0,0,0,1.78,0,52.75,52.75,0,0,1,10.7-7.41,26.69,26.69,0,0,1,10.54-2.89,43.19,43.19,0,0,1,6.74,0c1.33.14,1.66.53,1.75,1.9a4.46,4.46,0,0,1-1.56,3.85c-2,1.81-3.82,3.75-5.69,5.67a2.59,2.59,0,0,1-1.29.76,26.68,26.68,0,0,0-9.88,4.79,57.14,57.14,0,0,0-8.33,7.36C87.61,65,87,66,85.74,66.24c-1.63.34-3.16.21-4.3-1.13a51.13,51.13,0,0,0-6-5.8,41.2,41.2,0,0,0-8.28-5.59,20.14,20.14,0,0,0-11.6-1.9A23.42,23.42,0,0,0,46,54.92a14.75,14.75,0,0,0-6,7.19,24.32,24.32,0,0,0-1.72,11.63,22.43,22.43,0,0,0,3,9.15A54,54,0,0,0,51.61,95.46c3.6,3.44,30.36,29.28,32.13,31,.55.54,1,.66,1.51,0a2.54,2.54,0,0,1,.2-.21c3.13-3.06,27.32-26.44,30.86-29.85,1.39-1.33,2.83-2.63,4.15-4a43.82,43.82,0,0,0,7.81-10.67,19.45,19.45,0,0,0,2.11-6.19,1.84,1.84,0,0,1,.65-1q3.22-3.21,6.43-6.43a3.8,3.8,0,0,1,4.05-.75c.92.28,1.16,1.3,1.22,2.22S142.76,71.1,142.76,71.87Z"></path>
+                                    <path id="heart_icon_checkmark" d="M84.43,112.08a5.38,5.38,0,0,1-4.15-1.67q-15-15-30-30a5.7,5.7,0,0,1,0-8.31c2.55-2.6,5.15-5.16,7.72-7.73,2.89-2.89,6.25-2.88,9.16,0Q75.44,72.69,83.72,81c.57.58.83.57,1.4,0,12.76-12.82,42.07-42.15,43.95-44a5.81,5.81,0,0,1,8.66,0c2.57,2.53,5.12,5.1,7.66,7.66,2.78,2.79,2.78,6.15,0,8.95-8,8-45.55,45.56-56.36,56.37A5.83,5.83,0,0,1,84.43,112.08Z"></path>
+                                </g>
+                            </svg>
+                        </div>
+                    </button>
+                    <div id="add-favorite-text" ng-click="toggleFavorite()" aria-hidden="false" class="is-active hidden-mobile">
+                        <p class="upper">Send an email</p>
+                        <br>
+                        <p class="lower"> when brand is in-stock, or on sale.</p>
+                    </div>
+                    <div id="added-favorite-text" ng-click="toggleFavorite()" aria-hidden="true" class="hidden-mobile">
+                        <p>This brand is in your<br> favorites list.</p>
+                    </div>
+                    <div tabindex="-1" aria-hidden="true" id="remove-favorite">
+                        <button tabindex="-1" id="remove_button" class="btn heart-button remove-button" ng-click="removeFavorite()">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24.531" height="20" viewBox="0 0 24.531 20">
+                                <path id="icon-heart-remove.svg" d="M113.313,180.533m1.993,7.64,16.833-12.53a6.269,6.269,0,0,0-3.4-.582,6.126,6.126,0,0,0-2.916,1.252,18.267,18.267,0,0,0-1.535,1.239,6.809,6.809,0,0,0-.907.937,1.159,1.159,0,0,1-.144.161,1.145,1.145,0,0,1-1.618-.068,12.961,12.961,0,0,0-1.167-1.165,13.129,13.129,0,0,0-1.842-1.42,7.675,7.675,0,0,0-1.622-.743,5.407,5.407,0,0,0-2.235-.153,5.677,5.677,0,0,0-2.3.7,3.657,3.657,0,0,0-1.285,1.114,5.955,5.955,0,0,0-.973,3.524,5.375,5.375,0,0,0,.612,2.5,11.612,11.612,0,0,0,2.121,2.918c0.344,0.377.718,0.714,1.081,1.062Zm19.169-9.673-16.484,12.271c1.886,1.826,3.8,3.682,4.232,4.105l0.034,0.037a0.224,0.224,0,0,0,.382,0c0.48-.472,7.605-7.368,8.588-8.3a17.547,17.547,0,0,0,1.707-1.857,9.217,9.217,0,0,0,1.41-2.388,6.016,6.016,0,0,0,.205-3.59C134.527,178.684,134.5,178.592,134.475,178.5Z" transform="translate(-110.188 -175.031)"></path>
+                            </svg>
+                            Remove?
+                        </button>
+                        <button tabindex="-1" id="cancel_button" class="btn heart-button cancel-button" ng-click="cancelRemoveFavorite()">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+
+                <div class="brand-favorite-container">
+                    <div class="brand-favorite-container-inner">
+                        <div class="brand-favorite-container-image">
+                            <img class="brandLogo" src="{{card.img}}">
+                        </div>
+                        <div class="brand-favorite-container-title">
+                            <h1 class="title">{{card.name}}'s Gift Cards
+                              <i cp-reveal="#brand-description" class="fa fa-info-circle" aria-label="More Info" role="button" tabindex="0"></i>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <p id="brand-description" class="brand-description cp-reveal-off cp-reveal" aria-hidden="true">{{card.description}}</p>
+                <div>
+                    <brand-listing brand-name="card.name" brand-logo="'{{card.img}}'" brand-id="10" brand-discount="{{card.discount}}" brand-swift-buy-defaults="[&quot;$50&quot;,&quot;$75&quot;,&quot;$100&quot;]" >
+                        <div id="brand-listing">
+                            <div class="brand-options">
+                                <div class="brand-filter-options" ng-hide="isOutOfStock()">
+                                    <div class="brand-button-wrapper">
+                                        <button id="instant-filter" class="brand-button left-most-button first-button" >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="35.969" height="28" viewBox="0 0 35.969 28" class="icon-instant svg" src="img/icon-instant.svg">
+                                                <defs>
+                                                    <style>
+                                                    .cls-1 {
+                                                        fill: #3399FF;
+                                                        fill-rule: evenodd;
+                                                    }
+                                                    </style>
+                                                </defs>
+                                                <path id="icon-instant.svg" class="cls-1" d="M234.318,1168.94a2.469,2.469,0,0,0-1.78-.94H221.525a2.72,2.72,0,0,0-1.9.94,2.85,2.85,0,0,0-.782,2.04v6.16a0.554,0.554,0,0,1,.239-0.31l0.4-.41a1.539,1.539,0,0,1,1.376-.71v-1.31a0.37,0.37,0,0,1,.193-0.34,0.545,0.545,0,0,1,.472-0.06h11.013c0.187,0,.216-0.08.352,0.06s0.073,0.15.073,0.34v15.01a0.465,0.465,0,0,1-.073.43,0.363,0.363,0,0,1-.352.16H221.525a0.584,0.584,0,0,1-.472-0.16,0.523,0.523,0,0,1-.193-0.43v-0.87a1.534,1.534,0,0,1-1.357-.7l-0.45-.5a0.547,0.547,0,0,1-.21-0.29v5.77a3.114,3.114,0,0,0,.782,2.15,2.834,2.834,0,0,0,1.9,1.03h11.013a2.585,2.585,0,0,0,1.78-1.03,3.018,3.018,0,0,0,.662-2.15v-21.84A2.752,2.752,0,0,0,234.318,1168.94Zm-6.071,25.09a1.727,1.727,0,0,1-2.431,0,1.639,1.639,0,0,1-.5-1.21,1.617,1.617,0,0,1,.5-1.2,1.727,1.727,0,0,1,2.431,0,1.617,1.617,0,0,1,.5,1.2A1.639,1.639,0,0,1,228.247,1194.03Zm-2.289-11.91a0.708,0.708,0,0,1-.219.53l-3.851,3.82a0.742,0.742,0,0,1-.538.22,0.733,0.733,0,0,1-.532-0.22l-0.444-.44a0.714,0.714,0,0,1-.225-0.53,0.736,0.736,0,0,1,.225-0.54l1.733-1.71h-4.164a0.653,0.653,0,0,1-.5-0.22,0.8,0.8,0,0,1-.193-0.54v-0.75a0.793,0.793,0,0,1,.193-0.53,0.653,0.653,0,0,1,.5-0.22h4.164l-1.733-1.72a0.737,0.737,0,0,1,0-1.06l0.444-.44a0.72,0.72,0,0,1,.532-0.22,0.729,0.729,0,0,1,.538.22l3.851,3.82A0.693,0.693,0,0,1,225.958,1182.12Zm-9.615-5.06v10.44a1.462,1.462,0,0,1-.455,1.08,1.5,1.5,0,0,1-1.094.45H200.546a1.5,1.5,0,0,1-1.094-.45,1.462,1.462,0,0,1-.455-1.08v-10.44a1.469,1.469,0,0,1,.455-1.09,1.5,1.5,0,0,1,1.094-.45h14.248a1.5,1.5,0,0,1,1.094.45A1.469,1.469,0,0,1,216.343,1177.06Zm-1.239.35v-0.23c0-.03,0-0.07-0.005-0.13a0.293,0.293,0,0,0-.029-0.12,0.474,0.474,0,0,1-.053-0.09,0.221,0.221,0,0,0-.087-0.07,0.535,0.535,0,0,0-.136-0.02H200.546a0.3,0.3,0,0,0-.219.09,0.291,0.291,0,0,0-.091.22,3.343,3.343,0,0,0,1.423,2.72c1.245,0.97,2.539,1.99,3.881,3.04,0.039,0.04.152,0.13,0.339,0.29s0.336,0.27.445,0.36,0.253,0.18.431,0.3a2.154,2.154,0,0,0,.488.26,1.121,1.121,0,0,0,.417.09h0.019a1.121,1.121,0,0,0,.417-0.09,2.138,2.138,0,0,0,.489-0.26q0.266-.18.431-0.3t0.445-.36c0.187-.16.3-0.25,0.339-0.29,1.342-1.05,2.636-2.07,3.881-3.04a4.322,4.322,0,0,0,.973-1.11A2.36,2.36,0,0,0,215.1,1177.41Zm0,10.09v-7.37a5.514,5.514,0,0,1-.668.63q-2.594,1.98-4.124,3.24c-0.329.28-.6,0.49-0.8,0.65a4.324,4.324,0,0,1-.837.46,2.408,2.408,0,0,1-.993.24H207.66a2.407,2.407,0,0,1-.992-0.24,4.324,4.324,0,0,1-.837-0.46c-0.207-.16-0.474-0.37-0.8-0.65q-1.53-1.26-4.124-3.24a5.506,5.506,0,0,1-.667-0.63v7.37a0.285,0.285,0,0,0,.091.21,0.279,0.279,0,0,0,.219.1h14.248a0.277,0.277,0,0,0,.218-0.1A0.286,0.286,0,0,0,215.1,1187.5Z" transform="translate(-199 -1168)"></path>
+                                            </svg>
+                                            <span class="svg-button-text ng-binding" ng-click="selectTypeFilter('Email Only')">Email Only</span>
+                                        </button>
+                                        <button id="physical-filter" class="brand-button between-button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="25.03" viewBox="0 0 36 25.03" class="icon-physical svg" src="img/icon-physical.svg">
+                                                <defs>
+                                                    <style>
+                                                    .cls-1 {
+                                                        fill: #3399FF;
+                                                        fill-rule: evenodd;
+                                                    }
+                                                    </style>
+                                                </defs>
+                                                <path id="icon-physical.svg" class="cls-1" d="M227.7,1229.66h-7.016a1.413,1.413,0,0,1-1.419-1.4v-3.48a1.413,1.413,0,0,1,1.419-1.4h5.769a1.18,1.18,0,0,1,1.351.64l1.247,3.81a1.378,1.378,0,0,1-.2,1.25A1.436,1.436,0,0,1,227.7,1229.66Zm-6.469-1.94h5.72l-0.9-2.4h-4.824v2.4Zm4.7-2.77h0Zm7.229,14.19-0.014-1.93h1.891v-6.23l-3.459-1.53a1.18,1.18,0,0,1-.64-0.69l-1.967-5.54a1.159,1.159,0,0,1,.153-1.07,1.176,1.176,0,0,1,.643-0.45v-0.08h-26.8v16.76h1.76a9.655,9.655,0,0,0,.375,1.93h-2.245a1.843,1.843,0,0,1-1.856-1.82v-16.98a1.845,1.845,0,0,1,1.856-1.83H230.31a1.413,1.413,0,0,1,1.419,1.4v1.11a1.391,1.391,0,0,1-.634,1.16l1.586,4.47,3.615,1.6a1.176,1.176,0,0,1,.7,1.07v7.25a1.413,1.413,0,0,1-1.42,1.4h-2.423Zm-8.309,1.17H214.406l0.059-1.93h9.5S224.011,1240.38,224.848,1240.31Zm-15.041,4.4a5.381,5.381,0,1,1,5.468-5.38A5.428,5.428,0,0,1,209.807,1244.71Zm0-8.98a3.6,3.6,0,1,0,3.657,3.6A3.637,3.637,0,0,0,209.807,1235.73Zm18.742,8.98a5.191,5.191,0,1,1,5.274-5.19A5.233,5.233,0,0,1,228.549,1244.71Zm0-8.66a3.47,3.47,0,1,0,3.527,3.47A3.5,3.5,0,0,0,228.549,1236.05Z" transform="translate(-201 -1219.69)"></path>
+                                            </svg>
+                                            <span class="svg-button-text ng-binding" ng-click="selectTypeFilter('Physical Only')">Physical Only</span>
+                                        </button>
+                                        <button id="all-filter" ng-click="selectTypeFilter('All')" class="svg-button-text ng-binding brand-button right-most-button">All Gift Cards</button>
+                                        <!-- "brand-button right-most-button ng-binding last-button white-filter-button-tapped" -->
+                                    </div>
+                                    <p class="description-label ng-binding">Showing all card types, eGift &amp; Physical, and redemption options (Online only, In-store only, and Online &amp; in-store).</p>
+                                </div>
+
+                                <!--  class="ng-binding "     swift-buy swift-buy-disabled  -->
+                                <div class="swift-buy" style="background-color: rgba(217, 236, 255, 0.4); border-color: rgba(217, 236, 255, 0.4); border-radius: 10px; padding-top : 10px ;">
+                                    <p align="right" style="color: #39F">Minium Price:   <input type="number" ng-model="price1"></p>
+                                    <p align="right" style="color: #39F">Maximum Price: <input type="number" ng-model="price2"></p>
+                                </div>
+                                <div class="out-of_stock-container ng-hide" ng-show="$ctrl.isOutOfStock()">
+                                    <out-of-stock all-card-list="$ctrl.allCardList" brand-name="$ctrl.brandName" brand="$ctrl.brandId" class="ng-isolate-scope">
+                                        <div id="out-of-stock-component">
+                                            <div class="out-of-stock-title" >Temporarily Out-of-Stock</div>
+                                            <div class="out-of-stock-content">
+                                                <div class="out-of-stock-message">
+                                                    <div class="title" >Get Notified of New Inventory</div>
+                                                    <div class="message">
+                                                        <!-- When we are favorited show one, else show the other... -->
+                                                        <span ng-i18next="brand_temporary_out_of_stock_message_part1_favorite">New stock of </span>
+                                                        <span ng-bind="$ctrl.brandName" class="ng-binding">{{card.name}}</span>
+                                                        <span ng-i18next="brand_temporary_out_of_stock_message_part2_favorite"> gift cards may become available at any time. Tap the Add to Favorites button to receive an email when the brand is in-stock again.</span>
+                                                    </div>
+                                                </div>
+                                                <div class="out-of-stock-button-container favorite" role="button" ng-class="$ctrl.buttonState">
+                                                    <a ng-click="!$ctrl.disabled &amp;&amp; $ctrl.addFavorite()" class="out-of-stock-button favorite" ng-class="$ctrl.buttonState">
+                                                        <!-- ngIf: $ctrl.buttonState === 'favorite' -->
+                                                        <svg aira-hidden="true" class="button-heart-icon ng-scope" ng-if="$ctrl.buttonState === 'favorite'" data-name="icon_heart" xmlns="http://www.w3.org/2000/svg" width="48" height="44" viewBox="0 0 173.77 172.61">
+                                                            <title>Brand favorite status icon</title>
+                                                            <g>
+                                                                <path id="heart_icon_outer" d="M173.52,18A21.28,21.28,0,0,0,152.29,0C130.52,0,19.19.05,18,.25A21.28,21.28,0,0,0,0,21.58c0,43.15.05,131.84.25,133a21.28,21.28,0,0,0,21.23,18c43.54,0,133.07-.05,134.28-.24a21.27,21.27,0,0,0,18-21.23C173.77,107.85,173.7,19.09,173.52,18Z"></path>
+                                                                <path id="heart_icon_inner" d="M38.25,72a22.45,22.45,0,0,1,3.67-13.28,13.8,13.8,0,0,1,4.85-4.2,21.49,21.49,0,0,1,8.68-2.64,20.43,20.43,0,0,1,8.43.58A28.89,28.89,0,0,1,70,55.26a49.56,49.56,0,0,1,6.95,5.35A48.8,48.8,0,0,1,81.35,65,4.32,4.32,0,0,0,88,64.65a25.6,25.6,0,0,1,3.42-3.53,68.14,68.14,0,0,1,5.79-4.67c3.34-2.34,6.9-4.34,11-4.72a23.75,23.75,0,0,1,14.4,2.92c4.3,2.49,6.47,6.45,7.53,11.09a22.66,22.66,0,0,1-.77,13.53,34.8,34.8,0,0,1-5.32,9,66.78,66.78,0,0,1-6.44,7c-3.71,3.51-30.59,29.5-32.4,31.28-.55.54-1,.53-1.44,0l-.13-.14c-3.15-3.09-27.4-26.53-31-30-1.37-1.31-2.78-2.58-4.08-4a43.74,43.74,0,0,1-8-11A20.21,20.21,0,0,1,38.25,72Z"></path>
+                                                                <path id="heart_icon_outline" d="M142.76,71.87c.34,9.13-3.27,16.78-8.81,23.73a103.56,103.56,0,0,1-9.36,9.89c-3.42,3.28-30.1,29-34.69,33.5-1,1-2,1.92-3.07,2.8a3.52,3.52,0,0,1-4.62,0C80.07,140,41.7,103,38.17,99.19c-4.9-5.33-9-11.17-10.85-18.36a38.62,38.62,0,0,1-.92-12.15,45.91,45.91,0,0,1,.81-6.79,24,24,0,0,1,6.48-12.3A42.59,42.59,0,0,1,38.75,45a27.33,27.33,0,0,1,11-4.52,37,37,0,0,1,5.84-.6c1.38,0,2.76-.17,4.14-.17a29.39,29.39,0,0,1,16.66,5,67.46,67.46,0,0,1,7.26,5.44,1.18,1.18,0,0,0,1.78,0,52.75,52.75,0,0,1,10.7-7.41,26.69,26.69,0,0,1,10.54-2.89,43.19,43.19,0,0,1,6.74,0c1.33.14,1.66.53,1.75,1.9a4.46,4.46,0,0,1-1.56,3.85c-2,1.81-3.82,3.75-5.69,5.67a2.59,2.59,0,0,1-1.29.76,26.68,26.68,0,0,0-9.88,4.79,57.14,57.14,0,0,0-8.33,7.36C87.61,65,87,66,85.74,66.24c-1.63.34-3.16.21-4.3-1.13a51.13,51.13,0,0,0-6-5.8,41.2,41.2,0,0,0-8.28-5.59,20.14,20.14,0,0,0-11.6-1.9A23.42,23.42,0,0,0,46,54.92a14.75,14.75,0,0,0-6,7.19,24.32,24.32,0,0,0-1.72,11.63,22.43,22.43,0,0,0,3,9.15A54,54,0,0,0,51.61,95.46c3.6,3.44,30.36,29.28,32.13,31,.55.54,1,.66,1.51,0a2.54,2.54,0,0,1,.2-.21c3.13-3.06,27.32-26.44,30.86-29.85,1.39-1.33,2.83-2.63,4.15-4a43.82,43.82,0,0,0,7.81-10.67,19.45,19.45,0,0,0,2.11-6.19,1.84,1.84,0,0,1,.65-1q3.22-3.21,6.43-6.43a3.8,3.8,0,0,1,4.05-.75c.92.28,1.16,1.3,1.22,2.22S142.76,71.1,142.76,71.87Z"></path>
+                                                                <path id="heart_icon_checkmark" d="M84.43,112.08a5.38,5.38,0,0,1-4.15-1.67q-15-15-30-30a5.7,5.7,0,0,1,0-8.31c2.55-2.6,5.15-5.16,7.72-7.73,2.89-2.89,6.25-2.88,9.16,0Q75.44,72.69,83.72,81c.57.58.83.57,1.4,0,12.76-12.82,42.07-42.15,43.95-44a5.81,5.81,0,0,1,8.66,0c2.57,2.53,5.12,5.1,7.66,7.66,2.78,2.79,2.78,6.15,0,8.95-8,8-45.55,45.56-56.36,56.37A5.83,5.83,0,0,1,84.43,112.08Z"></path>
+                                                            </g>
+                                                        </svg>
+                                                        <!-- end ngIf: $ctrl.buttonState === 'favorite' -->
+                                                        <span class="button-text favorite" ng-class="$ctrl.buttonState">Add to Favorites</span>
+                                                        <!-- ngIf: $ctrl.buttonState === 'wait' -->
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </out-of-stock>
+                                </div>
+                            </div>
+
+
+                            <div class="brand-card-listing" >  
+                            <!-- ng-hide="$ctrl.isOutOfStock()" -->
+                                <div class="sorts-container">
+                                    <div class="type-sort-container">
+                                        <button class="sort-button type-sort ng-binding"  ng-click="changeSortCol('qty')" aria-label="TYPE Sort Ascending">TYPE
+                                        </button>
+                                    </div>
+                                    <div class="other-sorts-container">
+                                        <button class="sort-button value-sort ng-binding"  ng-click="changeSortCol('price')" aria-label="VALUE Sort Ascending">VALUE
+                                        </button>
+                                        <button class="sort-button discount-sort ng-binding" ng-click="changeSortCol('discount')" aria-label="% OFF Sort Ascending">% OFF
+                                            <!-- ngIf: $ctrl.sortBy == 'discount' -->
+                                        </button>
+                                        <button class="sort-button you-pay-sort ng-binding" ng-click="changeSortCol('price*(100-discount)')" aria-label="YOU PAY Sort Ascending">YOU PAY
+                                        </button>
+                                    </div>
+                                    <div class="sort-padding"></div>
+                                </div>
+                                <hr>
+
+                                <div class="brand-card-listing-container">
+                                    <div style="position: inherit;">
+                                        <div ng-repeat="singleCard in cardList2 | typeFilter:type | priceFilter:price1:price2 | orderBy:sortCol:reverse" style="left: 0%; position: relative; width: 100%;">
+                                            <card-listing>
+                                                <div>
+                                                    <div class="card-listing-container" >
+                                                        <div class="ghost-overlay ng-hide" ></div>
+                                                        <div class="card-listing">
+                                                            <div class="card-details">
+                                                                <div class="card-details-more">
+                                                                    <img class="card-image" ng-src="{{singleCard.img}}">
+                                                                        <!--<a class="more-details-button" ng-click="$ctrl.setExpanded(item)">
+                                                                        <span ng-show="item.showDetails" class="ng-binding ng-hide">-</span>
+                                                                        <span ng-hide="item.showDetails" class="ng-binding">+</span>
+                                                                        <span class="underline ng-binding">More Info</span></a> -->
+                                                                </div>
+                                                                <div class="card-info">
+                                                                    <div class="card-info-element" >
+                                                                        <span class="fill-background ng-binding ng-hide" >
+                                                                        <!-- ng-show="$ctrl.getAvailableQuantity() === 1" -->
+                                                                          <span class="number bold ng-binding">{{singleCard.qty}}</span> Card Available
+                                                                        </span>
+                                                                        <span class="fill-background ng-binding" >
+                                                                          <span class="number bold ng-binding">{{singleCard.qty}}</span> Cards Available
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="card-info-element">
+                                                                        <span class="fill-background ng-binding">{{singleCard.type}}</span>
+                                                                        <span class="fill-background ng-binding">Use Anywhere</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="purchase-details">
+                                                                <div class="divider"></div>
+                                                                <div class="number card-value ng-binding">{{singleCard.price | currency}}</div>
+                                                                <div class="divider"></div>
+                                                                <div class="number discount-value ng-binding">{{singleCard.discount}}%</div>
+                                                                <div class="divider"></div>
+                                                                <div class="number you-pay-value ng-binding">{{singleCard.price*(1-(singleCard.discount/100)) | currency}}</div>
+                                                            </div>
+                                                            <div class="button-container">
+                                                                <button ng-click="buyNow(singleCard.id)" class="regular-button buy-now-button">
+                                                                    <span class="buy-text-label ng-binding">Buy Now</span>
+                                                                    <!-- <span class="mobile-buy-text-label ng-binding" ng-hide="item.ghosted">Buy</span> -->
+                                                                    <span class="buy-text-label ng-binding ng-hide" ng-show="item.inCart">In Cart</span>
+                                                                    <!-- <span class="mobile-buy-text-label ng-binding ng-hide" ng-show="item.inCart">In Cart</span> -->
+                                                                    <span class="buy-text-label ng-binding ng-hide" ng-show="item.reserving">Reserving</span>
+                                                                    <!-- <span class="mobile-buy-text-label ng-binding ng-hide" ng-show="item.reserving">Reserving</span> -->
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <!--<div>
+                                                            <more-details hide="!item.showDetails" sku="$ctrl.sku" class="ng-isolate-scope">
+                                                                <div class="more-details ng-hide" ng-hide="$ctrl.hide">
+                                                                    <p class="more-details-label ng-binding" ng-show="$ctrl.sku.deliveryMethod == 'electronic'">
+                                                                        <b ng-show="$ctrl.sku.redemptionChannel == 'all'" class="ng-binding">Email gift cards</b>
+                                                                        <b ng-hide="$ctrl.sku.redemptionChannel == 'all'" class="ng-binding ng-hide">eGifts</b> will arrive in approximately 1 business day.
+                                                                    </p>
+                                                                    <p class="more-details-label ng-binding ng-hide" ng-show="$ctrl.sku.deliveryMethod == 'paper'">
+                                                                        Paper card will arrive via
+                                                                        <b class="ng-binding">USPS mail</b> in 3 - 7 business days.
+                                                                    </p>
+                                                                    <p class="more-details-label ng-binding ng-hide" ng-show="$ctrl.sku.deliveryMethod == 'plastic'">
+                                                                        Plastic card will arrive via
+                                                                        <b class="ng-binding">USPS mail</b> in 3 - 7 business days.
+                                                                    </p>
+                                                                    <p class="more-details-label ng-binding" ng-show="$ctrl.sku.redemptionChannel == 'all'">
+                                                                        <b class="ng-binding">Use anywhere</b> cards for use in-store &amp; online.
+                                                                    </p>
+                                                                    <p class="more-details-label ng-binding" ng-show="$ctrl.sku.redemptionChannel == 'all' &amp;&amp; $ctrl.sku.deliveryMethod == 'electronic'">
+                                                                        Must be printed to use in-stores.
+                                                                    </p>
+                                                                    <p class="more-details-label ng-binding ng-hide" ng-show="$ctrl.sku.redemptionChannel == 'instore'">
+                                                                        <b class="ng-binding">Cards are for use</b> in-store only.
+                                                                    </p>
+                                                                    <p class="more-details-label ng-binding ng-hide" ng-show="$ctrl.sku.redemptionChannel == 'instore' &amp;&amp; $ctrl.sku.deliveryMethod == 'electronic'">
+                                                                        Must be printed to use in-stores.
+                                                                    </p>
+                                                                    <p class="more-details-label ng-binding ng-hide" ng-show="$ctrl.sku.redemptionChannel == 'online'">
+                                                                        Cards are for use
+                                                                        <b class="ng-binding">online only</b>
+                                                                    </p>
+                                                                </div>
+                                                            </more-details>
+                                                        </div> -->
+                                                    </div>
+                                            
+                                                    <hr>
+                                                </div>
+                                                
+                                            </card-listing>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </brand-listing>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

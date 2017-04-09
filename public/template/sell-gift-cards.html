@@ -1,0 +1,780 @@
+<div id="body-wrap">
+    <div id="sell-select-brand">
+        <div class="breadcrumbs">
+            <span><a href="#home">Home</a></span>
+            <span><h1>Sell Gift Cards</h1></span>
+        </div>
+        <div id="sell-hero-plank">
+            <div class="bulk-seller-button-container">
+                <div class="bulk-seller-button"><a href="https://bulk.cardpool.com/" class="clear-action-button">Bulk Seller?</a></div>
+            </div>
+            <div class="top">
+                <h2>Sell Your Unwanted Gift Cards for cash</h2>
+                <h3>Earn up to <span class="number bold">92%</span> cash back!</h3>
+                <search-brand>
+                    <div id="sell-brand-search-container-7" class="sell-brand-search-container">
+                        <div id="sell-search-container-7" class="sell-search-container">
+                            <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            <input type="text" id="sell-brand-input-7" class="sell-brand-input ng-pristine ng-untouched ng-valid ng-empty" placeholder="Enter gift card store name" ng-focus="$ctrl.onFocus()" ng-model="$ctrl.searchText" ng-change="$ctrl.updateTopBrands()" ng-keydown="$ctrl.onKeydown($event)">
+                            <div role="listbox" id="sell-text-dropdown-7" class="sell-text-dropdown ng-hide" ng-show="$ctrl.showDropdown">
+                                <div class="brands-message ng-hide" ng-show="$ctrl.showLoadingText" ng-i18next="sell_select_search_loading">Loading available cards...</div>
+                                <div class="brands-message" ng-show="!$ctrl.topBrands.length" ng-i18next="sell_select_search_no_results">Sorry, no results were found. Please try a different store or brand name.</div>
+                                <!-- ngRepeat: card in $ctrl.topBrands -->
+                            </div>
+                        </div>
+                    </div>
+                </search-brand>
+            </div>
+            <div class="bottom-bar">
+                <div class="bottom-links">
+                    <div class="desktop"><span class="semi-bold number">1.</span> Enter your gift cards.</div>
+                    <div class="desktop"><span class="semi-bold number">2.</span> See your payout offer instantly.</div>
+                    <div class="desktop"><span class="semi-bold number">3.</span> Get paid fast.</div>
+                    <div class="mobile"><a href="https://www.cardpool.com/bulk-seller-program" class="clear-action-button">Bulk Seller?</a></div>
+                    <div class="desktop mobile">
+                        <span id="cp-video" class="pointer" ng-click="$ctrl.open()"><a class="clear-action-button ng-scope">See how it works <i class="fa fa-play-circle-o" aria-hidden="true"></i></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="how-to-plank">
+            <img class="atm" src="./img/atm_giftcard_into_dollar.png" alt="turn gift cards into cash">
+            <div class="how-to">
+                <h2 class="large">How to Sell Your Gift Cards Online</h2>
+                <!-- in-view used to append 'animate' class to icons so they know when to trigger animation -->
+                <div in-view="animate=true" in-view-options="{ &quot;offset&quot;: [-250, 0, 0, 0] }">
+                    <div class="section animate" ng-class="{animate: animate}">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="sell_icon_cards" width="59px" height="59px" viewBox="0 0 59 59" class="icon svg" src="/assets/images/sell/sell_icon_cards.svg">
+                            <defs>
+                                <style>
+                                /* INITIAL STYLES */
+                                
+                                .sell_icon_mask {
+                                    fill: #fff;
+                                }
+                                
+                                .sell_icon_ring {
+                                    fill: none;
+                                    stroke: #ccc;
+                                    stroke-width: 3px;
+                                }
+                                
+                                #sell_icon_cards,
+                                #sell_icon_tags,
+                                #sell_icon_money {
+                                    transform: scale(0.8);
+                                    transform-origin: 50% 50%;
+                                }
+                                
+                                .sell_icon_cards_detail {
+                                    fill: #3399ff;
+                                }
+                                
+                                .sell_icon_cards_back {
+                                    fill: #fff;
+                                }
+                                
+                                #sell_icon_cards_card1 {
+                                    transform: rotate(40deg);
+                                    transform-origin: 55px 95px 0px;
+                                }
+                                
+                                #sell_icon_cards_card2 {
+                                    transform: rotate(29deg);
+                                    transform-origin: 56px 109px 0px;
+                                }
+                                
+                                #sell_icon_cards_card3 {
+                                    transform: rotate(18deg);
+                                    transform-origin: 50px 130px 0px;
+                                }
+                                
+                                #sell_icon_tags_t1,
+                                #sell_icon_tags_t2 {
+                                    fill: #fff;
+                                    stroke: #39f;
+                                    stroke-width: 2px;
+                                }
+                                
+                                #sell_icon_tags_d1,
+                                #sell_icon_tags_d2 {
+                                    fill: #39f;
+                                }
+                                
+                                #sell_icon_tags_inner {
+                                    transform: translateY(45px);
+                                }
+                                
+                                .sell_icon_money_outline {
+                                    fill: #39f;
+                                }
+                                
+                                .sell_icon_money_back {
+                                    fill: #fff;
+                                }
+                                
+                                #sell_icon_money_envelope {
+                                    transform: translateX(-59px) translateY(10px);
+                                }
+                                /* ANIMATIION STYLES */
+                                
+                                .animate #sell_icon_cards {
+                                    animation: expand 250ms forwards;
+                                    animation-delay: 25ms;
+                                    animation-timing-function: ease-in-out;
+                                }
+                                
+                                .animate #sell_icon_tags {
+                                    animation: expand 250ms forwards;
+                                    animation-delay: 400ms;
+                                    animation-timing-function: ease-in-out;
+                                }
+                                
+                                .animate #sell_icon_money {
+                                    animation: expand 250ms forwards;
+                                    animation-delay: 900ms;
+                                    animation-timing-function: ease-in-out;
+                                }
+                                
+                                .animate #sell_icon_cards_card1 {
+                                    animation: fanInOne 400ms forwards;
+                                    animation-delay: 0ms;
+                                    animation-timing-function: ease-in;
+                                }
+                                
+                                .animate #sell_icon_cards_card2 {
+                                    animation: fanInTwo 400ms forwards;
+                                    animation-delay: 0ms;
+                                    animation-timing-function: ease-in;
+                                }
+                                
+                                .animate #sell_icon_cards_card3 {
+                                    animation: fanInThree 400ms forwards;
+                                    animation-delay: 0ms;
+                                    animation-timing-function: ease-in;
+                                }
+                                
+                                .animate #sell_icon_tags_inner {
+                                    animation: slideIn 300ms forwards;
+                                    animation-delay: 500ms;
+                                    animation-timing-function: ease-in-out;
+                                }
+                                
+                                .animate #sell_icon_money_envelope {
+                                    animation: zoomOut 200ms forwards;
+                                    animation-delay: 1000ms;
+                                    animation-timing-function: ease-out;
+                                }
+                                
+                                @keyframes expand {
+                                    0% {
+                                        transform: scale(0.8);
+                                    }
+                                    80% {
+                                        transform: scale(1.2);
+                                    }
+                                    100% {
+                                        transform: scale(1.0);
+                                    }
+                                }
+                                
+                                @keyframes fanInOne {
+                                    0% {
+                                        transform: rotate(40deg);
+                                        opacity: 0;
+                                    }
+                                    100% {
+                                        transform: rotate(0deg);
+                                        opacity: 1;
+                                    }
+                                }
+                                
+                                @keyframes fanInTwo {
+                                    0% {
+                                        transform: rotate(29deg);
+                                        opacity: 0;
+                                    }
+                                    100% {
+                                        transform: rotate(0deg);
+                                        opacity: 1;
+                                    }
+                                }
+                                
+                                @keyframes fanInThree {
+                                    0% {
+                                        transform: rotate(18deg);
+                                        opacity: 0;
+                                    }
+                                    100% {
+                                        transform: rotate(0deg);
+                                        opacity: 1;
+                                    }
+                                }
+                                
+                                @keyframes slideIn {
+                                    0% {
+                                        transform: translateY(45px);
+                                        opacity: 0;
+                                    }
+                                    80% {
+                                        transform: translateY(-8px);
+                                        opacity: 1;
+                                    }
+                                    100% {
+                                        transform: translateY(0px);
+                                        opacity: 1;
+                                    }
+                                }
+                                
+                                @keyframes zoomOut {
+                                    0% {
+                                        transform: translateX(-59px) translateY(10px);
+                                        opacity: 0;
+                                    }
+                                    100% {
+                                        transform: translateX(0px) translateY(0px);
+                                        opacity: 1;
+                                    }
+                                }
+                                </style>
+                            </defs>
+                            <g id="sell_icon_cards_card1">
+                                <path class="sell_icon_cards_detail" d="M31.8,11.9c-0.7-1.3-2.4-1.8-3.7-1.1l-18.3,10c-1.3,0.7-1.8,2.4-1.1,3.7l13.1,24.1c0.7,1.3,2.4,1.8,3.7,1.1l18.3-10c1.3-0.7,1.8-2.4,1.1-3.7L31.8,11.9z M43,37.1c0.1,0.3,0,0.6-0.2,0.7l-3.4,1.8L25.7,14.6l3.4-1.8c0.3-0.1,0.6,0,0.7,0.2L43,37.1z M10.6,23.5c-0.1-0.3,0-0.6,0.2-0.7l9.2-5l13.7,25.1l-9.2,5c-0.3,0.1-0.6,0-0.7-0.2L10.6,23.5zM15.4,27.8l1.9-1.1l-2.1-3.9l-1.9,1.1L15.4,27.8z M19.6,35.5l1.9-1.1l-3.2-5.8l-1.9,1.1L19.6,35.5z"></path>
+                            </g>
+                            <g id="sell_icon_cards_card2">
+                                <path class="sell_icon_cards_back" d="M42.5,13.2l6.7,22c0.9,2.7-0.6,5.6-3.2,6.6l-16.2,5.5c-2.6,0.8-5.4-0.6-6.2-3.2c0-0.1,0-0.1-0.1-0.2l-6.7-22c-0.9-2.7,0.6-5.6,3.2-6.6l16.2-5.5c2.6-0.8,5.4,0.6,6.2,3.2C42.5,13,42.5,13.1,42.5,13.2z"></path>
+                                <path class="sell_icon_cards_detail" d="M41.4,11.1c-0.2-0.8-0.8-1.4-1.5-1.7c-0.7-0.4-1.5-0.4-2.2-0.2L16.5,16c-0.7,0.2-1.4,0.8-1.7,1.5c-0.4,0.7-0.4,1.5-0.2,2.3l8.9,28.2c0.2,0.7,0.7,1.4,1.4,1.7c0.7,0.4,1.5,0.4,2.2,0.2L48.5,43c0.7-0.2,1.4-0.8,1.7-1.5c0.4-0.7,0.4-1.5,0.2-2.3L41.4,11.1z M48.1,40c0.1,0.3-0.1,0.6-0.4,0.7L43.8,42l-9.3-29.3l3.9-1.3c0.3-0.1,0.6,0.1,0.7,0.4L48.1,40z M16.9,19c0-0.1,0-0.3,0-0.5c0.1-0.1,0.2-0.2,0.3-0.3l10.6-3.4l9.3,29.3l-10.6,3.4c-0.1,0-0.3,0-0.4,0c-0.1-0.1-0.2-0.2-0.3-0.3L16.9,19z M21.1,24.5l2.2-0.7l-1.4-4.5L19.6,20L21.1,24.5z M23.9,33.5l2.2-0.7L24,26l-2.2,0.7L23.9,33.5z"></path>
+                            </g>
+                            <g id="sell_icon_cards_card3">
+                                <path class="sell_icon_cards_back" d="M53,13.9l2.7,23.6c0.3,3,1.7,5.7-1.2,6l-24,3c-2.9,0.4-1.7-3-2-6l-3-27c-0.3-3,4.1-2.6,7-3l17-2C52.4,8.1,52.7,10.9,53,13.9z"></path>
+                                <path class="sell_icon_cards_detail" d="M53.8,9.9c-0.1-0.8-0.5-1.6-1.2-2.1c-0.6-0.5-1.5-0.8-2.3-0.7L26.4,10c-0.8,0.1-1.6,0.5-2.1,1.2c-0.5,0.7-0.8,1.5-0.7,2.3l3.6,31.6c0.1,0.8,0.5,1.6,1.2,2.1c0.6,0.5,1.5,0.8,2.3,0.7L54.6,45c0.8-0.1,1.6-0.5,2.1-1.2c0.5-0.7,0.8-1.5,0.7-2.3L53.8,9.9z M54.9,41.8c0,0.2,0,0.3-0.1,0.5c-0.1,0.1-0.3,0.2-0.4,0.2L49.9,43l-3.8-32.9l4.4-0.5c0.2,0,0.3,0,0.5,0.1c0.1,0.1,0.2,0.3,0.2,0.4L54.9,41.8z M26.1,13.2c0-0.3,0.2-0.7,0.6-0.7l11.9-1.5l3.8,32.9l-11.9,1.5c-0.3,0-0.7-0.2-0.7-0.6L26.1,13.2z M29.4,19.9l2.5-0.3l-0.6-5.1l-2.5,0.3L29.4,19.9z M30.6,30l2.5-0.3l-0.9-7.6l-2.5,0.3L30.6,30z"></path>
+                            </g>
+                            <g>
+                                <path class="sell_icon_mask" d="M0.2,0v59h59V0H0.2z M29.7,57.5c-15.5,0-28-12.5-28-28s12.5-28,28-28s28,12.5,28,28S45.2,57.5,29.7,57.5z"></path>
+                                <circle class="sell_icon_ring" cx="29.5" cy="29.5" r="28"></circle>
+                            </g>
+                        </svg>
+                        <div class="text">
+                            <h3>Find gift cards</h3>
+                            <span>We accept physical and electronic gift cards, as well as store credits for <span class="number">3,000</span>+ brands.</span>
+                        </div>
+                    </div>
+                    <div class="section animate" ng-class="{animate: animate}">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="sell_icon_tags" width="59" height="59" viewBox="0 0 59 59" class="icon svg" src="/assets/images/sell/sell_icon_tags.svg">
+                            <defs>
+                                <style>
+                                /* INITIAL STYLES */
+                                
+                                .sell_icon_mask {
+                                    fill: #fff;
+                                }
+                                
+                                .sell_icon_ring {
+                                    fill: none;
+                                    stroke: #ccc;
+                                    stroke-width: 3px;
+                                }
+                                
+                                #sell_icon_cards,
+                                #sell_icon_tags,
+                                #sell_icon_money {
+                                    transform: scale(0.8);
+                                    transform-origin: 50% 50%;
+                                }
+                                
+                                .sell_icon_cards_detail {
+                                    fill: #3399ff;
+                                }
+                                
+                                .sell_icon_cards_back {
+                                    fill: #fff;
+                                }
+                                
+                                #sell_icon_cards_card1 {
+                                    transform: rotate(40deg);
+                                    transform-origin: 55px 95px 0px;
+                                }
+                                
+                                #sell_icon_cards_card2 {
+                                    transform: rotate(29deg);
+                                    transform-origin: 56px 109px 0px;
+                                }
+                                
+                                #sell_icon_cards_card3 {
+                                    transform: rotate(18deg);
+                                    transform-origin: 50px 130px 0px;
+                                }
+                                
+                                #sell_icon_tags_t1,
+                                #sell_icon_tags_t2 {
+                                    fill: #fff;
+                                    stroke: #39f;
+                                    stroke-width: 2px;
+                                }
+                                
+                                #sell_icon_tags_d1,
+                                #sell_icon_tags_d2 {
+                                    fill: #39f;
+                                }
+                                
+                                #sell_icon_tags_inner {
+                                    transform: translateY(45px);
+                                }
+                                
+                                .sell_icon_money_outline {
+                                    fill: #39f;
+                                }
+                                
+                                .sell_icon_money_back {
+                                    fill: #fff;
+                                }
+                                
+                                #sell_icon_money_envelope {
+                                    transform: translateX(-59px) translateY(10px);
+                                }
+                                /* ANIMATIION STYLES */
+                                
+                                .animate #sell_icon_cards {
+                                    animation: expand 250ms forwards;
+                                    animation-delay: 25ms;
+                                    animation-timing-function: ease-in-out;
+                                }
+                                
+                                .animate #sell_icon_tags {
+                                    animation: expand 250ms forwards;
+                                    animation-delay: 400ms;
+                                    animation-timing-function: ease-in-out;
+                                }
+                                
+                                .animate #sell_icon_money {
+                                    animation: expand 250ms forwards;
+                                    animation-delay: 900ms;
+                                    animation-timing-function: ease-in-out;
+                                }
+                                
+                                .animate #sell_icon_cards_card1 {
+                                    animation: fanInOne 400ms forwards;
+                                    animation-delay: 0ms;
+                                    animation-timing-function: ease-in;
+                                }
+                                
+                                .animate #sell_icon_cards_card2 {
+                                    animation: fanInTwo 400ms forwards;
+                                    animation-delay: 0ms;
+                                    animation-timing-function: ease-in;
+                                }
+                                
+                                .animate #sell_icon_cards_card3 {
+                                    animation: fanInThree 400ms forwards;
+                                    animation-delay: 0ms;
+                                    animation-timing-function: ease-in;
+                                }
+                                
+                                .animate #sell_icon_tags_inner {
+                                    animation: slideIn 300ms forwards;
+                                    animation-delay: 500ms;
+                                    animation-timing-function: ease-in-out;
+                                }
+                                
+                                .animate #sell_icon_money_envelope {
+                                    animation: zoomOut 200ms forwards;
+                                    animation-delay: 1000ms;
+                                    animation-timing-function: ease-out;
+                                }
+                                
+                                @keyframes expand {
+                                    0% {
+                                        transform: scale(0.8);
+                                    }
+                                    80% {
+                                        transform: scale(1.2);
+                                    }
+                                    100% {
+                                        transform: scale(1.0);
+                                    }
+                                }
+                                
+                                @keyframes fanInOne {
+                                    0% {
+                                        transform: rotate(40deg);
+                                        opacity: 0;
+                                    }
+                                    100% {
+                                        transform: rotate(0deg);
+                                        opacity: 1;
+                                    }
+                                }
+                                
+                                @keyframes fanInTwo {
+                                    0% {
+                                        transform: rotate(29deg);
+                                        opacity: 0;
+                                    }
+                                    100% {
+                                        transform: rotate(0deg);
+                                        opacity: 1;
+                                    }
+                                }
+                                
+                                @keyframes fanInThree {
+                                    0% {
+                                        transform: rotate(18deg);
+                                        opacity: 0;
+                                    }
+                                    100% {
+                                        transform: rotate(0deg);
+                                        opacity: 1;
+                                    }
+                                }
+                                
+                                @keyframes slideIn {
+                                    0% {
+                                        transform: translateY(45px);
+                                        opacity: 0;
+                                    }
+                                    80% {
+                                        transform: translateY(-8px);
+                                        opacity: 1;
+                                    }
+                                    100% {
+                                        transform: translateY(0px);
+                                        opacity: 1;
+                                    }
+                                }
+                                
+                                @keyframes zoomOut {
+                                    0% {
+                                        transform: translateX(-59px) translateY(10px);
+                                        opacity: 0;
+                                    }
+                                    100% {
+                                        transform: translateX(0px) translateY(0px);
+                                        opacity: 1;
+                                    }
+                                }
+                                </style>
+                            </defs>
+                            <g id="sell_icon_tags_inner">
+                                <path id="sell_icon_tags_t1" d="M53.5,42.6v-10c0-4.9-4.8-6.2-7-6.2c-2,0-4.2-4.9-4.2-4.9s-2.2,4.9-4.2,4.9         c-3.7-0.2-7,2.5-7.7,6.2v31h23L53.5,42.6z"></path>
+                                <path id="sell_icon_tags_d1" d="M46.5,41.4c-0.1-0.2-0.1-0.4-0.2-0.6c-0.1-0.2-0.2-0.4-0.4-0.5c-0.2-0.1-0.3-0.3-0.5-0.4         c-0.2-0.1-0.4-0.2-0.6-0.3l-0.6-0.3L43.5,39L43,38.8l-0.5-0.2c-0.2-0.1-0.3-0.1-0.4-0.2c-0.1-0.1-0.2-0.2-0.3-0.3         c-0.1-0.1-0.2-0.2-0.2-0.3c0-0.1-0.1-0.3-0.1-0.4c0-0.4,0.2-0.7,0.5-0.9c0.4-0.2,0.8-0.4,1.2-0.3c0.2,0,0.4,0,0.7,0.1         c0.2,0.1,0.4,0.1,0.6,0.2c0.2,0.1,0.3,0.2,0.5,0.2l0.3,0.2l0.1,0.1c0.1,0,0.1,0.1,0.2,0c0.1,0,0.1-0.1,0.2-0.1l0.6-1.2         c0.1-0.1,0.1-0.2,0-0.3l-0.1-0.1l-0.3-0.2c-0.2-0.1-0.3-0.2-0.5-0.3c-0.2-0.1-0.4-0.2-0.7-0.3c-0.3-0.1-0.6-0.1-0.9-0.2V33         c0-0.1,0-0.1-0.1-0.2c0,0-0.1-0.1-0.2-0.1h-1c-0.1,0-0.1,0-0.2,0.1c0,0-0.1,0.1-0.1,0.2v1.4c-0.8,0.1-1.5,0.5-2,1.1         c-0.5,0.5-0.8,1.2-0.8,1.9c0,0.2,0,0.4,0.1,0.6c0,0.2,0.1,0.4,0.2,0.5c0,0.2,0.1,0.3,0.2,0.5c0.1,0.1,0.2,0.3,0.3,0.4         c0.1,0.1,0.3,0.2,0.4,0.3l0.4,0.3l0.5,0.2l0.5,0.2l0.5,0.2l0.6,0.3l0.5,0.2c0.2,0.1,0.3,0.2,0.5,0.3c0.1,0.1,0.2,0.2,0.3,0.3         c0.1,0.1,0.1,0.3,0.1,0.4c0,0.4-0.2,0.8-0.5,1c-0.3,0.2-0.7,0.3-1.1,0.3c-0.2,0-0.4,0-0.6-0.1c-0.7-0.2-1.4-0.5-1.9-1l0,0         c0-0.1-0.1-0.1-0.2-0.1c-0.1,0-0.1,0-0.2,0.1l-0.8,1.1c-0.1,0.1-0.1,0.2,0,0.3l0.1,0.1c0.1,0.1,0.2,0.2,0.4,0.3         c0.2,0.1,0.4,0.3,0.6,0.4c0.3,0.1,0.5,0.3,0.8,0.3c0.3,0.1,0.7,0.2,1,0.2v1.4c0,0.1,0,0.1,0.1,0.2c0,0,0.1,0.1,0.2,0.1h1         c0.1,0,0.1,0,0.2-0.1c0,0,0.1-0.1,0.1-0.2v-1.4c0.8-0.1,1.5-0.5,2-1.1c0.5-0.6,0.8-1.3,0.8-2.1l0,0C46.5,41.9,46.5,41.7,46.5,41.4z         "></path>
+                                <path id="sell_icon_tags_t2" d="M7.8,64.5V26.3c0.8-4.7,5-8,9.7-7.7c2.5,0,5.3-6.1,5.3-6.1s2.8,6.1,5.3,6.1         c2.7,0,8.9,1.7,8.9,7.8v38.1L7.8,64.5z"></path>
+                                <path id="sell_icon_tags_d2" d="M27.5,38.1c-0.1-0.3-0.2-0.6-0.3-0.8c-0.1-0.3-0.3-0.5-0.6-0.7c-0.2-0.2-0.4-0.4-0.7-0.5         c-0.3-0.2-0.5-0.3-0.8-0.5l-0.8-0.4l-0.9-0.3l-0.7-0.3l-0.6-0.3c-0.2-0.1-0.4-0.2-0.6-0.3c-0.1-0.1-0.3-0.2-0.4-0.3         c-0.1-0.1-0.2-0.3-0.3-0.4c-0.2-0.6,0-1.3,0.5-1.7c0.5-0.3,1.1-0.5,1.7-0.5c0.3,0,0.6,0,0.9,0.1c0.3,0.1,0.5,0.2,0.8,0.3         c0.2,0.1,0.4,0.2,0.6,0.3l0.4,0.3l0.1,0.1c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2-0.1,0.2-0.2l0.9-1.5c0.1-0.1,0.1-0.3,0-0.4L27,30         c-0.1-0.1-0.3-0.2-0.4-0.3c-0.2-0.2-0.4-0.3-0.7-0.4c-0.3-0.1-0.6-0.2-0.9-0.3c-0.4-0.1-0.8-0.2-1.2-0.2v-1.9         c0-0.2-0.1-0.3-0.3-0.3h-1.4c-0.2,0-0.3,0.2-0.3,0.3l0,0v1.9c-1,0.2-2,0.7-2.7,1.4c-0.7,0.7-1,1.6-1,2.6c0,0.3,0,0.6,0.1,0.8         c0.1,0.2,0.1,0.5,0.2,0.7c0.1,0.2,0.2,0.4,0.4,0.6c0.1,0.2,0.3,0.4,0.5,0.5c0.2,0.2,0.4,0.3,0.6,0.5c0.2,0.2,0.4,0.3,0.6,0.4         c0.2,0.1,0.4,0.2,0.7,0.3l0.6,0.3l0.6,0.3l0.9,0.3l0.7,0.3c0.2,0.1,0.4,0.2,0.6,0.4c0.1,0.1,0.3,0.3,0.4,0.4         c0.1,0.2,0.2,0.4,0.2,0.6c0,0.5-0.2,1-0.6,1.3c-0.4,0.3-1,0.5-1.5,0.5c-0.3,0-0.5,0-0.8-0.1c-1-0.2-1.8-0.7-2.6-1.3l0,0         c-0.1-0.1-0.2-0.1-0.2-0.1c-0.1,0-0.2,0.1-0.2,0.1L17.8,41c-0.1,0.1-0.1,0.3,0,0.4l0.2,0.2c0.2,0.1,0.3,0.3,0.5,0.4         c0.2,0.2,0.5,0.4,0.8,0.5c0.3,0.2,0.7,0.3,1.1,0.5c0.4,0.2,0.9,0.3,1.4,0.3v1.8c0,0.1,0,0.2,0.1,0.2c0.1,0.1,0.1,0.1,0.2,0.1h1.4         c0.2,0,0.3-0.1,0.3-0.3l0,0v-1.9c1.1-0.1,2-0.7,2.7-1.4c0.7-0.8,1.1-1.8,1-2.8l0,0C27.6,38.7,27.6,38.4,27.5,38.1z"></path>
+                            </g>
+                            <g>
+                                <path class="sell_icon_mask" d="M0,0v59h59V0H0z M29.5,57.5c-15.5,0-28-12.5-28-28s12.5-28,28-28s28,12.5,28,28         S45,57.5,29.5,57.5z"></path>
+                                <circle class="sell_icon_ring" cx="29.5" cy="29.5" r="28"></circle>
+                            </g>
+                        </svg>
+                        <div class="text">
+                            <h3>See your payout</h3>
+                            <span>Enter the balance on your card for an instant payout offer. Or choose the payout you want.</span>
+                        </div>
+                    </div>
+                    <div class="section animate" ng-class="{animate: animate}">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="sell_icon_money" width="61.94" height="59" viewBox="0 0 61.94 59" class="icon svg" src="/assets/images/sell/sell_icon_money.svg">
+                            <defs>
+                                <style>
+                                /* INITIAL STYLES */
+                                
+                                .sell_icon_mask {
+                                    fill: #fff;
+                                }
+                                
+                                .sell_icon_ring {
+                                    fill: none;
+                                    stroke: #ccc;
+                                    stroke-width: 3px;
+                                }
+                                
+                                #sell_icon_cards,
+                                #sell_icon_tags,
+                                #sell_icon_money {
+                                    transform: scale(0.8);
+                                    transform-origin: 50% 50%;
+                                }
+                                
+                                .sell_icon_cards_detail {
+                                    fill: #3399ff;
+                                }
+                                
+                                .sell_icon_cards_back {
+                                    fill: #fff;
+                                }
+                                
+                                #sell_icon_cards_card1 {
+                                    transform: rotate(40deg);
+                                    transform-origin: 55px 95px 0px;
+                                }
+                                
+                                #sell_icon_cards_card2 {
+                                    transform: rotate(29deg);
+                                    transform-origin: 56px 109px 0px;
+                                }
+                                
+                                #sell_icon_cards_card3 {
+                                    transform: rotate(18deg);
+                                    transform-origin: 50px 130px 0px;
+                                }
+                                
+                                #sell_icon_tags_t1,
+                                #sell_icon_tags_t2 {
+                                    fill: #fff;
+                                    stroke: #39f;
+                                    stroke-width: 2px;
+                                }
+                                
+                                #sell_icon_tags_d1,
+                                #sell_icon_tags_d2 {
+                                    fill: #39f;
+                                }
+                                
+                                #sell_icon_tags_inner {
+                                    transform: translateY(45px);
+                                }
+                                
+                                .sell_icon_money_outline {
+                                    fill: #39f;
+                                }
+                                
+                                .sell_icon_money_back {
+                                    fill: #fff;
+                                }
+                                
+                                #sell_icon_money_envelope {
+                                    transform: translateX(-59px) translateY(10px);
+                                }
+                                /* ANIMATIION STYLES */
+                                
+                                .animate #sell_icon_cards {
+                                    animation: expand 250ms forwards;
+                                    animation-delay: 25ms;
+                                    animation-timing-function: ease-in-out;
+                                }
+                                
+                                .animate #sell_icon_tags {
+                                    animation: expand 250ms forwards;
+                                    animation-delay: 400ms;
+                                    animation-timing-function: ease-in-out;
+                                }
+                                
+                                .animate #sell_icon_money {
+                                    animation: expand 250ms forwards;
+                                    animation-delay: 900ms;
+                                    animation-timing-function: ease-in-out;
+                                }
+                                
+                                .animate #sell_icon_cards_card1 {
+                                    animation: fanInOne 400ms forwards;
+                                    animation-delay: 0ms;
+                                    animation-timing-function: ease-in;
+                                }
+                                
+                                .animate #sell_icon_cards_card2 {
+                                    animation: fanInTwo 400ms forwards;
+                                    animation-delay: 0ms;
+                                    animation-timing-function: ease-in;
+                                }
+                                
+                                .animate #sell_icon_cards_card3 {
+                                    animation: fanInThree 400ms forwards;
+                                    animation-delay: 0ms;
+                                    animation-timing-function: ease-in;
+                                }
+                                
+                                .animate #sell_icon_tags_inner {
+                                    animation: slideIn 300ms forwards;
+                                    animation-delay: 500ms;
+                                    animation-timing-function: ease-in-out;
+                                }
+                                
+                                .animate #sell_icon_money_envelope {
+                                    animation: zoomOut 200ms forwards;
+                                    animation-delay: 1000ms;
+                                    animation-timing-function: ease-out;
+                                }
+                                
+                                @keyframes expand {
+                                    0% {
+                                        transform: scale(0.8);
+                                    }
+                                    80% {
+                                        transform: scale(1.2);
+                                    }
+                                    100% {
+                                        transform: scale(1.0);
+                                    }
+                                }
+                                
+                                @keyframes fanInOne {
+                                    0% {
+                                        transform: rotate(40deg);
+                                        opacity: 0;
+                                    }
+                                    100% {
+                                        transform: rotate(0deg);
+                                        opacity: 1;
+                                    }
+                                }
+                                
+                                @keyframes fanInTwo {
+                                    0% {
+                                        transform: rotate(29deg);
+                                        opacity: 0;
+                                    }
+                                    100% {
+                                        transform: rotate(0deg);
+                                        opacity: 1;
+                                    }
+                                }
+                                
+                                @keyframes fanInThree {
+                                    0% {
+                                        transform: rotate(18deg);
+                                        opacity: 0;
+                                    }
+                                    100% {
+                                        transform: rotate(0deg);
+                                        opacity: 1;
+                                    }
+                                }
+                                
+                                @keyframes slideIn {
+                                    0% {
+                                        transform: translateY(45px);
+                                        opacity: 0;
+                                    }
+                                    80% {
+                                        transform: translateY(-8px);
+                                        opacity: 1;
+                                    }
+                                    100% {
+                                        transform: translateY(0px);
+                                        opacity: 1;
+                                    }
+                                }
+                                
+                                @keyframes zoomOut {
+                                    0% {
+                                        transform: translateX(-59px) translateY(10px);
+                                        opacity: 0;
+                                    }
+                                    100% {
+                                        transform: translateX(0px) translateY(0px);
+                                        opacity: 1;
+                                    }
+                                }
+                                </style>
+                            </defs>
+                            <g>
+                                <circle class="sell_icon_ring" cx="29.5" cy="29.5" r="28"></circle>
+                            </g>
+                            <g id="sell_icon_money_envelope">
+                                <path class="sell_icon_money_back" d="M29.77,17.5l19-5c3.24-.68,5.3-1.2,6,2l4.87,17.6c.69,3.2,1.36,3.49-4.87,5.4L35.06,43.36c-7.45,2.8-7.59-1.66-8.28-4.86l-4-15C21.81,18.73,23.55,19.56,29.77,17.5Z"></path>
+                                <path class="sell_icon_money_outline" d="M31.77,45.5h-18a56.39,56.39,0,0,0,13-2S27.54,45.5,31.77,45.5Zm-3-6h-20a109.83,109.83,0,0,0,17.78-2A2.86,2.86,0,0,0,28.77,39.5Zm-4-8h-15a54.74,54.74,0,0,0,12.8-2S23.62,31.33,24.77,31.5Zm-1-5h-12A35.66,35.66,0,0,0,22,24.5S22.85,26.33,23.77,26.5Zm19-11h-23s11.92-1.08,28-2C47.77,13.5,40.77,15.21,42.77,15.5Z"></path>
+                                <path class="sell_icon_money_outline" d="M43.19,25.16a2.28,2.28,0,0,0-.35-.4,1.67,1.67,0,0,0-.46-.28,4.09,4.09,0,0,0-.48-.17,4,4,0,0,0-.55-.1l-.54-.05-.56,0-.48,0-.42,0a2.29,2.29,0,0,1-.41-.07l-.31-.12a.73.73,0,0,1-.27-.19.87.87,0,0,1,0-1.08A1.67,1.67,0,0,1,39.2,22a2.17,2.17,0,0,1,.54-.11,3,3,0,0,1,.51,0l.42.07.29.08.11,0a.21.21,0,0,0,.18,0,.18.18,0,0,0,.11-.15l.19-1.06a.19.19,0,0,0-.11-.22l-.12-.05-.3-.1a3.11,3.11,0,0,0-.47-.09,4.13,4.13,0,0,0-.6,0,3.63,3.63,0,0,0-.72.09l-.37-1.07a.2.2,0,0,0-.25-.13h0l-.82.28a.21.21,0,0,0-.13.26L38,21a2.94,2.94,0,0,0-1.27,1.35A2.2,2.2,0,0,0,36.67,24a2.32,2.32,0,0,0,.22.46,2.55,2.55,0,0,0,.27.36,1.55,1.55,0,0,0,.34.28l.37.21a2.19,2.19,0,0,0,.41.15l.42.1.45.06.43,0,.43,0,.55,0,.47.06a1.81,1.81,0,0,1,.43.11,1.22,1.22,0,0,1,.29.18.65.65,0,0,1,.2.29.9.9,0,0,1-.12.87,1.56,1.56,0,0,1-.78.56,2.22,2.22,0,0,1-.47.11,3.37,3.37,0,0,1-1.74-.25h0a.16.16,0,0,0-.16,0,.2.2,0,0,0-.11.12l-.34,1a.2.2,0,0,0,.1.25l.14.07.36.13a4,4,0,0,0,1.26.2,4.06,4.06,0,0,0,.84-.08l.37,1.07a.21.21,0,0,0,.26.13l.82-.28a.2.2,0,0,0,.13-.25h0l-.37-1.06a2.76,2.76,0,0,0,1.29-1.37,2.45,2.45,0,0,0,.05-1.81h0A2.1,2.1,0,0,0,43.19,25.16Z"></path>
+                                <path class="sell_icon_money_outline" d="M59.31,34.67a.63.63,0,0,1-.39.31L30.13,43.14a.63.63,0,0,1-.49-.06.61.61,0,0,1-.31-.38L25,28a12,12,0,0,0,1.72.88Q33.11,31.31,37,33q1.24.54,2,.83a9.51,9.51,0,0,0,2,.45,5.19,5.19,0,0,0,2.14-.1h0a5.14,5.14,0,0,0,1.87-1,9.36,9.36,0,0,0,1.42-1.41q.49-.64,1.24-1.75,2.34-3.41,6.42-8.85a11.7,11.7,0,0,0,1-1.65l4.34,14.75A.6.6,0,0,1,59.31,34.67Zm-6-17.89a9.31,9.31,0,0,1-1.31,2.78q-2.92,4-6.05,8.31l-.52.76q-.43.63-.69,1c-.17.23-.4.51-.69.85a5.35,5.35,0,0,1-.83.81,2.43,2.43,0,0,1-.79.41h0a2.46,2.46,0,0,1-.89.07,5.49,5.49,0,0,1-1.14-.25q-.64-.2-1-.36l-1.11-.47-.85-.37-9.63-3.86a7.05,7.05,0,0,1-4.48-4.64.61.61,0,0,1,.06-.48.63.63,0,0,1,.39-.31l28.79-8.16a.76.76,0,0,1,.29,0,.38.38,0,0,1,.22.09l.16.14a.55.55,0,0,1,.13.22l.08.25.08.26.06.21A4.9,4.9,0,0,1,53.26,16.78Zm.9-6.11a3.19,3.19,0,0,0-2.47-.28L22.9,18.56A3.13,3.13,0,0,0,21,20.09a3,3,0,0,0-.28,2.43l6.14,20.9a3.09,3.09,0,0,0,1.56,1.91,3.19,3.19,0,0,0,2.47.28l28.79-8.16a3.13,3.13,0,0,0,1.94-1.53,3,3,0,0,0,.28-2.43l-6.14-20.9a3.09,3.09,0,0,0-1.55-1.91Z"></path>
+                            </g>
+                            <g>
+                                <path class="sell_icon_mask" d="M29.56,57.5a28,28,0,1,1,0-56V0H.06V59h29.5Z"></path>
+                                <path class="sell_icon_ring" d="M29.56,57.5a28,28,0,1,1,0-56"></path>
+                            </g>
+                        </svg>
+                        <div class="text">
+                            <h3>Get higher payouts!</h3>
+                            <span>Get paid by check or with a gift card. Up to 92% cash back.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sell-now-location-plank" class="clearfix">
+            <div class="center">
+                <div class="column">
+                    <h2>Sell gift cards online <br> It’s fast &amp; easy</h2>
+                    <span>Earn up to <span class="number">92%</span> cash back or choose your payout price. We accept physical and online gift cards.</span>
+                    <search-brand class="ng-isolate-scope">
+                        <div id="sell-brand-search-container-10" class="sell-brand-search-container">
+                            <div id="sell-search-container-10" class="sell-search-container">
+                                <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                <input type="text" id="sell-brand-input-10" class="sell-brand-input ng-pristine ng-untouched ng-valid ng-empty" placeholder="Enter gift card store name" ng-focus="$ctrl.onFocus()" ng-model="$ctrl.searchText" ng-change="$ctrl.updateTopBrands()" ng-keydown="$ctrl.onKeydown($event)">
+                                <div role="listbox" id="sell-text-dropdown-10" class="sell-text-dropdown ng-hide" ng-show="$ctrl.showDropdown">
+                                    <div class="brands-message ng-hide" ng-show="$ctrl.showLoadingText" ng-i18next="sell_select_search_loading">Loading available cards...</div>
+                                    <div class="brands-message" ng-show="!$ctrl.topBrands.length" ng-i18next="sell_select_search_no_results">Sorry, no results were found. Please try a different store or brand name.</div>
+                                    <!-- ngRepeat: card in $ctrl.topBrands -->
+                                </div>
+                            </div>
+                        </div>
+                    </search-brand>
+                </div>
+                <div class="middle">
+                    <div class="line">
+                    </div>
+                    <div class="or">
+                        OR
+                    </div>
+                    <div class="line">
+                    </div>
+                </div>
+                <div class="column">
+                    <h2>Need cash today?</h2>
+                    <span>Bring your unwanted gift cards to one of our many physical locations and walk out with cash or credit.</span>
+                    <div class="links">
+                        <a href="https://www.cardpool.com/sell-gift-cards-for-cash">How it works?</a>
+                        <span class="spacer"></span>
+                        <a href="https://www.cardpool.com/gift-cards-accepted-near-me">Cards Accepted</a>
+                    </div>
+                    <a class="clear-action-button" aria-role="button" href="https://www.cardpool.com/locations">
+                        <img class="button_icon" aria-hidden="" src="./img/mappin_findlocation.png">
+                        <span>Find a Location</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="qa-plank" class="clearfix">
+            <div class="center">
+                <h2 class="large">Questions &amp; Answers</h2>
+                <div class="question-container" cp-reveal="#answer1" sibling-listener="qa-plank">
+                    <h3 class="question">How much will I get for my unwanted gift card?</h3>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+                <div class="answer-container">
+                    <p class="cp-reveal-off cp-reveal" id="answer1" aria-hidden="true">
+                        You can get up to <span class="number">92%</span> of the gift card’s value, though the exchange rate varies by brand. Once we’ve verified the balance on your card, we’ll present you with an offer. There's absolutely no commitment to accept an offer.
+                    </p>
+                </div>
+                <div class="question-container" cp-reveal=".answer2" sibling-listener="qa-plank">
+                    <h3 class="question">When will I be paid after I sell a gift card?</h3>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+                <div class="answer-container">
+                    <p class="answer2 cp-reveal-off cp-reveal" aria-hidden="true">
+                        If you selected to be paid with an Amazon eGift card, we usually verify the value, process the gift card(s), and issue payment typically within one (<span class="number">1</span>) business day.
+                    </p>
+                    <p class="answer2 cp-reveal-off cp-reveal" aria-hidden="true">
+                        If you selected payout via check, your check will be issued within one (<span class="number">1</span>) business day of gift card receipt and should arrive in <span class="number">3-7</span> business days via USPS First Class Mail.
+                    </p>
+                    <p class="answer2 cp-reveal-off cp-reveal" aria-hidden="true">
+                        During peak holiday periods, please allow 1 additional business day for processing transactions and also consider the USPS holiday delivery schedule, which can be found <a href="https://www.usps.com/holiday/holiday-shipping-dates.htm" target="_blank">here.</a>
+                    </p>
+                </div>
+                <div class="question-container" cp-reveal=".answer3" sibling-listener="qa-plank">
+                    <h3 class="question">What payout options does Cardpool offer?</h3>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+                <div class="answer-container">
+                    <p class="answer3 cp-reveal-off cp-reveal" aria-hidden="true">
+                        We offer two payment options for sold gift cards:
+                    </p>
+                    <ol class="answer3 cp-reveal-off cp-reveal" aria-hidden="true">
+                        <li>Amazon eGift card that is delivered to your email address.</li>
+                        <li>Paper check that is mailed directly to you.</li>
+                    </ol>
+                    <p class="answer3 cp-reveal-off cp-reveal" aria-hidden="true">
+                        Checks are usually issued within 1 business day of gift card receipt and should arrive in <span class="number">3-7</span> business days via USPS First Class Mail. We do not issue payments via direct deposit or Paypal at this time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

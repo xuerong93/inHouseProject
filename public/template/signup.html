@@ -1,0 +1,83 @@
+<div class="auth-form" style="margin: 30px auto">
+    <form class="form ng-invalid ng-invalid-pattern ng-invalid-required ng-valid-maxlength ng-valid-minlength ng-dirty ng-valid-parse" name="passwordForm" novalidate="true" >
+        <div>
+            <h3 class="auth-h3">New Account</h3>
+            <button type="button" class="header-link right-link ng-binding" ui-sref="login">I have an account</button>
+        </div>
+        <div type="name" label="Username" required="true" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-pattern ng-invalid-required" >
+            <div id="signupcontroller-nametext" class="form-element form-element-text required invalid invalid-required invalid-pattern"  value="UserName">
+                <label ng-show="!user.username">UserName</label>
+                <input type="text"  ng-model="user.username"  class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" required="required">
+                <!-- ngIf: !$ctrl.required -->
+                <i class="fa fa-check ng-hide" ng-show="user.username" aria-hidden="true"></i>
+            </div>
+        </div>
+        <!-- end ngIf: !$signUpController.isMobile() -->
+       
+        <div class="change-password-container">
+            <div  label="Create Password" required="true" class="ng-isolate-scope ng-dirty ng-empty ng-invalid ng-invalid-pattern ng-invalid-required ng-touched" style="">
+                <div id="signupcontroller-passwordtext" class="form-element form-element-password required invalid invalid-required invalid-pattern" >
+                    <label ng-show="!user.password">Password</label>
+                    <input value="Password" id="ShowPassword" type="password"  maxlength="256" ng-model="user.password"  required="required">
+                    <!-- end ngIf: !$ctrl.showPassword -->
+                    <!-- ngIf: $ctrl.showPassword -->
+                    <a tabindex="0" ng-if="!showPassword" class="toggle-password" ng-click="togglePassword()">show</a>
+                    <a tabindex="0" ng-if="showPassword" class="toggle-password" ng-click="togglePassword()">hide</a>
+                </div>
+            </div>
+
+            <div class="ng-pristine ng-untouched ng-scope ng-isolate-scope ng-empty ng-valid-pattern ng-invalid ng-invalid-required">
+                <div id="signupcontroller-confirmpasswordtext" class="form-element form-element-password required invalid invalid-required">
+                    <label ng-show="!password">Confirm Password</label>
+                    <input value="Confirm Password" type="password" id="ShowPassword2" maxlength="256" ng-model="password"  required="required">
+                    <a tabindex="0" ng-if="!showPassword2" class="toggle-password" ng-click="togglePassword2()">show</a>
+                    <a tabindex="0" ng-if="showPassword2" class="toggle-password" ng-click="togglePassword2()">hide</a>
+                </div>
+            </div>
+            <!-- end ngIf: !$signUpController.hideConfirmPassword -->
+        </div>
+        <div class="signup-checkbox-container">
+            <div class="terms-and-conditions-container">
+                <div required="true" class="ng-pristine ng-untouched ng-invalid ng-invalid-submit ng-not-empty ng-valid-required" >
+                    <div id="signupcontroller-acceptlegal" class="form-element form-element-checkbox required invalid">
+                        <label>
+                            <input type="checkbox" name="acceptLegal" ng-true-value="true" ng-false-value="false" ng-model="termConfirm" ng-focus="$ctrl.onFocus()" ng-blur="$ctrl.onBlur()" ng-required="!!$ctrl.required" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" required="required" style="">
+                            <span class="check" ng-keypress="$ctrl.onKeypress($event)" tabindex="0"></span>
+                           
+                        </label>
+                    </div>
+                </div>
+                <div ng-if="password==user.password" class="text">
+                    I agree to Cardpool's
+                    <a href="/tos" target="_blank" class="ng-binding">Terms of Use</a> and
+                    <a href="/privacy" target="_blank" class="ng-binding">Privacy Policy.</a>
+                </div>
+                <div ng-if="password!=user.password" class="text">
+                    Both Password must match
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button ng-disabled="!termConfirm" ng-click="createAccount()"  class="button button-large button-submit auth-submit-button">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="18.188" viewBox="0 0 14 18.188" class="modal-img svg" src="img/signout-o.svg">
+                    <defs>
+                        <style>
+                        .cls-1 {
+                            fill: #636363;
+                            fill-rule: evenodd;
+                            filter: url(#filter);
+                        }
+                        </style>
+                        <filter id="filter" x="1002" y="294.906" width="14" height="18.188" filterUnits="userSpaceOnUse">
+                            <feFlood result="flood" flood-color="#ffffff"></feFlood>
+                            <feComposite result="composite" operator="in" in2="SourceGraphic"></feComposite>
+                            <feBlend result="blend" in2="SourceGraphic"></feBlend>
+                        </filter>
+                    </defs>
+                    <path id="signout-o.svg" class="cls-1" d="M1014.23,313.1h-10.46a1.777,1.777,0,0,1-1.77-1.773v-7.64a1.777,1.777,0,0,1,1.77-1.772h0.33v-1.987c0-3.2,1.79-5.03,4.9-5.03,2.37,0,4.9,1.322,4.9,5.03v1.987h0.33a1.777,1.777,0,0,1,1.77,1.772v7.64A1.777,1.777,0,0,1,1014.23,313.1ZM1004.1,311h9.8v-6.991h-9.8V311Zm2.1-9.088h5.6v-1.987c0-1.946-.94-2.932-2.8-2.932-1.96,0-2.8.876-2.8,2.932v1.987Zm3.47,7.107h-1.34v-3.029h1.34v3.029Z" transform="translate(-1002 -294.906)"></path>
+                </svg>
+                <span >Create Account</span>
+            </button>
+        </div>
+    </form>
+</div>

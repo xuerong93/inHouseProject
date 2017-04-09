@@ -1,0 +1,44 @@
+<div id="body-wrap">
+    <div class="breadcrumbs">
+        <span><a ui-sref="home">Home</a></span>
+        <span>Account Overview</span>
+    </div>
+    <div id="account-container">
+        <div id="left-rail" class="account-left-rail scr-medium">
+            <h3 class="account-sidebar-header">My Account</h3>
+            <div class="account-sidebar-element" style="padding-top: 10px">
+                <div class="account-sidebar-image-container">
+                    <i class="fa fa-snowflake-o account-img settings" aria-hidden="true"></i>
+                    <a ui-sref=".overview" class="account-sidebar-link" style="font-size: 15px; text-decoration: none; color: black">Overview</a>
+                </div>
+            </div>
+            <div class="account-sidebar-element" style="padding-top: 10px">
+                <div class="account-sidebar-image-container">
+                    <i class="fa fa-shopping-bag account-img settings" aria-hidden="true"></i>
+                    <a ui-sref=".purchases" class="account-sidebar-link" style="font-size: 15px; text-decoration: none; color: black">Purchases</a>
+                </div>
+            </div>
+            <div class="account-sidebar-element" style="padding-top: 10px">
+                <div class="account-sidebar-image-container">
+                    <i class="fa fa-list-ul account-img settings" aria-hidden="true"></i>
+                    <a ui-sref=".listings" class="account-sidebar-link" style="font-size: 15px; text-decoration: none; color: black">Listings</a>
+                </div>
+            </div>
+            <!---->
+            <div class="account-sidebar-element" style="padding-top: 10px">
+                <div class="account-sidebar-image-container">
+                    <i class="fa fa-user-o account-img settings" aria-hidden="true"></i>
+                    <a ui-sref=".profile" class="account-sidebar-link" style="font-size: 15px; text-decoration: none; color: black">     Profile</a>
+                </div>
+            </div>
+            <div class="account-sidebar-element" style="padding-top: 10px">
+                <div class="account-sidebar-image-container">
+                    <i class="fa fa-toggle-on account-img settings" aria-hidden="true"></i>
+                    <a ui-sref=".settings" class="account-sidebar-link" style="font-size: 15px; text-decoration: none; color: black">Settings</a>
+                </div>
+            </div>
+        </div>
+        
+        <div ui-view></div>
+    </div>
+</div>

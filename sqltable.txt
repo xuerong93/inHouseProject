@@ -1,0 +1,45 @@
+Create table card(
+id number not null,
+name varchar2(25) not null,
+category varchar2(30),
+price number(6,2),
+discount number(4,2),
+img varchar2(4000),
+type varchar2(20)
+);
+
+
+
+
+Insert into cardpool (name, category, price, discount) values ('Home Depot', 'Home and Garden', 25, 0.03);
+
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval, 'Home Depot', 'Home and Garden', 25, 3,'img/cards/home_depot.jpg', 'Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Home Depot', 'Home and Garden', 31.3, 3,'img/cards/home_depot.jpg', 'Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Home Depot', 'Home and Garden', 273.79, 3,'img/cards/home_depot.jpg','Physical Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Applebees', 'Restaurants', 25, 16,'img/cards/applebees.jpg','All');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Applebees', 'Restaurants', 50, 16,'img/cards/applebees.jpg', 'Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Applebees', 'Restaurants', 75, 16,'img/cards/applebees.jpg','Physical Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Best Buy', 'Computers and Electronics', 20, 5,'img/cards/best_buy.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Williams-Sonoma', 'Home and Garden', 20, 6.5,'img/cards/williams_sonoma.jpg','Physical Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Williams-Sonoma', 'Home and Garden', 28.37, 6.5,'img/cards/williams_sonoma.jpg','Physical Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Red Lobster', 'Restaurants', 25, 14.5,'img/cards/red_lobster.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Red Lobster', 'Restaurants', 49.91, 14.5,'img/cards/red_lobster.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Red Lobster', 'Restaurants', 85, 14.5,'img/cards/red_lobster.jpg','All');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Chili', 'Restaurants', 53, 16,'img/cards/chilis.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Cheesecake Factory', 'Restaurants', 30, 6.5,'img/cards/cheesecake_factory.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Apple Store', 'Computers and Electronics', 20.62, 4.5,'img/cards/apple.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Dell', 'Computers and Electronics', 25, 6.5,'img/cards/dell.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Fandango', 'Movies and Entertainment', 15, 16,'img/cards/fandango.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Fandango', 'Movies and Entertainment', 25, 16,'img/cards/fandango.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Fandango', 'Movies and Entertainment', 30, 16,'img/cards/fandango.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'AMC Theatres', 'Movies and Entertainment', 60, 16,'img/cards/amc_theatres.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'AMC Theatres', 'Movies and Entertainment', 50, 16,'img/cards/amc_theatres.jpg','Physical Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Old Navy', 'Department Stores', 21.34, 18.5,'img/cards/old_navy.jpg','Physical Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Old Navy', 'Department Stores', 55.09, 18.5,'img/cards/old_navy.jpg','All');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Nordstrom', 'Department Stores', 29.12, 10.5,'img/cards/nordstrom.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Nordstrom', 'Department Stores', 50, 10.5,'img/cards/nordstrom.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Nordstrom', 'Department Stores', 45, 10.5,'img/cards/nordstrom.jpg','Email Only');
+Insert into card (id, name, category, price, discount,img, type) values (id_inc.nextval,'Nordstrom', 'Department Stores', 30, 10.5,'img/cards/nordstrom.jpg','Physical Only');
+ 
+
+
