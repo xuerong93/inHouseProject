@@ -1,0 +1,45 @@
+package com.mercury.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.mercury.beans.Users;
+import com.mercury.dao.UserDao;
+
+
+@Controller
+public class UserController {
+	@Autowired
+	private UserDao ud;
+	
+	@RequestMapping(value="/userInfo", method=RequestMethod.GET)
+	@ResponseBody 
+	public List<Users> getUser(){
+		return ud.queryAll();
+	}
+	
+	@RequestMapping(value="/userInfo", method=RequestMethod.POST)
+	@ResponseBody  
+	public void saveUserInfo(@RequestBody Users user) {
+		ud.save(user);
+	}
+	
+	@RequestMapping(value="/userInfo", method=RequestMethod.PUT)
+	@ResponseBody     
+	public void updateUserInfo(@RequestBody Users user) {
+		ud.update(user);
+	}
+	
+	@RequestMapping(value="/userInfo/{name}", method=RequestMethod.DELETE)
+	@ResponseBody  
+	public void deleteUserInfo(@PathVariable String name) {
+		ud.deleteByName(name);
+	}
+}

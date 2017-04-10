@@ -165,7 +165,7 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
 
 
 app.factory("cs", ["$q","$http", ds.cardService]);
-app.factory("us", ["$q","$http", us.userService]);
+app.factory("us", ["$q","$http", ds.userService]);
 
 app.controller("homeCtrl", ["$scope", function($scope){
     console.log("home page now");

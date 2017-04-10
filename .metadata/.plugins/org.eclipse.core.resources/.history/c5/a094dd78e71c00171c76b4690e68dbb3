@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+		
+	<!-- http block -->	
+	<sec:http auto-config="true">
+		<sec:intercept-url pattern="http://localhost:3000/cardpool" access="ROLE_USER"/>
+		<!-- Without login form, Spring provides a default login form -->
+		<sec:form-login
+			login-page="http://localhost:3000/cardpool#/login"
+			authentication-success-handler-ref="postSuccessAuthHandler"
+			authentication-failure-url="http://localhost:3000/cardpool#/login?login_error=1"
+		/>
+		<sec:logout logout-success-url="http://localhost:3000/cardpool"/>
+		<sec:remember-me/>
+	</sec:http>	
+	
+	<!-- security manager block -->
+	<sec:authentication-manager>
+		<sec:authentication-provider user-service-ref="personService"/>
+	</sec:authentication-manager>	
+	
+	<bean id="postSuccessAuthHandler" class="com.mercury.service.PostSuccessfulAuthenticationHandler">
+		<property name="defaultTargetUrl" value="http://localhost:3000/cardpool"></property>
+		<property name="alwaysUseDefaultTargetUrl" value="true"></property>
+	</bean>
+</beans>

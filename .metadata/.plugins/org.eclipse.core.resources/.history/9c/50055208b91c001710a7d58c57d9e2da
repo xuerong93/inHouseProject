@@ -1,0 +1,12 @@
+package com.mercury.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.mercury.dao.PersonDao;
+
+@Controller
+public class PersonController {
+	@Autowired
+	private PersonDao pd;
+}

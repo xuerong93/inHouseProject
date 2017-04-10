@@ -1,0 +1,5 @@
+package com.mercury.dao;
+
+public class UserDao {
+
+}

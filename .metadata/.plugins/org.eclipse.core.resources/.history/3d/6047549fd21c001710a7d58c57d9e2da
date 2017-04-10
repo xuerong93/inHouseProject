@@ -1,0 +1,38 @@
+package com.mercury.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.mercury.beans.User;
+import com.mercury.dao.UserDao;
+import com.mercury.vo.CardInfo;
+
+@Controller
+public class UserController {
+	@Autowired
+	private UserDao ud;
+	
+	@RequestMapping(value="/userInfo", method=RequestMethod.GET)
+	@ResponseBody 
+	public List<User> getUser(){
+		return ud.queryAll();
+	}
+	
+	@RequestMapping(value="/cardInfo", method=RequestMethod.POST)
+	@ResponseBody  
+	public void saveUserInfo(@RequestBody User user) {
+		ud.save(user);
+	}
+	
+	@RequestMapping(value="/cardInfo", method=RequestMethod.PUT)
+	@ResponseBody     
+	public void updateUserInfo(@RequestBody User user) {
+		ud.update(user);
+	}
+}

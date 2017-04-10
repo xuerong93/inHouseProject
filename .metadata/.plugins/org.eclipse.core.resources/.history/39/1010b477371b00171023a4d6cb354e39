@@ -1,0 +1,69 @@
+package com.mercury.dao.impl;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.mercury.beans.Card;
+import com.mercury.dao.CardDao;
+
+@Repository
+public class CardDaoImpl implements CardDao {
+	private HibernateTemplate template;
+	
+	@Autowired
+	@Qualifier("mySessionFactory")
+	public void setSessionFactory(SessionFactory factory) {
+		template = new HibernateTemplate(factory);
+	}
+	
+	@Override
+	public void save(Card card) {
+		// TODO Auto-generated method stub
+		template.save(card);
+	}
+	
+	@Override
+	public void update(Card card) {
+		// TODO Auto-generated method stub
+		template.update(card);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Card> queryAll() {
+		// TODO Auto-generated method stub
+		List<Card> cards = template.find("from Card");
+		return cards;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Card> queryByName(String name) {
+		// TODO Auto-generated method stub
+//		return (Card)template.get(Card.class, name);
+		List<Card> cards = template.find("from Card where name = ?", name);
+		return cards;
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Card> queryByCategory(String category) {
+		// TODO Auto-generated method stub
+		List<Card> cards = template.find("from Card where name = ?", name);
+		return cards;
+	}
+
+	@Override
+	public void deleteByName(String name) {
+		// TODO Auto-generated method stub
+		Card per = (Card)template.get(Card.class, name);
+		template.delete(per);
+	}
+
+}

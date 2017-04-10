@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.hibernate.annotations.Entity"/>
+<fullyQualifiedTypeName name="org.springframework.orm.hibernate3.HibernateTemplate"/>
+<fullyQualifiedTypeName name="com.mercury.dao.CardDao"/>
+<fullyQualifiedTypeName name="com.mercury.util.Converter"/>
+<fullyQualifiedTypeName name="com.mercury.beans.Card"/>
+<fullyQualifiedTypeName name="com.mercury.vo.Emp"/>
+<fullyQualifiedTypeName name="com.mercury.vo.Address"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.mercury.util.ConverterP"/>
+<fullyQualifiedTypeName name="com.mercury.vo.CardInfo"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.Table"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="com.mercury.dao.UserDao"/>
+<fullyQualifiedTypeName name="com.mercury.beans.User"/>
+<fullyQualifiedTypeName name="com.mercury.dao.PersonDao"/>
+<fullyQualifiedTypeName name="com.mercury.beans.Person"/>
+</qualifiedTypeNameHistroy>

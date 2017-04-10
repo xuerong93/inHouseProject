@@ -1,0 +1,8 @@
+127.0.0.1 - - [30/Mar/2017:15:04:18 -0400] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:15:04:34 -0400] "GET /CardPool/rest/emp HTTP/1.1" 200 294
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:15:06:49 -0400] "GET /CardPool/rest/emp HTTP/1.1" 200 294
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:15:06:53 -0400] "GET /CardPool/rest/emp/Steven HTTP/1.1" 200 81
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:15:06:54 -0400] "GET /CardPool/rest/emp HTTP/1.1" 200 294
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:15:06:56 -0400] "GET /CardPool/rest/emp HTTP/1.1" 200 294
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:15:06:59 -0400] "OPTIONS /CardPool/rest/emp/mark HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [30/Mar/2017:15:06:59 -0400] "DELETE /CardPool/rest/emp/mark HTTP/1.1" 200 -
