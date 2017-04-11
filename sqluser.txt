@@ -1,0 +1,14 @@
+create table users(
+user_id number(3) primary key,
+username varchar2(20),
+password varchar2(20),
+enabled char(1)
+);
+
+
+create table user_roles(
+user_role_id number(3) primary key,
+user_id number(3),
+authority varchar2(20),
+constraints user_role_fk foreign key(user_id)
+references users(user_id));

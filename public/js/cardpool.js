@@ -1,4 +1,4 @@
-var app = angular.module("mainApp",["ngRoute","ui.router"]);
+var app = angular.module("mainApp",["ngRoute","ui.router","ngStorage"]);
 
 // "ShoppingCart", "CartItem",                , ShoppingCart, CartItem
 app.controller("mainCtrl",["$scope", "cs", "$location", "$timeout", "ShoppingCart", "$rootScope",  function($scope, cs, $location,$timeout, ShoppingCart, $rootScope){
